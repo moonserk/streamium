@@ -1,1 +1,21 @@
-body{background:red}
+.custom-icon {
+  max-width: 22px; }
+
+.custom-logo {
+  max-width: 190px; }
+
+.custom-btn {
+  max-width: 60px; }
+
+.absolute {
+  position: absolute;
+  margin: 6px 6px;
+  z-index: 23; }
+
+.btn-content {
+  margin: 1px !important;
+  padding: 0 4px !important; }
+
+.router-link {
+  color: #000 !important;
+  text-decoration: none !important; }

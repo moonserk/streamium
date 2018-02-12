@@ -11,7 +11,7 @@ let config = {
     filename: 'output.js'
   },
   resolve: { // These options change how modules are resolved
-    extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.jpeg', '.jpg', '.gif', '.png'], // Automatically resolve certain extensions
+    extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.styl', '.jpeg', '.jpg', '.gif', '.png', 'svg'], // Automatically resolve certain extensions
     alias: { // Create aliases
       images: path.resolve(__dirname, 'src/assets/images')  // src/assets/images alias
     }
@@ -23,11 +23,19 @@ let config = {
         loader: "babel-loader" 
       },
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
         test: /\.scss$/,
         use: ExtractTextWebpackPlugin.extract({
-          use: ["css-loader", "sass-loader"],
+          use: ["css-loader", "sass-loader", "stylus-loader"],
           fallback: "style-loader"
         })	
+      },
+      {
+        test: /\.styl$/, 
+        loader: 'style-loader!css-loader!stylus-loader'
       },
       {
         test: /\.jsx$/,
@@ -66,7 +74,9 @@ let config = {
     contentBase: path.resolve(__dirname, './public'),
     historyApiFallback: true,
     inline: true,
-    open: true
+    open: true,
+    publicPath: '/',
+    port: 9000
   },
   devtool: 'eval-source-map'
 }
