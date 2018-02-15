@@ -14,7 +14,7 @@ import FlatButton from 'material-ui/FlatButton'
 const Card = (props) => {
     return (
         <div className="col-md-4">
-            <div className="card mb-4 box-shadow">
+            <div className="card mb-4 box-shadow custom-card-border">
                 <div className="">
                     <Channel channelName={props.channelName} pubTime={props.pubTime} />
                     <Avatar />
@@ -40,11 +40,12 @@ const Channel = (props) => {
 
 const VideoSlot = (props) => {
     return (
-        <div className="img-fluid">
+        <div className="img-fluid video-slot">
             <video className="card-img-top">
                 <source src={props.src} type="video/mp4" />
+                
             </video>
-            <span className="">{props.time}</span>
+            <span className="video-time">{props.time}</span>
         </div>
     )
 }

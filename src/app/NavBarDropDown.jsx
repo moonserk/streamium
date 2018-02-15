@@ -17,6 +17,7 @@ import heart from '../assets/images/heart.svg'
 import live from '../assets/images/live.svg'
 import trend from '../assets/images/trend.svg'
 import menu from '../assets/images/menu-mobileHamb.svg'
+import crownlogo from '../assets/images/crown.png'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -38,21 +39,21 @@ export default class NavBarDropDown extends React.Component {
 
   render() {
     return (
-      <div>
-        <Navbar color="faded" light>
-          <NavbarBrand to="/" tag={RRNavLink} className="mr-auto"><img className="custom-logo" src={logo} /></NavbarBrand>
+      <div >
+        <Navbar  className="navbar-custom" color="faded" light>
+          <NavbarBrand to="/" tag={RRNavLink} className="mr-auto in-navbar-custom"><img className="custom-logo2"  src={crownlogo} /><img className="custom-logo" src={logo} /></NavbarBrand>
 
-            <Nav className="mr-auto" navbar>
-              <NavItem>
+            <Nav className="mr-auto in-navbar-custom" navbar>
+              <NavItem className="input-custom">
                     <InputGroup>
-                    <Input type="search" name="search" id="exampleSearch" placeholder="search" />
+                    <Input  type="search" name="search" id="exampleSearch" placeholder="search" />
                     <InputGroupAddon addonType="append"><Button color="primary">search</Button></InputGroupAddon>
                     </InputGroup>
               </NavItem>
             </Nav>
 
 
-          <Nav className="mr-5" navbar>
+          <Nav className="mr-5 in-navbar-custom hide-icon" navbar>
               <NavItem>
               <NavLink  to="/channel" tag={RRNavLink}>
                 <Media>
@@ -62,7 +63,7 @@ export default class NavBarDropDown extends React.Component {
               </NavItem>
             </Nav>
           
-            <Nav className="mr-5" navbar>
+            <Nav className="mr-5 in-navbar-custom hide-icon" navbar>
               <NavItem>
               <NavLink  to="/channel" tag={RRNavLink}>
                 <Media>
@@ -73,7 +74,7 @@ export default class NavBarDropDown extends React.Component {
             </Nav>
           
 
-            <Nav className="mr-5" navbar>
+            <Nav className="mr-5 in-navbar-custom hide-icon" navbar>
               <NavItem>
               <NavLink  to="/channel" tag={RRNavLink}>
                 <Media>
@@ -83,10 +84,10 @@ export default class NavBarDropDown extends React.Component {
               </NavItem>
             </Nav>
 
-            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle} >
+            <Dropdown  isOpen={this.state.dropdownOpen} toggle={this.toggle} >
             
             <DropdownToggle nav>
-            <NavbarToggler className="mr-2" />
+            <NavbarToggler className="mr-2 in-navbar-custom" />
             </DropdownToggle>
 
             <DropdownMenu right>
@@ -98,7 +99,6 @@ export default class NavBarDropDown extends React.Component {
               
               </DropdownItem>
               
-
 
               <DropdownItem >
                 <NavLink to="/channel" className="router-link" tag={RRNavLink}>

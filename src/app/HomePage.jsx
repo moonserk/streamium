@@ -1,6 +1,9 @@
 import React from 'react'
 import axios from 'axios'
 import Card from './Card'
+
+import load from '../assets/images/spinning-circles.svg'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default class HomePage extends React.Component{
@@ -25,7 +28,18 @@ export default class HomePage extends React.Component{
                       error
                     });
                   }
-            )
+               )
+        
+    }
+
+    renderSpiner(){
+        
+            return (
+                <div>
+                    <img className="App-logo" src={load} />
+                </div>
+            );
+        
     }
 
     render(){
@@ -33,7 +47,7 @@ export default class HomePage extends React.Component{
         if(error){
             return <div>Error: {error.message}</div>
         } else if (!isLoaded){
-            return <div>Loading...</div>
+            return <div>{this.renderSpiner()}</div>
         }else{
             return (
                 <div className="container-fluid">
