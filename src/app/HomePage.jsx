@@ -29,7 +29,6 @@ export default class HomePage extends React.Component{
                     });
                   }
                )
-        
     }
 
     renderSpiner(){
@@ -50,8 +49,8 @@ export default class HomePage extends React.Component{
             return <div>{this.renderSpiner()}</div>
         }else{
             return (
-                <div className="container-fluid">
-                    <div className="row">
+                <div className="container">
+                    <div className="masonry">
                         {cards.map((item, index) => <Card key={index} 
                                                             channelName={item.channelName}
                                                             pubTime={item.pubTime}

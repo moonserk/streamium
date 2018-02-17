@@ -13,7 +13,7 @@ import FlatButton from 'material-ui/FlatButton'
 
 const Card = (props) => {
     return (
-        <div className="col-md-4">
+        <div className="item">
             <div className="card mb-4 box-shadow custom-card-border">
                 <div className="">
                     <Channel channelName={props.channelName} pubTime={props.pubTime} />
@@ -23,6 +23,7 @@ const Card = (props) => {
                     <Text text={props.text} moneyEarned={props.moneyEarned} />
                 </div>
             </div>
+            <div className="clearfix"></div>
         </div>
     )
 }
