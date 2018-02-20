@@ -23,7 +23,6 @@ const App = () => {
         <MuiThemeProvider muiTheme={muiTheme}>
             <div>
                 <NavBarDropDown />
-                <br />
                 <Main />
             </div>
         </MuiThemeProvider>

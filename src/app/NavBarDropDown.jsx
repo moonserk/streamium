@@ -40,8 +40,8 @@ export default class NavBarDropDown extends React.Component {
   render() {
     return (
       <div >
-        <Navbar  className="navbar-custom" color="faded" light>
-          <NavbarBrand to="/" tag={RRNavLink} className="mr-auto in-navbar-custom"><img className="custom-logo2"  src={crownlogo} /><img className="custom-logo" src={logo} /></NavbarBrand>
+        <Navbar  className="navbar-custom  fixed-top" color="faded" light>
+          <NavbarBrand to="/" tag={RRNavLink} className="mr-auto in-navbar-custom"><img className="custom-logo2"  src={crownlogo} />  <img className="custom-logo" src={logo} /></NavbarBrand>
 
             <Nav className="mr-auto in-navbar-custom" navbar>
               <NavItem className="input-custom">

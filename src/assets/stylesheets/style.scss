@@ -50,7 +50,9 @@
     padding-bottom: 0px !important;
     background-color: rgb(245,245,245);
     border-bottom: 1px solid rgb(220, 220, 220); 
+    -webkit-transform: translate3d(0, 0, 0);
 }
+
 .in-navbar-custom{
     padding-top: 1px !important;
     padding-bottom: 1px !important;
@@ -64,9 +66,12 @@
         display: none !important;
     }
 }
-
-
     
+.container-margin-top{
+    margin-top: 80px;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+}
 
 .input-custom{
     width: 480px;
@@ -95,9 +100,9 @@
     margin: 1.5em 0;
     padding: 0;
     column-gap: 1.5em; /* Общее расстояние между колонками */
-    font-size: .85em;
     -moz-column-gap: 1.5em; /* Расстояние между колонками для Firefox */
     -webkit-column-gap: 1.5em; /* Расстояние между колонками  для Safari, Chrome и iOS */
+    width: 100%;
 }
  
 /* Элементы в виде плиток с содержанием */
@@ -106,7 +111,7 @@
     background: #fff;
     padding: 1px;
     margin: 0 0 1.5em;
-    width: 100%;
+    width: 100%
 }
 
 /* Стили картинок, видое и фреймов внутри адаптивных плиток */
@@ -157,3 +162,16 @@
             width: 1260px;
         }
     }
+
+.custom-footer{
+    border-top: 3px solid;
+    border-color:  #5c5c5c;
+    //position: fixed; /* Фиксированное положение */
+    //left: 0; bottom: 0; /* Левый нижний угол */
+    padding: 10px; /* Поля вокруг текста */
+    background: #292929ea; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    // width: 100%; /* Ширина слоя */
+    //z-index: 50;
+    -webkit-transform: translate3d(0, 0, 0)
+}

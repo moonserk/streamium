@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import Card from './Card'
 
+import Notification from './Notification';
+
 import load from '../assets/images/spinning-circles.svg'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -12,11 +14,22 @@ export default class HomePage extends React.Component{
         this.state = {
             error: null,
             isLoaded: false,
-            cards: []
+            cards: [],
+            toggleNotify: false,
+            notifyIndex: null
         };
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(index){
+
+        this.setState({toggleNotify: false})
+        this.setState({toggleNotify: true, notifyIndex: index})
+       
     }
 
     componentDidMount(){
+        this.timerNotify = setInterval(() => this.setState({toggleNotify: false}), 8000)
         axios.get("/fakedata.json")
             .then(
                 (response) => {
@@ -29,6 +42,8 @@ export default class HomePage extends React.Component{
                     });
                   }
                )
+
+        
     }
 
     renderSpiner(){
@@ -41,6 +56,10 @@ export default class HomePage extends React.Component{
         
     }
 
+    renderNotify(){
+        console.log("hom")
+    }
+
     render(){
         const { error, isLoaded, cards} = this.state;
         if(error){
@@ -49,17 +68,21 @@ export default class HomePage extends React.Component{
             return <div>{this.renderSpiner()}</div>
         }else{
             return (
-                <div className="container">
-                    <div className="masonry">
-                        {cards.map((item, index) => <Card key={index} 
+                <div>
+                    <div className="container-fluid container-margin-top">
+                        <div className="card-columns">
+                            {cards.map((item, index) => <Card key={index} 
                                                             channelName={item.channelName}
                                                             pubTime={item.pubTime}
                                                             src={item.src}
                                                             time={item.time}
                                                             title={item.title}
                                                             text={item.text}
+                                                            click={(e) => this.handleClick(index)}
                                                             moneyEarned={item.moneyEarned}/>)}
+                        </div>
                     </div>
+                    {this.state.toggleNotify ? <Notification title={cards[this.state.notifyIndex].channelName}/> : null} 
                 </div>
             )
         }

@@ -36,7 +36,8 @@
   padding-top: 0px !important;
   padding-bottom: 0px !important;
   background-color: #f5f5f5;
-  border-bottom: 1px solid #dcdcdc; }
+  border-bottom: 1px solid #dcdcdc;
+  -webkit-transform: translate3d(0, 0, 0); }
 
 .in-navbar-custom {
   padding-top: 1px !important;
@@ -47,6 +48,11 @@
     display: none !important; }
   .hide-icon {
     display: none !important; } }
+
+.container-margin-top {
+  margin-top: 80px;
+  padding-left: 50px !important;
+  padding-right: 50px !important; }
 
 .input-custom {
   width: 480px; }
@@ -72,11 +78,11 @@
   padding: 0;
   column-gap: 1.5em;
   /* Общее расстояние между колонками */
-  font-size: 0.85em;
   -moz-column-gap: 1.5em;
   /* Расстояние между колонками для Firefox */
   -webkit-column-gap: 1.5em;
-  /* Расстояние между колонками  для Safari, Chrome и iOS */ }
+  /* Расстояние между колонками  для Safari, Chrome и iOS */
+  width: 100%; }
 
 /* Элементы в виде плиток с содержанием */
 .item {
@@ -116,6 +122,17 @@
 @media only screen and (min-width: 1280px) {
   .wrapper {
     width: 1260px; } }
+
+.custom-footer {
+  border-top: 3px solid;
+  border-color: #5c5c5c;
+  padding: 10px;
+  /* Поля вокруг текста */
+  background: rgba(41, 41, 41, 0.918);
+  /* Цвет фона */
+  color: #fff;
+  /* Цвет текста */
+  -webkit-transform: translate3d(0, 0, 0); }
 
 @-moz-keyframes App-logo-spin {
   from {
