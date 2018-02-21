@@ -11,19 +11,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import FlatButton from 'material-ui/FlatButton'
 
+
 const Card = (props) => {
+    const handleClick = () => {
+        props.click();
+    }
+
     return (
-        <div className="col-md-4">
-            <div className="card mb-4 box-shadow">
-                <div className="">
+                <div className="card custom-card-border">
                     <Channel channelName={props.channelName} pubTime={props.pubTime} />
                     <Avatar />
                     <VideoSlot src={props.src} time={props.time} />
                     <Title title={props.title} />
-                    <Text text={props.text} moneyEarned={props.moneyEarned} />
+                    <Text text={props.text} moneyEarned={props.moneyEarned} click={handleClick}/>
                 </div>
-            </div>
-        </div>
     )
 }
 
@@ -40,11 +41,12 @@ const Channel = (props) => {
 
 const VideoSlot = (props) => {
     return (
-        <div className="img-fluid">
-            <video className="card-img-top">
+        <div className="img-fluid video-slot">
+            <video className="card-img-top" loop autoPlay>
                 <source src={props.src} type="video/mp4" />
+                
             </video>
-            <span className="">{props.time}</span>
+            <span className="video-time">{props.time}</span>
         </div>
     )
 }
@@ -71,6 +73,12 @@ const Title = (props) => {
 }
 
 const Text = (props) => {
+
+    const handleClick = () => {
+        props.click();
+        console.log("handle")
+    }
+
     return (
         <div className="card-body">
             <p className="">{props.text}</p>
@@ -93,7 +101,7 @@ const Text = (props) => {
                     </div>
                     <div className="col-4">
                         <FlatButton backgroundColor="#E53935" type="button" data-ripple="true">
-                                <div className="btn-content">TUNE IN 10K</div>
+                                <div className="btn-content" onClick={handleClick} >TUNE IN 10K</div>
                         </FlatButton>
                     </div>
                 </div>
