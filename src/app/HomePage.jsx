@@ -28,9 +28,13 @@ export default class HomePage extends React.Component{
        
     }
 
-    componentDidMount(){
+    componentDidUpdate(){
+        clearInterval(this.timerNotify)
         this.timerNotify = setInterval(() => this.setState({toggleNotify: false}), 8000)
-        axios.get("/fakedata.json")
+    }
+
+    componentDidMount(){
+                axios.get("/fakedata.json")
             .then(
                 (response) => {
                     this.setState({isLoaded: true, cards: response.data});

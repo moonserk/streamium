@@ -1,40 +1,77 @@
 import React from 'react'
-import { Switch, Route, Link } from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route, Link, withRouter } from 'react-router-dom'
 
 import {grey50} from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-import AppBar from 'material-ui/AppBar'
 import HomePage from './HomePage'
 import Channel from './Channel'
-import NavBar from './NavBar'
-import NavBarDropDown from './NavBarDropDown'
 
-const muiTheme = getMuiTheme({
-    appBar: {
-      height: 55,
-      color: grey50
+import NavBarDropDown from './navbar/NavBarDropDown'
+import NavBarGuest from './navbar/NavBarGuest'
+
+const fakeAuth = {
+    isAuthenticated: false,
+    authenticate(cb) {
+      this.isAuthenticated = true;
+      setTimeout(cb, 100); // fake async
+    },
+    signout(cb) {
+      this.isAuthenticated = false;
+      setTimeout(cb, 100);
     }
-  });
+};
 
-const App = () => {
-    return (
-        <MuiThemeProvider muiTheme={muiTheme}>
-            <div>
-                <NavBarDropDown />
-                <Main />
-            </div>
-        </MuiThemeProvider>
-    )
+const AuthButton = (props) =>{ 
+      return fakeAuth.isAuthenticated ? (
+        <NavBarDropDown onLogout={(e) => props.onLogout()}/>
+      ) : (
+        <NavBarGuest onLogin={(e) => props.onLogin()} />
+      )
 }
 
-const Header = () => (
-    <AppBar
-    title="Title"
-    iconClassNameRight="muidocs-icon-navigation-expand-more"
-    />
-)
+class App extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {isLogin: false};
+        this.login = this.login.bind(this)
+        this.logout = this.logout.bind(this)
+    }
+
+    componentWillMount(){
+        this.login()
+    }
+
+    login(){
+        const login = window.localStorage.getItem('rr_login')
+        const pass = window.localStorage.getItem('rr_password')
+        if (login === 'admin' && pass === 'admin') {
+            fakeAuth.authenticate(() => {
+                this.setState({ isLogin: true });
+            });
+        }
+    }
+
+    logout(){
+        window.localStorage.removeItem('rr_login');
+        window.localStorage.removeItem('rr_password');
+        fakeAuth.signout(() => {
+            this.setState({isLogin: false});
+        })
+    }
+    
+    render(){
+        return (
+            <MuiThemeProvider>
+                <div>
+                    <AuthButton onLogin={this.login} onLogout={this.logout}/>                 
+                    <Main />
+                </div>
+            </MuiThemeProvider>
+        )
+    }
+}
 
 const Main = () => (
     <main>

@@ -39,6 +39,13 @@
   border-bottom: 1px solid #dcdcdc;
   -webkit-transform: translate3d(0, 0, 0); }
 
+.navbar-guest-custom {
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #dcdcdc;
+  -webkit-transform: translate3d(0, 0, 0); }
+
 .in-navbar-custom {
   padding-top: 1px !important;
   padding-bottom: 1px !important; }
