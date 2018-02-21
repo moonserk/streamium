@@ -9,14 +9,25 @@ export default class Login extends React.Component {
         super(props)
         this.modalToggle = this.modalToggle.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.state = {modal: true}
+        this.onChangeLogin = this.onChangeLogin.bind(this)
+        this.onChangePassword = this.onChangePassword.bind(this)
+        this.state = {modal: true, login: "admin", password: "admin"}
+    }
+
+    onChangeLogin(){
+        e.preventDefault()
+        this.setState({login: e.target.value})
+    }
+
+    onChangePassword(){
+        e.preventDefault()
+        this.setState({password: e.target.value})
     }
 
     modalToggle(){
         this.setState({modal: !this.state.modal});
     }
   
-
     handleSubmit(e) {
         e.preventDefault()
         const login = e.target.elements[0].value
@@ -42,11 +53,11 @@ export default class Login extends React.Component {
                     <Form onSubmit={this.handleSubmit}>
                         <FormGroup>
                         <Label for="exampleEmail">Email</Label>
-                        <Input name="email" id="exampleEmail" placeholder="Email"/>
+                        <Input name="email" id="exampleEmail" placeholder="Email" onChange={this.onChangeLogin} value={this.state.login} />
                         </FormGroup>
                         <FormGroup>
                         <Label for="examplePassword">Password</Label>
-                        <Input type="password" name="password" id="examplePassword" placeholder="password" />
+                        <Input type="password" name="password" id="examplePassword" placeholder="password" onChange={this.onChangePassword} value={this.state.password} />
                         </FormGroup>
                    
                         <ModalFooter>
