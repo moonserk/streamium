@@ -7,6 +7,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import HomePage from './HomePage'
 import Channel from './Channel'
+import Home from './routes/Home'
+import Feed from './routes/Feed'
 
 import NavBarDropDown from './navbar/NavBarDropDown'
 import NavBarGuest from './navbar/NavBarGuest'
@@ -76,8 +78,9 @@ class App extends React.Component{
 const Main = () => (
     <main>
         <Switch>
-            <Route exact path='/' component={HomePage} />
+            <Route exact path='/' component={Home} />
             <Route path='/channel' component={Channel} />
+            <Route path='/feed' component={Feed} />
         </Switch>
     </main>
 )

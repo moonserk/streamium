@@ -1,4 +1,5 @@
 import React from 'react';
+
 import menu from '../assets/images/menu.svg';
 import clock from '../assets/images/clock.svg';
 import gm from '../assets/images/gm.png';
@@ -18,13 +19,13 @@ const Card = (props) => {
     }
 
     return (
-                <div className="card custom-card-border">
-                    <Channel channelName={props.channelName} pubTime={props.pubTime} />
-                    <Avatar />
-                    <VideoSlot src={props.src} time={props.time} />
-                    <Title title={props.title} />
-                    <Text text={props.text} moneyEarned={props.moneyEarned} click={handleClick}/>
-                </div>
+        <div className="card custom-card-border card-custom">
+            <Channel channelName={props.channelName} pubTime={props.pubTime} />
+            
+            <VideoSlot src={props.src} time={props.time} />
+            <Title title={props.title} />
+            <Text text={props.text} moneyEarned={props.moneyEarned} click={handleClick}/>
+        </div>
     )
 }
 
@@ -41,8 +42,10 @@ const Channel = (props) => {
 
 const VideoSlot = (props) => {
     return (
-        <div className="img-fluid video-slot">
-            <video className="card-img-top" loop autoPlay>
+        <div className="img-fluid video-slot relative">
+            <Avatar />
+            <video className="card-img-top"  loop autoPlay>
+                
                 <source src={props.src} type="video/mp4" />
                 
             </video>
@@ -57,7 +60,7 @@ const Avatar = (props) => {
         weight: '68px',
     };
     return(
-        <div className="media mr-3 absolute" style={size}>
+        <div className="media absolute" style={size}>
             <img className="rounded-circle" src={"https://avatars0.githubusercontent.com/u/9064066?v=4&amp;s=460"} style={size} alt="user avatar" />
         </div>
     )
@@ -89,66 +92,56 @@ const Text = (props) => {
                 <div className="row">
                     <div className="col-4">
                         <FlatButton  type="button" data-ripple="true">
-                                <img className="custom-icon " src={clock} alt="moneyEarned"/>
-                                {props.moneyEarned}
+                            <img className="custom-icon " src={clock} alt="moneyEarned"/>
+                            {props.moneyEarned}
                         </FlatButton>
                     </div>
                     <div className="col-4">
                         <FlatButton  type="button" data-ripple="true">
-                                <img className="custom-icon" src={gm} alt="moneyEarned"/>
-                                {props.moneyEarned}
+                            <img className="custom-icon" src={gm} alt="moneyEarned"/>
+                            {props.moneyEarned}
                         </FlatButton>
                     </div>
                     <div className="col-4">
                         <FlatButton backgroundColor="#E53935" type="button" data-ripple="true">
-                                <div className="btn-content" onClick={handleClick} >TUNE IN 10K</div>
+                            <div className="btn-content" onClick={handleClick} >TUNE IN 10K</div>
                         </FlatButton>
                     </div>
                 </div>
-
-                    <br />
-                    
-                    <div className="">
-                        <div className="">
-                            <div className="row">
-                                <div className="col">
-                                    <a href="" className="" data-ripple="true" title="Watch full video">
-                                        <div className="text-center">
-                                            <img src={home} className="custom-icon" alt="home" />
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="col">
-                                    <a href="" className="" data-ripple="true" title="Watch full video">
-                                        <div className="text-center">
-                                            <img src={info} className="custom-icon" alt="home" />
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="col">
-                                    <a href="" className="" data-ripple="true" title="Watch full video">
-                                        <div className="text-center">
-                                            <img src={comments} className="custom-icon" alt="home" />
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="col">
-                                    <a href="" className="" data-ripple="true" title="Watch full video">
-                                        <div className="text-center">
-                                            <img src={share} className="custom-icon" alt="home" />
-                                        </div>
-                                    </a>
-                                </div>
+                <br />
+                <div className="row">
+                    <div className="col">
+                        <a href="" className="" data-ripple="true" title="Watch full video">
+                            <div className="text-center">
+                                <img src={home} className="custom-icon" alt="home" />
                             </div>
-                        </div>
+                        </a>
+                    </div>
+                    <div className="col">
+                        <a href="" className="" data-ripple="true" title="Watch full video">
+                            <div className="text-center">
+                                <img src={info} className="custom-icon" alt="home" />
+                            </div>
+                        </a>
+                    </div>
+                    <div className="col">
+                        <a href="" className="" data-ripple="true" title="Watch full video">
+                            <div className="text-center">
+                                <img src={comments} className="custom-icon" alt="home" />
+                            </div>
+                        </a>
+                    </div>
+                    <div className="col">
+                        <a href="" className="" data-ripple="true" title="Watch full video">
+                            <div className="text-center">
+                                <img src={share} className="custom-icon" alt="home" />
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
+        </div>
     )
 }
-
-
-
-
 
 export default Card;

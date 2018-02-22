@@ -24,6 +24,18 @@
   color: #000 !important;
   text-decoration: none !important; }
 
+.centering {
+  float: none;
+  margin: 0 auto; }
+
+.card-custom {
+  margin: 10px !important; }
+
+.three {
+  top: 50px;
+  left: 55px;
+  z-index: 5; }
+
 .App-logo {
   position: fixed;
   top: 50%;
@@ -56,10 +68,19 @@
   .hide-icon {
     display: none !important; } }
 
+.centering {
+  float: none;
+  margin: 0 auto; }
+
 .container-margin-top {
   margin-top: 80px;
   padding-left: 50px !important;
   padding-right: 50px !important; }
+
+.container-margin-top-feed {
+  margin-top: 80px;
+  padding-left: 300px !important;
+  padding-right: 300px !important; }
 
 .input-custom {
   width: 480px; }

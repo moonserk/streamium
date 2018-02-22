@@ -37,6 +37,7 @@
     "webpack-dev-server": "^2.9.7"
   },
   "dependencies": {
+    "@srph/react-infinite-scroll": "^0.1.0",
     "axios": "^0.17.1",
     "bootstrap": "^4.0.0",
     "express": "^4.16.2",

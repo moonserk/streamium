@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
-import Card from './Card'
 
+import Card from './Card'
 import Notification from './Notification';
 
 import load from '../assets/images/spinning-circles.svg'
@@ -11,6 +11,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 export default class HomePage extends React.Component{
     constructor(props){
         super(props)
+
+        this.class = this.props.class;
+        this.url = this.props.url;
+
         this.state = {
             error: null,
             isLoaded: false,
@@ -22,10 +26,8 @@ export default class HomePage extends React.Component{
     }
 
     handleClick(index){
-
         this.setState({toggleNotify: false})
         this.setState({toggleNotify: true, notifyIndex: index})
-       
     }
 
     componentDidUpdate(){
@@ -34,10 +36,13 @@ export default class HomePage extends React.Component{
     }
 
     componentDidMount(){
-                axios.get("/fakedata.json")
+                axios.get(this.url)
             .then(
                 (response) => {
-                    this.setState({isLoaded: true, cards: response.data});
+                    this.setState({cards: response.data});
+                    setInterval(() => {
+                        this.setState({isLoaded: true});
+                    }, 1000);
                 },
                 (error) => {
                     this.setState({
@@ -46,22 +51,14 @@ export default class HomePage extends React.Component{
                     });
                   }
                )
-
-        
     }
 
     renderSpiner(){
-        
             return (
                 <div>
                     <img className="App-logo" src={load} />
                 </div>
-            );
-        
-    }
-
-    renderNotify(){
-        console.log("hom")
+            );      
     }
 
     render(){
@@ -73,9 +70,10 @@ export default class HomePage extends React.Component{
         }else{
             return (
                 <div>
-                    <div className="container-fluid container-margin-top">
-                        <div className="card-columns">
-                            {cards.map((item, index) => <Card key={index} 
+                    <div className={this.class.container}>
+                        <div className={this.class.columns}>
+                            {cards.map((item, index) => <Card
+                                                            key={index} 
                                                             channelName={item.channelName}
                                                             pubTime={item.pubTime}
                                                             src={item.src}

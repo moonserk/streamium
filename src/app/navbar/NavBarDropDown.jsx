@@ -28,8 +28,7 @@ export default class NavBarDropDown extends React.Component {
     super(props);
 
     this.toggle = this.toggle.bind(this);
-    this.modalToggle = this.modalToggle.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this)
+    
     this.state = {
       dropdownOpen: false,
       isLogin: false,
@@ -71,7 +70,7 @@ export default class NavBarDropDown extends React.Component {
           
             <Nav className="mr-5 in-navbar-custom hide-icon" navbar>
               <NavItem>
-              <NavLink  to="/channel" tag={RRNavLink}>
+              <NavLink  to="/feed" tag={RRNavLink}>
                 <Media>
                     <img   className="custom-icon" src={heart} />
                 </Media>
@@ -151,67 +150,6 @@ export default class NavBarDropDown extends React.Component {
       </div>
     )
   }
-
-  renderNavBarGuest(){
-    return(
-      <div>
-        <Navbar  className="navbar-guest-custom  fixed-top" color="faded" light>
-          <NavbarBrand to="/" tag={RRNavLink} className="mr-auto in-navbar-custom"><img className="custom-logo2"  src={crownlogo} />  <img className="custom-logo" src={logo} /></NavbarBrand>
-
-            <Nav className="mr-5 in-navbar-custom hide-icon" navbar>
-              <NavItem>
-              <NavLink>
-                <Media>
-                    <img onClick={this.modalToggle} className="custom-icon" src={login} />
-                </Media>
-              </NavLink>
-              </NavItem>
-            </Nav>
-
-        </Navbar>
-      </div>
-    )
-  }
-
-modalToggle(){
-    this.setState({modal: !this.state.modal});
-}
-
-handleSubmit(e) {
-  e.preventDefault()
-  const value = e.target.elements[0].value
-  window.localStorage.setItem('rr_login', value)
-  this.props.onLogin()
-  this.setState({isLogin: this.props.isLogin})
-  if(this.state.isLogin){
-    this.setState({modal: false})
-  }
-}
-
-modal(){
-    return(
-        <Modal isOpen={this.state.modal} fade={true} toggle={this.modalToggle}>
-            <ModalHeader toggle={this.modalToggle}>Login</ModalHeader>
-            <ModalBody>
-            <Form onSubmit={this.handleSubmit}>
-                <FormGroup>
-                <Label for="exampleEmail">Email</Label>
-                <Input name="email" id="exampleEmail" placeholder="Email" />
-                </FormGroup>
-                <FormGroup>
-                <Label for="examplePassword">Password</Label>
-                <Input type="password" name="password" id="examplePassword" placeholder="password" />
-                </FormGroup>
-           
-                <ModalFooter>
-                    <Button color="primary">Login</Button>{' '}
-                    <Button color="secondary" onClick={this.modalToggle}>Cancel</Button>
-                </ModalFooter>
-            </Form>
-            </ModalBody>
-        </Modal>
-    )
-}
 
   render() {
     return (
