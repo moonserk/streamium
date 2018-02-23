@@ -1,4 +1,5 @@
 import React from 'react';
+import VisibilitySensor from 'react-visibility-sensor'
 
 import menu from '../assets/images/menu.svg';
 import clock from '../assets/images/clock.svg';
@@ -41,14 +42,19 @@ const Channel = (props) => {
 }
 
 const VideoSlot = (props) => {
+    let testVideo;
+    const handleChange = (isVisible) => {
+        isVisible ? testVideo.play() : testVideo.pause();
+    }
+
     return (
         <div className="img-fluid video-slot relative">
             <Avatar />
-            <video className="card-img-top"  loop>
-                
+            <VisibilitySensor onChange={handleChange}>
+            <video className="card-img-top"  ref={(video) => testVideo = video} loop>
                 <source src={props.src} type="video/mp4" />
-                
             </video>
+            </ VisibilitySensor>
             <span className="video-time">{props.time}</span>
         </div>
     )
