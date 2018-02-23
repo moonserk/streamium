@@ -44,7 +44,7 @@ const VideoSlot = (props) => {
     return (
         <div className="img-fluid video-slot relative">
             <Avatar />
-            <video className="card-img-top"  loop autoPlay>
+            <video className="card-img-top"  loop>
                 
                 <source src={props.src} type="video/mp4" />
                 

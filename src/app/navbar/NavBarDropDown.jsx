@@ -28,7 +28,7 @@ export default class NavBarDropDown extends React.Component {
     super(props);
 
     this.toggle = this.toggle.bind(this);
-    
+
     this.state = {
       dropdownOpen: false,
       isLogin: false,
@@ -48,7 +48,7 @@ export default class NavBarDropDown extends React.Component {
         <Navbar  className="navbar-custom  fixed-top" color="faded" light>
           <NavbarBrand to="/" tag={RRNavLink} className="mr-auto in-navbar-custom"><img className="custom-logo2"  src={crownlogo} />  <img className="custom-logo" src={logo} /></NavbarBrand>
 
-            <Nav className="mr-auto in-navbar-custom" navbar>
+            <Nav className="mx-auto in-navbar-custom" navbar>
               <NavItem className="input-custom">
                     <InputGroup>
                     <Input  type="search" name="search" id="exampleSearch" placeholder="search" />
