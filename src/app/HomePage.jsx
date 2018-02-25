@@ -19,20 +19,12 @@ export default class HomePage extends React.Component{
             error: null,
             isLoaded: false,
             cards: [],
-            toggleNotify: false,
-            notifyIndex: null
         };
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(index){
-        this.setState({toggleNotify: false})
-        this.setState({toggleNotify: true, notifyIndex: index})
-    }
-
-    componentDidUpdate(){
-        clearInterval(this.timerNotify)
-        this.timerNotify = setInterval(() => this.setState({toggleNotify: false}), 8000)
+    handleClick(title, msg){
+        this.refs.notificator.success(title, msg, 5000);
     }
 
     componentDidMount(){
@@ -80,11 +72,11 @@ export default class HomePage extends React.Component{
                                                             time={item.time}
                                                             title={item.title}
                                                             text={item.text}
-                                                            click={(e) => this.handleClick(index)}
+                                                            click={() => this.handleClick(item.channelName, "$10.000,00")}
                                                             moneyEarned={item.moneyEarned}/>)}
                         </div>
                     </div>
-                    {this.state.toggleNotify ? <Notification title={cards[this.state.notifyIndex].channelName}/> : null} 
+                   <Notification ref='notificator' /> 
                 </div>
             )
         }
