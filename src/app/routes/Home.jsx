@@ -5,7 +5,7 @@ import HomePage from '../HomePage'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Home = (props) => (
-    <HomePage class={{columns: "card-columns", container: "container container-margin-top"}}
+    <HomePage class={{columns: "mx-auto", container: "feed-container container-margin-top"}}
               url={"/fakedata.json"} />
 )
 
