@@ -33,6 +33,7 @@ export default class NavBarDropDown extends React.Component {
     super(props);
 
     this.toggle = this.toggle.bind(this);
+    this.handleFilterTextChange = this.handleFilterTextChange.bind(this)
 
     this.state = {
       dropdownOpen: false,
@@ -45,6 +46,11 @@ export default class NavBarDropDown extends React.Component {
     };
   }
 
+  handleFilterTextChange(e){
+    // e.preventDefault()
+     this.props.onFilterTextChange(e)
+ }
+
   toggle() {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen
@@ -52,6 +58,10 @@ export default class NavBarDropDown extends React.Component {
   }
 
   renderNavBarLogin(){
+    const iconMarginRight = {
+      marginRight: '20px'
+    }
+
     return(
       <div>
         <Navbar  className="navbar-custom  fixed-top" color="faded" light>
@@ -86,19 +96,19 @@ export default class NavBarDropDown extends React.Component {
 
               <DropdownItem >
                 <NavLink to="/feed" className="router-link" tag={RRNavLink}>
-                    <img className="custom-icon" src={heart} /> Feed
+                    <img className="custom-icon" src={heart} style={iconMarginRight} /> Tuning In
                 </NavLink>   
               </DropdownItem>
 
               <DropdownItem >
                 <NavLink to="/live" className="router-link" tag={RRNavLink}>
-                    <img className="custom-icon" src={live} /> Live
+                    <img className="custom-icon" src={live} style={iconMarginRight} /> Live
                 </NavLink>   
               </DropdownItem>
 
               <DropdownItem >
                 <NavLink to="/trend" className="router-link" tag={RRNavLink}>
-                    <img className="custom-icon" src={trend} /> Trend
+                    <img className="custom-icon" src={trend} style={iconMarginRight} /> Trending
                 </NavLink>   
               </DropdownItem>
 
@@ -106,31 +116,31 @@ export default class NavBarDropDown extends React.Component {
 
               <DropdownItem >
                 <NavLink to="/channel" className="router-link" tag={RRNavLink}>
-                    <img className="custom-icon" src={channel} /> My Channel
+                    <img className="custom-icon" src={channel} style={iconMarginRight}/> My Channel
                 </NavLink>   
               </DropdownItem>
 
               <DropdownItem>
                 <NavLink to="/community" className="router-link" tag={RRNavLink}>
-                    <img className="custom-icon" src={community} /> Community
+                    <img className="custom-icon" src={community} style={iconMarginRight}/> Community
                 </NavLink>
               </DropdownItem>
 
               <DropdownItem>
                 <NavLink to="/envelope" className="router-link" tag={RRNavLink}>
-                    <img className="custom-icon" src={envelope} /> Messages
+                    <img className="custom-icon" src={envelope} style={iconMarginRight}/> Messages
                 </NavLink>
               </DropdownItem>
 
               <DropdownItem>
                 <NavLink to="/upload" className="router-link" tag={RRNavLink}>
-                    <img className="custom-icon" src={upload} /> Upload
+                    <img className="custom-icon" src={upload} style={iconMarginRight}/> Upload
                 </NavLink>
               </DropdownItem>
 
               <DropdownItem>
                 <NavLink to="/stream" className="router-link" tag={RRNavLink}>
-                    <img className="custom-icon" src={stream} /> Stream
+                    <img className="custom-icon" src={stream} style={iconMarginRight}/> Stream
                 </NavLink>
               </DropdownItem>
 
@@ -139,13 +149,13 @@ export default class NavBarDropDown extends React.Component {
 
               <DropdownItem>
                 <NavLink onClick={(e) => this.setState({darkToogle: !this.state.darkToogle})}>
-                    <img className="custom-icon" src={dark} /> Dark mode: {this.state.darkToogle ? 'On' : 'Off'}
+                    <img className="custom-icon" src={dark} style={iconMarginRight}/> Dark mode: {this.state.darkToogle ? 'On' : 'Off'}
                 </NavLink>
               </DropdownItem>
 
               <DropdownItem>
                 <NavLink to="/settings" className="router-link" tag={RRNavLink}>
-                    <img className="custom-icon" src={settings} /> Settings
+                    <img className="custom-icon" src={settings} style={iconMarginRight}/> Settings
                 </NavLink>
               </DropdownItem>  
 
@@ -166,7 +176,7 @@ export default class NavBarDropDown extends React.Component {
 
               <DropdownItem>
                 <NavLink onClick={(e) => this.props.onLogout()}>
-                    <img className="custom-icon" src={login} /> Logout
+                    <img className="custom-icon" src={login} style={iconMarginRight}/> Logout
                 </NavLink>
               </DropdownItem>
 
@@ -192,7 +202,8 @@ export default class NavBarDropDown extends React.Component {
               </NavItem>
           </Nav>
           
-          <SearchBar />
+          <SearchBar filterText={this.props.filterText}
+                     onFilterTextChange={this.handleFilterTextChange}/>
 
         </Navbar>
       </div>
@@ -222,11 +233,11 @@ const Avatar = (props) => {
     return(
         <div className="row">
             <div className="media col-sm-4" style={size2}>
-                <img className="rounded-circle" src={"https://avatars0.githubusercontent.com/u/9064066?v=4&amp;s=460"} style={size} alt="user avatar" />
+                <img className="rounded-circle" src={"https://media.giphy.com/media/j2nATOAdRgYZq/giphy.gif"} style={size} alt="user avatar" />
             </div>
             <div className="col-sm-8 text-right">
                 <h5>Login Logan</h5>
-                <h6 style={pad}>someemail@email.com</h6>
+                <h6 style={pad}>Balance: $8.94</h6>
             </div>
         </div>
     )

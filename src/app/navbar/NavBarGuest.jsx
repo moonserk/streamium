@@ -32,6 +32,7 @@ export default class NavBarDropDown extends React.Component {
     super(props);
 
     this.modalToggle = this.modalToggle.bind(this)
+    this.handleFilterTextChange = this.handleFilterTextChange.bind(this)
 
     this.state = {
       dropdownOpen: false,
@@ -40,6 +41,11 @@ export default class NavBarDropDown extends React.Component {
       search: false
     };
   }
+
+  handleFilterTextChange(e){
+    // e.preventDefault()
+     this.props.onFilterTextChange(e)
+ }
 
   modalToggle(){
       this.setState({modal: !this.state.modal})
@@ -93,7 +99,8 @@ export default class NavBarDropDown extends React.Component {
               </NavItem>
           </Nav>
           
-          <SearchBar />
+          <SearchBar filterText={this.props.filterText}
+                     onFilterTextChange={this.handleFilterTextChange}/>
 
         </Navbar>
       </div>

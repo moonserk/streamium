@@ -10,7 +10,8 @@ const Feed = (props) => (
     //    url={"/fakedata.json"} />
     */
         <HomePage class={{columns: " mx-auto", container: "feed-container container-margin-top"}} 
-                  url={"/fakedata.json"} />
+                  url={"/fakedata.json"} 
+                  filterText={props.filterText}/>
 )
 
 export default Feed;

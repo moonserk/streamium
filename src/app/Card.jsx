@@ -67,7 +67,7 @@ const Avatar = (props) => {
     };
     return(
         <div className="media absolute" style={size}>
-            <img className="rounded-circle" src={"https://avatars0.githubusercontent.com/u/9064066?v=4&amp;s=460"} style={size} alt="user avatar" />
+            <img className="rounded-circle" src={"https://media.giphy.com/media/j2nATOAdRgYZq/giphy.gif"} style={size} alt="user avatar" />
         </div>
     )
 }

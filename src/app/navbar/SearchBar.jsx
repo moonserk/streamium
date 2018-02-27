@@ -10,25 +10,22 @@ export default class SearchBar extends React.Component{
 
     constructor(props){
         super(props)
-        this.state = {
-            value: ''
-        }
-        this.handleChange = this.handleChange.bind(this)
+        this.handleFilterTextChange = this.handleFilterTextChange.bind(this)
     }
 
-    handleChange(e){
-        e.preventDefault()
-        this.setState({value: e.target.value})
+    handleFilterTextChange(e){
+       // e.preventDefault()
+        this.props.onFilterTextChange(e.target.value)
     }
 
 
     render(){
         return(
                 <div className="mx-auto">
-                    <input className="" style={{border: 'none', minHeight: "42px", width: '500px'}} onChange={this.handleChange} placeholder="search" value={this.state.value}/>
-                    <button className="" style={{border: 'none', minHeight: "42px"}} >
+                    <input type="text" className="" style={{border: 'none', minHeight: "42px", width: '500px'}} onChange={this.handleFilterTextChange} placeholder="search" value={this.props.filterText}/>
+                    {/* <button className="" style={{border: 'none', minHeight: "42px"}} >
                         <img  style={{height: '20px', width: '20px'}} src={search} />
-                    </button>
+                    </button> */}
                 </div>
         )
     }

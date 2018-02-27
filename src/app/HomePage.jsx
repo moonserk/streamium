@@ -64,7 +64,14 @@ export default class HomePage extends React.Component{
                 <div>
                     <div className={this.class.container}>
                         <div className={this.class.columns}>
-                            {cards.map((item, index) => <Card
+                            {cards.filter((item) => {
+                                if (item.channelName.indexOf(this.props.filterText) === -1) {
+                                    return false;
+                                }
+                                else{
+                                    return true;
+                                }
+                            }).map((item, index) => <Card
                                                             key={index} 
                                                             channelName={item.channelName}
                                                             pubTime={item.pubTime}
