@@ -41,7 +41,7 @@ export default class Login extends React.Component {
             this.modalToggle();
             this.props.onLogin();
         }
-      }
+    }
 
     render() {
   
@@ -72,7 +72,7 @@ export default class Login extends React.Component {
     }
   }
 
-  const fakeAuth = {
+const fakeAuth = {
     isAuthenticated: false,
     authenticate(cb) {
       this.isAuthenticated = true;
@@ -82,4 +82,4 @@ export default class Login extends React.Component {
       this.isAuthenticated = false;
       setTimeout(cb, 100);
     }
-  };
+};

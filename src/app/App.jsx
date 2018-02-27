@@ -7,6 +7,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import HomePage from './HomePage'
 import Channel from './Channel'
+import Home from './routes/Home'
+import Feed from './routes/Feed'
 
 import NavBarDropDown from './navbar/NavBarDropDown'
 import NavBarGuest from './navbar/NavBarGuest'
@@ -23,20 +25,35 @@ const fakeAuth = {
     }
 };
 
-const AuthButton = (props) =>{ 
+const IsAuthNavbarRender = (props) =>{ 
+    const handleChange = (e) =>{
+        props.onFilterTextChange(e)
+    }
       return fakeAuth.isAuthenticated ? (
-        <NavBarDropDown onLogout={(e) => props.onLogout()}/>
+        <NavBarDropDown onLogout={(e) => props.onLogout()} 
+                        filterText={props.filterText}
+                        onFilterTextChange={handleChange}/>
       ) : (
-        <NavBarGuest onLogin={(e) => props.onLogin()} />
+        <NavBarGuest onLogin={(e) => props.onLogin()} 
+                     filterText={props.filterText}
+                     onFilterTextChange={handleChange}/>
       )
 }
 
 class App extends React.Component{
     constructor(props){
         super(props);
-        this.state = {isLogin: false};
+        this.state = {
+            isLogin: false, 
+            filterText: ''
+        };
         this.login = this.login.bind(this)
         this.logout = this.logout.bind(this)
+        this.handleFilterTextChange = this.handleFilterTextChange.bind(this)
+    }
+
+    handleFilterTextChange(filterText){
+        this.setState({filterText: filterText})
     }
 
     componentWillMount(){
@@ -65,18 +82,22 @@ class App extends React.Component{
         return (
             <MuiThemeProvider>
                 <div>
-                    <AuthButton onLogin={this.login} onLogout={this.logout}/>                 
-                    <Main />
+                    <IsAuthNavbarRender onLogin={this.login} 
+                                        onLogout={this.logout}
+                                        filterText={this.state.filterText}
+                                        onFilterTextChange={this.handleFilterTextChange}/>                 
+                    <Main filterText={this.state.filterText}/>
                 </div>
             </MuiThemeProvider>
         )
     }
 }
 
-const Main = () => (
+const Main = (props) => (
     <main>
         <Switch>
-            <Route exact path='/' component={HomePage} />
+            <Route exact path='/'  render={() => <Home filterText={props.filterText}/>} />
+            <Route path='/feed' render={() => <Feed filterText={props.filterText}/>} />
             <Route path='/channel' component={Channel} />
         </Switch>
     </main>

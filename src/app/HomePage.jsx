@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
-import Card from './Card'
 
+import Card from './Card'
 import Notification from './Notification';
 
 import load from '../assets/images/spinning-circles.svg'
@@ -11,33 +11,30 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 export default class HomePage extends React.Component{
     constructor(props){
         super(props)
+
+        this.class = this.props.class;
+        this.url = this.props.url;
+
         this.state = {
             error: null,
             isLoaded: false,
             cards: [],
-            toggleNotify: false,
-            notifyIndex: null
         };
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(index){
-
-        this.setState({toggleNotify: false})
-        this.setState({toggleNotify: true, notifyIndex: index})
-       
-    }
-
-    componentDidUpdate(){
-        clearInterval(this.timerNotify)
-        this.timerNotify = setInterval(() => this.setState({toggleNotify: false}), 8000)
+    handleClick(title, msg){
+        this.refs.notificator.success(title, msg, 5000);
     }
 
     componentDidMount(){
-                axios.get("/fakedata.json")
+                axios.get(this.url)
             .then(
                 (response) => {
-                    this.setState({isLoaded: true, cards: response.data});
+                    this.setState({cards: response.data});
+                    setInterval(() => {
+                        this.setState({isLoaded: true});
+                    }, 1000);
                 },
                 (error) => {
                     this.setState({
@@ -46,22 +43,14 @@ export default class HomePage extends React.Component{
                     });
                   }
                )
-
-        
     }
 
     renderSpiner(){
-        
             return (
                 <div>
                     <img className="App-logo" src={load} />
                 </div>
-            );
-        
-    }
-
-    renderNotify(){
-        console.log("hom")
+            );      
     }
 
     render(){
@@ -73,20 +62,28 @@ export default class HomePage extends React.Component{
         }else{
             return (
                 <div>
-                    <div className="container-fluid container-margin-top">
-                        <div className="card-columns">
-                            {cards.map((item, index) => <Card key={index} 
+                    <div className={this.class.container}>
+                        <div className={this.class.columns}>
+                            {cards.filter((item) => {
+                                if (item.channelName.indexOf(this.props.filterText) === -1) {
+                                    return false;
+                                }
+                                else{
+                                    return true;
+                                }
+                            }).map((item, index) => <Card
+                                                            key={index} 
                                                             channelName={item.channelName}
                                                             pubTime={item.pubTime}
                                                             src={item.src}
                                                             time={item.time}
                                                             title={item.title}
                                                             text={item.text}
-                                                            click={(e) => this.handleClick(index)}
+                                                            click={() => this.handleClick(item.channelName, "$10.000,00")}
                                                             moneyEarned={item.moneyEarned}/>)}
                         </div>
                     </div>
-                    {this.state.toggleNotify ? <Notification title={cards[this.state.notifyIndex].channelName}/> : null} 
+                   <Notification ref='notificator' /> 
                 </div>
             )
         }

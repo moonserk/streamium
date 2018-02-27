@@ -1,4 +1,26 @@
 @charset "UTF-8";
+.input-search {
+  border: none;
+  width: 100%;
+  min-height: 42px;
+  background-color: #f5f5f5;
+  text-align: center; }
+
+.input-search:focus {
+  outline: none; }
+
+.input-search:-moz-placeholder {
+  padding-left: 50px; }
+
+.input-search::-moz-placeholder {
+  padding-left: 50px; }
+
+.input-search:-ms-input-placeholder {
+  padding-left: 50px; }
+
+.input-search::-webkit-input-placeholder {
+  padding-left: 50px; }
+
 .custom-icon {
   width: 22px; }
 
@@ -16,13 +38,12 @@
   margin: 6px 6px;
   z-index: 23; }
 
-.btn-content {
-  margin: 1px !important;
-  padding: 0 4px !important; }
-
 .router-link {
   color: #000 !important;
   text-decoration: none !important; }
+
+.card-custom {
+  margin-bottom: 30px !important; }
 
 .App-logo {
   position: fixed;
@@ -56,10 +77,22 @@
   .hide-icon {
     display: none !important; } }
 
+@media only screen and (max-width: 845px) {
+  .input-custom {
+    display: none !important; }
+  .hide-icon {
+    display: none !important; } }
+
+@media only screen and (max-width: 992px) {
+  .hide-icon {
+    display: none !important; } }
+
+@media only screen and (max-width: 1060px) {
+  .hide-icon {
+    display: none !important; } }
+
 .container-margin-top {
-  margin-top: 80px;
-  padding-left: 50px !important;
-  padding-right: 50px !important; }
+  margin-top: 80px; }
 
 .input-custom {
   width: 480px; }
@@ -80,55 +113,60 @@
   color: #fff;
   background: rgba(0, 0, 0, 0.3); }
 
-.masonry {
-  margin: 1.5em 0;
-  padding: 0;
-  column-gap: 1.5em;
-  /* Общее расстояние между колонками */
-  -moz-column-gap: 1.5em;
-  /* Расстояние между колонками для Firefox */
-  -webkit-column-gap: 1.5em;
-  /* Расстояние между колонками  для Safari, Chrome и iOS */
-  width: 100%; }
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
 
-/* Элементы в виде плиток с содержанием */
-.item {
-  display: inline-block;
-  background: #fff;
-  padding: 1px;
-  margin: 0 0 1.5em;
-  width: 100%; }
+.feed-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
 
-/* Стили картинок, видое и фреймов внутри адаптивных плиток */
-/* Стили ссылок при наведении */
-/* Медиа-запросы для различных размеров адаптивного макета */
-@media only screen and (min-width: 400px) {
-  .masonry {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-    column-count: 1; } }
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px !important; }
+  .feed-container {
+    max-width: 576px !important; } }
 
-@media only screen and (min-width: 700px) {
-  .masonry {
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
-    column-count: 2; } }
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px !important; }
+  .feed-container {
+    max-width: 576px !important; } }
 
-@media only screen and (min-width: 900px) {
-  .masonry {
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3; } }
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1000px !important; }
+  .feed-container {
+    max-width: 576px !important; } }
 
-@media only screen and (min-width: 1100px) {
-  .masonry {
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3; } }
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1100px !important; }
+  .feed-container {
+    max-width: 576px !important; } }
 
-@media only screen and (min-width: 1280px) {
-  .wrapper {
-    width: 1260px; } }
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1200px !important; }
+  .feed-container {
+    max-width: 576px !important; } }
+
+.notify-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end; }
 
 .custom-footer {
   border-top: 3px solid;
@@ -139,28 +177,7 @@
   /* Цвет фона */
   color: #fff;
   /* Цвет текста */
+  width: 100%;
+  /* Ширина слоя */
+  z-index: 1000;
   -webkit-transform: translate3d(0, 0, 0); }
-
-@-moz-keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
-
-@-webkit-keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
-
-@-o-keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
