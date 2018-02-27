@@ -1,0 +1,23 @@
+.input-search{
+    border: none;
+    //display: block;
+    width: 100%;
+    min-height: 42px;
+    background-color: rgb(245,245,245);
+    text-align: center;
+}
+.input-search:focus{
+    outline: none;
+}
+.input-search:-moz-placeholder {
+    padding-left: 50px;
+}
+.input-search::-moz-placeholder {
+    padding-left: 50px;
+}
+.input-search:-ms-input-placeholder {
+    padding-left: 50px;
+}
+.input-search::-webkit-input-placeholder {
+    padding-left: 50px;
+}

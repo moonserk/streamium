@@ -33,6 +33,7 @@ export default class NavBarDropDown extends React.Component {
 
     this.modalToggle = this.modalToggle.bind(this)
     this.handleFilterTextChange = this.handleFilterTextChange.bind(this)
+    this.closeSearch = this.closeSearch.bind(this)
 
     this.state = {
       dropdownOpen: false,
@@ -85,11 +86,21 @@ export default class NavBarDropDown extends React.Component {
     )
   }
 
+  closeSearch(e){
+    console.log("someAction " + window.event.clientX + ' : ' + window.event.clientY);
+    if(window.event.clientY <= 48){
+        console.log("< 48");
+        return;
+    }else{
+      this.setState({search: false})
+    }
+  } 
+
   renderSearch(){
     return(
       <div>
         <Navbar  className="navbar-guest-custom  fixed-top" color="faded" light>
-          <Nav className="in-navbar-custom" navbar>
+          {/* <Nav className="in-navbar-custom" navbar>
               <NavItem>
               <NavLink onClick={(e) => this.setState({search: false})}>
                 <Media>
@@ -97,10 +108,11 @@ export default class NavBarDropDown extends React.Component {
                 </Media>
               </NavLink>
               </NavItem>
-          </Nav>
+          </Nav> */}
           
           <SearchBar filterText={this.props.filterText}
-                     onFilterTextChange={this.handleFilterTextChange}/>
+                     onFilterTextChange={this.handleFilterTextChange}
+                     onClickSearch={this.closeSearch}/>/>
 
         </Navbar>
       </div>

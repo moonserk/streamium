@@ -1,4 +1,26 @@
 @charset "UTF-8";
+.input-search {
+  border: none;
+  width: 100%;
+  min-height: 42px;
+  background-color: #f5f5f5;
+  text-align: center; }
+
+.input-search:focus {
+  outline: none; }
+
+.input-search:-moz-placeholder {
+  padding-left: 50px; }
+
+.input-search::-moz-placeholder {
+  padding-left: 50px; }
+
+.input-search:-ms-input-placeholder {
+  padding-left: 50px; }
+
+.input-search::-webkit-input-placeholder {
+  padding-left: 50px; }
+
 .custom-icon {
   width: 22px; }
 

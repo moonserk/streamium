@@ -13,6 +13,17 @@ export default class SearchBar extends React.Component{
         this.handleFilterTextChange = this.handleFilterTextChange.bind(this)
     }
 
+    componentDidMount(){
+        console.log("Search Did Mount");
+        // Detects clicks everywhere on the screen
+        document.addEventListener('click', this.props.onClickSearch)
+    }
+
+    componentWillUnmount () {
+        console.log("Search Will Unmount");
+        document.removeEventListener('click', this.props.onClickSearch)
+    }
+
     handleFilterTextChange(e){
        // e.preventDefault()
         this.props.onFilterTextChange(e.target.value)
@@ -21,8 +32,8 @@ export default class SearchBar extends React.Component{
 
     render(){
         return(
-                <div className="mx-auto">
-                    <input type="text" className="" style={{border: 'none', minHeight: "42px", width: '500px'}} onChange={this.handleFilterTextChange} placeholder="search" value={this.props.filterText}/>
+                <div className="input-search">
+                    <input type="text" autoFocus={true} className="input-search" onChange={this.handleFilterTextChange} placeholder="Search" value={this.props.filterText}/>
                     {/* <button className="" style={{border: 'none', minHeight: "42px"}} >
                         <img  style={{height: '20px', width: '20px'}} src={search} />
                     </button> */}
