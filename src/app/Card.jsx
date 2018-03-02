@@ -51,7 +51,7 @@ const VideoSlot = (props) => {
         <div className="img-fluid video-slot relative">
             <Avatar />
             <VisibilitySensor onChange={handleChange}>
-                <video className="card-img-top"  ref={(video) => testVideo = video} loop>
+                <video className="card-img-top" ref={(video) => testVideo = video} onClick={(e) => {testVideo.controls = true}}loop>
                     <source src={props.src} type="video/mp4" />
                 </video>
             </ VisibilitySensor>

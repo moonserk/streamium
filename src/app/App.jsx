@@ -9,6 +9,7 @@ import HomePage from './HomePage'
 import Channel from './Channel'
 import Home from './routes/Home'
 import Feed from './routes/Feed'
+import Upload from './routes/Upload'
 
 import NavBarDropDown from './navbar/NavBarDropDown'
 import NavBarGuest from './navbar/NavBarGuest'
@@ -99,6 +100,7 @@ const Main = (props) => (
             <Route exact path='/'  render={() => <Home filterText={props.filterText}/>} />
             <Route path='/feed' render={() => <Feed filterText={props.filterText}/>} />
             <Route path='/channel' component={Channel} />
+            <Route path='/upload' component={Upload} />
         </Switch>
     </main>
 )
