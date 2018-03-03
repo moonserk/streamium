@@ -67,13 +67,11 @@ class VideoSlot extends React.Component{
     render(){
         return(
             <div className="img-fluid video-slot relative">
-                <Avatar />
                     <VisibilitySensor onChange={this.handleChange}>
                         <video className="card-img-top" ref='videoref' controls autoPlay>
                             <source src={this.props.fullSrc} type="video/mp4" />
                         </video>
                     </ VisibilitySensor>
-                <span className="video-time">{this.props.time}</span>
             </div>
         );
     }

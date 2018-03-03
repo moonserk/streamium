@@ -124,14 +124,14 @@ export default class NavBarDropDown extends React.Component {
               </DropdownItem>
 
               <DropdownItem>
-                <NavLink to="/community" className="router-link" tag={RRNavLink}>
-                    <img className="custom-icon" src={community} style={iconMarginRight}/> Community
+                <NavLink to="/envelope" className="router-link" tag={RRNavLink}>
+                    <img className="custom-icon" src={envelope} style={iconMarginRight}/> Messages
                 </NavLink>
               </DropdownItem>
 
               <DropdownItem>
-                <NavLink to="/envelope" className="router-link" tag={RRNavLink}>
-                    <img className="custom-icon" src={envelope} style={iconMarginRight}/> Messages
+                <NavLink to="/community" className="router-link" tag={RRNavLink}>
+                    <img className="custom-icon" src={community} style={iconMarginRight}/> Community
                 </NavLink>
               </DropdownItem>
 
