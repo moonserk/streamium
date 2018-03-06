@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import VideoPlayer from '../VideoPlayer'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 export default class Upload extends React.Component{
@@ -18,10 +19,11 @@ export default class Upload extends React.Component{
         }
         return(
             <div  className="feed-container container-margin-top">
+                <VideoPlayer src="https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment"/>
                 <h1>Upload</h1>
                 <input onChange={(e) => this.setState({value: e.target.value})} value={this.state.value} />
                 <button onClick={(e) => {
-                    axios.post('http://api.tockermail.com:4000/images', {value}).then(res =>{
+                    axios.post('http://api.tockermail.com:4000/upload', {value}).then(res =>{
                         console.log(res);
                         console.log(res.data)
                     },
