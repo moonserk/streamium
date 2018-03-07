@@ -19,7 +19,7 @@ export default class Upload extends React.Component{
         }
         return(
             <div  className="feed-container container-margin-top">
-                <VideoPlayer src="https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment"/>
+                <VideoPlayer src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_640x360.m4v"/>
                 <h1>Upload</h1>
                 <input onChange={(e) => this.setState({value: e.target.value})} value={this.state.value} />
                 <button onClick={(e) => {

@@ -13,26 +13,35 @@ export default class VideoPlayer extends React.Component{
         this.state = {
             duration: '', 
             currentTime: '',
-            progressStyle: {width: ""}};
+            currentVolume: ''};
 
         this.handlePlay = this.handlePlay.bind(this);
         this.handleCanPlay = this.handleCanPlay.bind(this);
         this.handleTimeUpdate = this.handleTimeUpdate.bind(this);
+        this.handleVolumeMute = this.handleVolumeMute.bind(this);
+        this.handleVolumeChange = this.handleVolumeChange.bind(this);
+        this.handleChangeProgress = this.handleChangeProgress.bind(this);
+    }
 
+    handleChangeProgress(e){
+        e.preventDefault();
+        this.refs.video.currentTime = e.target.value;
     }
 
     handleTimeUpdate(e){
         e.preventDefault();
         this.setState({
             currentTime: this.refs.video.currentTime,
-            progressStyle: {width: Math.floor((this.state.currentTime / this.state.duration) * 100) + '%'}
+            //progressStyle: {width: Math.floor((this.state.currentTime / this.state.duration) * 100) + '%'}
         });
     }
 
     handleCanPlay(e){
         e.preventDefault();
-        this.setState({duration: this.refs.video.duration})
-        //console.log(this.refs.video.duration, timeFormat(this.refs.video.duration))
+        this.setState({
+            duration: this.refs.video.duration, 
+            currentTime: this.refs.video.currentTime,
+            currentVolume: this.refs.video.volume * 100});
     }
 
     handlePlay(e){
@@ -40,31 +49,49 @@ export default class VideoPlayer extends React.Component{
         this.refs.video.paused ? this.refs.video.play() : this.refs.video.pause();
     }
 
+    handleVolumeMute(e){
+        e.preventDefault(e);
+        this.refs.video.muted = !this.refs.video.muted;
+        this.setState({currentVolume: this.refs.video.muted ? 0 : this.refs.video.volume * 100});
+    }
+
+    handleVolumeChange(e){
+        e.preventDefault(e);
+        this.refs.video.volume = e.target.value / 100;
+        this.setState({currentVolume: this.refs.video.muted ? 0 : this.refs.video.volume * 100});
+    }
+
     render(){
         return(
             <div className="video"> 
-                <video className="img-fluid video-slot" id="video" ref='video' 
+                <video className="img-fluid video-slot mx-auto" id="video" ref='video' 
                        onCanPlay={this.handleCanPlay}
                        onTimeUpdate={this.handleTimeUpdate}>
                     <source src={this.props.src} type="video/mp4"/>
                 </video>
                 <div className="controls-container">
                     <div className="row mx-auto" style={{width: '100%'}}>
-                        <progress className="progress-bar"  value={this.state.currentTime} min="0" max={this.state.duration}>
-                            <span id="total">
-                                <span id="buffered"><span id="current">​</span></span>
-                            </span>
-                            <span className="" style={this.state.progressStyle}></span>
-                        </progress>
+                            <span className="progress">
+                                <input className="progress-bar" type="range"  ref='progress' 
+                                       value={this.state.currentTime} 
+                                       min="0" max={this.state.duration} 
+                                       onChange={this.handleChangeProgress}/>
+                            </span> 
                     </div>
                     
                     <div className="row mx-auto" style={{width: '100%'}}>
-                        <span className="play-btn" onClick={this.handlePlay}>
+                        <span className="element-btn" onClick={this.handlePlay}>
                             <img className="custom-icon-video-controls" src={play} />
                         </span>
-                        <span className="col-2 element-btn">
-                            <img className="custom-icon-video-controls" src={sound} />
+                        <span className="element-btn volume-icon" onClick={this.handleVolumeMute}>
+                            <img className="custom-icon-video-controls " src={sound} />
                         </span>
+
+                        <span className="volume volume-hide">
+                            <input className="volume-bar" type="range" value={this.state.currentVolume} min={0} max={100}
+                                   onChange={this.handleVolumeChange} />
+                        </span>
+
                         <span className="col mr-auto time">
                             <span >{timeFormat(this.state.currentTime)} / {timeFormat(this.state.duration)}</span>
                         </span>
