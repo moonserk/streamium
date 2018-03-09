@@ -21,6 +21,21 @@ export default class VideoPlayer extends React.Component{
         this.handleVolumeMute = this.handleVolumeMute.bind(this);
         this.handleVolumeChange = this.handleVolumeChange.bind(this);
         this.handleChangeProgress = this.handleChangeProgress.bind(this);
+        this.handleFullscreen = this.handleFullscreen.bind(this);
+    }
+
+    handleFullscreen(e){
+        e.preventDefault();
+        // this.refs.fs.style.display = 'none'
+        // this.refs.video.requestFullscreen;
+        if (this.refs.video.requestFullscreen) {
+            this.refs.video.requestFullscreen();
+          } else if (this.refs.video.mozRequestFullScreen) {
+            this.refs.video.mozRequestFullScreen(); // Firefox
+          } else if (this.refs.video.webkitRequestFullscreen) {
+            this.refs.video.webkitRequestFullscreen(); // Chrome and Safari
+          }
+        console.log("Fullscreen")
     }
 
     handleChangeProgress(e){
@@ -98,7 +113,7 @@ export default class VideoPlayer extends React.Component{
                         <span className="col-auto element-btn">
                             <img className="custom-icon-video-controls" src={settings} />
                         </span>
-                        <span className="element-btn">
+                        <span className="element-btn" ref='fs' onClick={this.handleFullscreen}>
                             <img className="custom-icon-video-controls" src={full_screen} />
                         </span>
                     </div>
