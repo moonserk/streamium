@@ -11,7 +11,7 @@ import Login from '../Login'
 
 import SearchBar from './SearchBar'
 
-import logo from '../../assets/images/logo.svg'
+import logo from '../../assets/images/logo2.png'
 import community from '../../assets/images/community-l.svg'
 import channel from  '../../assets/images/webM-my-channel.svg'
 import upload from '../../assets/images/upload-btn.svg'
@@ -66,7 +66,7 @@ export default class NavBarDropDown extends React.Component {
 
             <NavbarBrand    to="/" tag={RRNavLink} className="mx-auto in-navbar-custom">
 
-                        <img className="custom-logo2"  src={crownlogo} />{' '}
+                        {/* <img className="custom-logo2"  src={crownlogo} />{' '} */}
                         <img className="custom-logo" src={logo} />
 
             </NavbarBrand>

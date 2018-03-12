@@ -28,7 +28,7 @@ class Card extends React.Component {
     }
     render(){
         return (
-            <div className="card custom-card-border card-custom">
+            <div className="card custom-card-border card-custom" >
                 <Channel channelName={this.props.channelName} pubTime={this.props.pubTime} />
                 <div  onClick={(e) => this.setState({videoPreview: false})}>
                 {this.state.videoPreview ?

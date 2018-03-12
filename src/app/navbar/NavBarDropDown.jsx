@@ -10,7 +10,7 @@ import { Card, CardImg, CardText, CardBody,
 
 import SearchBar from './SearchBar'
 
-import logo from '../../assets/images/logo.svg'
+import logo from '../../assets/images/logo2.png'
 import community from '../../assets/images/community-l.svg'
 import channel from  '../../assets/images/webM-my-channel.svg'
 import upload from '../../assets/images/upload-btn.svg'
@@ -67,14 +67,14 @@ export default class NavBarDropDown extends React.Component {
       <div>
         <Navbar  className="navbar-custom  fixed-top" color="faded" light>
             
-            <Nav className="in-navbar-custom" navbar>
+            <Nav className="in-navbar-custom search-icon">
               <NavItem onClick={(e) => this.setState({search: true})}>
                 <img className="custom-icon" src={search} />
               </NavItem>
             </Nav>
           
           <NavbarBrand to="/" tag={RRNavLink} className="mx-auto in-navbar-custom">
-            <img className="custom-logo2"  src={crownlogo} />{' '}
+            {/* <img className="custom-logo2"  src={crownlogo} />{' '} */}
             <img className="custom-logo" src={logo} />
           </NavbarBrand>
 
