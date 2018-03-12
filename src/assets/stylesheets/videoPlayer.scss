@@ -89,6 +89,7 @@
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 5px;
+  
 }
 
 .progress-bar::-webkit-slider-thumb {
@@ -97,16 +98,32 @@
   width: 15px;
   height: 15px;
   border-radius: 50%; 
-  background: #009eff;
+  background: #ffffff;
   cursor: pointer;
+  z-index: 5000;
 }
 
 .progress-bar::-moz-range-thumb {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background: #009eff;
+  background: #ffffff;
   cursor: pointer;
+  z-index: 5000;
+}
+.viewed{
+  -webkit-appearance: none;
+  position: absolute;
+  background-color: #009eff;
+  height: 5px;
+  width: 100%;
+  border: 0;
+  border-radius: 9px;
+  margin-top: 5px; 
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  z-index: 1000;
 }
 
 .progress-bar:focus{

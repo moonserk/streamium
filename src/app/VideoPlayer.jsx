@@ -5,12 +5,15 @@ import play from '../assets/images/pp-w.png'
 import sound from '../assets/images/sound-w.png'
 import settings from '../assets/images/settings-w.png'
 import full_screen from '../assets/images/fs-w.png'
+import pause from '../assets/images/pause2.png'
 
 export default class VideoPlayer extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
+            play: false,
+            progressStyle: {width: '0px'},
             duration: '', 
             currentTime: '',
             currentVolume: '',
@@ -93,7 +96,7 @@ export default class VideoPlayer extends React.Component{
         e.preventDefault();
         this.setState({
             currentTime: this.refs.video.currentTime,
-            //progressStyle: {width: Math.floor((this.state.currentTime / this.state.duration) * 100) + '%'}
+            progressStyle: {width: Math.floor((this.state.currentTime / this.state.duration) * 100) + '%'}
         });
     }
 
@@ -107,6 +110,7 @@ export default class VideoPlayer extends React.Component{
 
     handlePlay(e){
         e.preventDefault();
+        this.setState({play: !this.state.play});
         this.refs.video.paused ? this.refs.video.play() : this.refs.video.pause();
     }
 
@@ -128,13 +132,15 @@ export default class VideoPlayer extends React.Component{
             <figure className="video figure-custom" ref='video2'> 
                 <video className="video align-self-center" ref='video' 
                        onCanPlay={this.handleCanPlay}
-                       onTimeUpdate={this.handleTimeUpdate}>
+                       onTimeUpdate={this.handleTimeUpdate}
+                       onClick={this.handlePlay}>
                     <source src={this.props.src} type="video/mp4"/>
                 </video>
                 <div className="controls-container">
                     <div className="row mx-auto" style={{width: '100%'}}>
                             <span className="progress">
-                                <input className="progress-bar" type="range"  ref='progress' 
+                            {/* <span className="viewed" style={this.state.progressStyle} ></span> */}
+                                <input className="progress-bar" type="range"  ref='progress' step="1"
                                        value={this.state.currentTime} 
                                        min="0" max={this.state.duration} 
                                        onChange={this.handleChangeProgress}/>
@@ -143,7 +149,7 @@ export default class VideoPlayer extends React.Component{
                     
                     <div className="row mx-auto" style={{width: '100%'}}>
                         <span className="element-btn" onClick={this.handlePlay}>
-                            <img className="custom-icon-video-controls" src={play} />
+                            <img className="custom-icon-video-controls" src={this.state.play ? play : pause} />
                         </span>
                         <span className="element-btn volume-icon" onClick={this.handleVolumeMute}>
                             <img className="custom-icon-video-controls " src={sound} />
