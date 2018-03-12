@@ -1,9 +1,10 @@
 [
   {
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
+    "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": "https://i1.ytimg.com/vi/tILK37rsPik/0.jpg",
     "title": "Marcus Williams explains what happened on Vikings’ game-winner",
-    "channelName": "New Orleans Saints",
+    "channelName": "test",
     "text": "Marcus Williams explains what happened on Vikings’ game-winner",
     "moneyEarned": "$1100",
     "time": "8:22",
@@ -12,6 +13,7 @@
   {
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": "https://i1.ytimg.com/vi/JN7m5s_D0aI/0.jpg",
+    "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "title": "No victims as Boeing narrowly avoids plunge into Black Sea",
     "channelName": "euronews (in English)",
     "text": "No victims as Boeing narrowly avoids plunge into Black Sea  Plane skidded off runway in northeastern Turkey on landing, with 162 passengers and crew on board. No victims as Boeing narrowly avoids plunge into Black Sea  Plane skidded off runway in northeastern Turkey on landing, with 162 passengers and crew on board.",
@@ -21,6 +23,7 @@
   },
   {
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
+    "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": null,
     "title": "Some title",
     "channelName": "Super Puper Name!",
@@ -31,6 +34,7 @@
   },
   {
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
+    "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": "https://i1.ytimg.com/vi/0xqczZWP2So/0.jpg",
     "title": "Some title",
     "channelName": "Puper Name!",
@@ -41,6 +45,7 @@
   },
   {
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
+    "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": null,
     "title": "Some title",
     "channelName": "Super Puper",
@@ -51,6 +56,7 @@
   },
   {
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
+    "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": null,
     "title": "Some title",
     "channelName": "Super Puper Cahnnel Name!",
@@ -61,6 +67,7 @@
   },
   {
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
+    "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": null,
     "title": "Some title",
     "channelName": "Super Puper Cahnnel Name!",
@@ -71,6 +78,7 @@
   },
   {
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
+    "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": "https://i1.ytimg.com/vi/3jbx8Sa8sCw/0.jpg",
     "title": "Some title",
     "channelName": "Super Puper Cahnnel Name!",
@@ -81,6 +89,7 @@
   },
   {
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
+    "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": null,
     "title": "Some title",
     "channelName": "Super Puper Cahnnel Name!",

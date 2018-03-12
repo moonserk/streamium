@@ -1,5 +1,6 @@
 import React from 'react';
 import VisibilitySensor from 'react-visibility-sensor'
+import VideoPlayer from './VideoPlayer';
 
 import menu from '../assets/images/menu.svg';
 import clock from '../assets/images/clock.svg';
@@ -14,20 +15,32 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import FlatButton from 'material-ui/FlatButton'
 
 
-const Card = (props) => {
-    const handleClick = () => {
-        props.click();
+class Card extends React.Component {
+    
+    constructor(props){
+        super(props)
+        this.state = {videoPreview : true}
+        this.handleClick = this.handleClick.bind(this)
     }
-
-    return (
-        <div className="card custom-card-border card-custom">
-            <Channel channelName={props.channelName} pubTime={props.pubTime} />
-            
-            <VideoSlot src={props.src} time={props.time} />
-            <Title title={props.title} />
-            <Text text={props.text} moneyEarned={props.moneyEarned} click={handleClick}/>
-        </div>
-    )
+    
+    handleClick(){
+        this.props.click();
+    }
+    render(){
+        return (
+            <div className="card custom-card-border card-custom">
+                <Channel channelName={this.props.channelName} pubTime={this.props.pubTime} />
+                <div  onClick={(e) => this.setState({videoPreview: false})}>
+                {this.state.videoPreview ?
+                    <VideoSlotPreview  src={this.props.src} fullSrc={this.props.fullSrc} time={this.props.time} /> :
+                    <VideoSlot fullSrc={this.props.fullSrc} time={this.props.time} /> 
+                }
+                </div>
+                <Title title={this.props.title} />
+                <Text text={this.props.text} moneyEarned={this.props.moneyEarned} click={this.handleClick}/>
+            </div>
+        )
+    }
 }
 
 const Channel = (props) => {
@@ -41,7 +54,29 @@ const Channel = (props) => {
     )
 }
 
-const VideoSlot = (props) => {
+class VideoSlot extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {preview: true}
+        //this.handleChange = this.handleChange.bind(this)
+    }
+
+    // handleChange(isVisible){
+    //     isVisible ? this.refs.videoref.play() : this.refs.videoref.pause();
+    // }
+
+    render(){
+        return(
+            <div className="img-fluid video-slot relative">
+                    <VisibilitySensor onChange={this.handleChange}>
+                        <VideoPlayer className="card-img-top" ref='videoref' src={this.props.fullSrc}/>
+                    </ VisibilitySensor>
+            </div>
+        );
+    }
+}
+
+const VideoSlotPreview = (props) => {
     let testVideo;
     const handleChange = (isVisible) => {
         isVisible ? testVideo.play() : testVideo.pause();
@@ -51,7 +86,7 @@ const VideoSlot = (props) => {
         <div className="img-fluid video-slot relative">
             <Avatar />
             <VisibilitySensor onChange={handleChange}>
-                <video className="card-img-top"  ref={(video) => testVideo = video} loop>
+                <video className="card-img-top" ref={(video) => testVideo = video} loop>
                     <source src={props.src} type="video/mp4" />
                 </video>
             </ VisibilitySensor>

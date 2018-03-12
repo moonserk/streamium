@@ -1,4 +1,6 @@
 @import './search';
+@import './scrollbar';
+@import './videoPlayer';
 
 .custom-icon{
     width: 22px;
@@ -216,7 +218,7 @@
     //position: fixed; /* Фиксированное положение */
     //left: 0; bottom: 0; /* Левый нижний угол */
     padding: 10px; /* Поля вокруг текста */
-    background: #292929ea; /* Цвет фона */
+    background: #29292998; /* Цвет фона */
     color: #fff; /* Цвет текста */
     width: 100%; /* Ширина слоя */
     z-index: 1000;

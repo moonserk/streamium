@@ -86,7 +86,7 @@ export default class NavBarDropDown extends React.Component {
             <NavbarToggler style={{padding: '1px', border: 'none'}} />
             </DropdownToggle>
 
-            <DropdownMenu right>
+            <DropdownMenu style={{marginTop: '0px', paddingTop: '18px'}} right>
               <DropdownItem header>
                
               <div className="">
@@ -94,6 +94,8 @@ export default class NavBarDropDown extends React.Component {
               </div>
               
               </DropdownItem>
+
+              <DropdownItem divider />
 
               <DropdownItem >
                 <NavLink to="/feed" className="router-link" tag={RRNavLink}>
@@ -122,14 +124,14 @@ export default class NavBarDropDown extends React.Component {
               </DropdownItem>
 
               <DropdownItem>
-                <NavLink to="/community" className="router-link" tag={RRNavLink}>
-                    <img className="custom-icon" src={community} style={iconMarginRight}/> Community
+                <NavLink to="/envelope" className="router-link" tag={RRNavLink}>
+                    <img className="custom-icon" src={envelope} style={iconMarginRight}/> Messages
                 </NavLink>
               </DropdownItem>
 
               <DropdownItem>
-                <NavLink to="/envelope" className="router-link" tag={RRNavLink}>
-                    <img className="custom-icon" src={envelope} style={iconMarginRight}/> Messages
+                <NavLink to="/community" className="router-link" tag={RRNavLink}>
+                    <img className="custom-icon" src={community} style={iconMarginRight}/> Community
                 </NavLink>
               </DropdownItem>
 

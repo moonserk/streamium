@@ -76,6 +76,7 @@ export default class HomePage extends React.Component{
                                                             channelName={item.channelName}
                                                             pubTime={item.pubTime}
                                                             src={item.src}
+                                                            fullSrc={item.fullSrc}
                                                             time={item.time}
                                                             title={item.title}
                                                             text={item.text}
