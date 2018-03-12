@@ -18,8 +18,10 @@ export default class Upload extends React.Component{
             filename: this.state.value, mimetype: "file.type", _csrf_token: "token.value", size: "file.size"
         }
         return(
-            <div  className="feed-container container-margin-top">
+            <div  className="card">
+                <div className="img-fluid video-slot reletive">
                 <VideoPlayer src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_640x360.m4v"/>
+                </div>
                 <h1>Upload</h1>
                 <input onChange={(e) => this.setState({value: e.target.value})} value={this.state.value} />
                 <button onClick={(e) => {

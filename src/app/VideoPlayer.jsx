@@ -13,7 +13,9 @@ export default class VideoPlayer extends React.Component{
         this.state = {
             duration: '', 
             currentTime: '',
-            currentVolume: ''};
+            currentVolume: '',
+            fullscreen: document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement,
+            fullscreenEnabled: document.fullscreenEnabled || document.mozFullScreenEnabled || document.webkitFullscreenEnabled};
 
         this.handlePlay = this.handlePlay.bind(this);
         this.handleCanPlay = this.handleCanPlay.bind(this);
@@ -24,19 +26,63 @@ export default class VideoPlayer extends React.Component{
         this.handleFullscreen = this.handleFullscreen.bind(this);
     }
 
+    componentDidMount(){
+        console.log(Document.fullscreenEnabled);
+        this.refs.video.addEventListener("fullscreenchange", function(e){
+            console.log('статус fullscreen = ', document.fullscreenEnabled);
+            });
+
+        
+    }
+
     handleFullscreen(e){
         e.preventDefault();
         // this.refs.fs.style.display = 'none'
-        // this.refs.video.requestFullscreen;
-        if (this.refs.video.requestFullscreen) {
-            this.refs.video.requestFullscreen();
-          } else if (this.refs.video.mozRequestFullScreen) {
-            this.refs.video.mozRequestFullScreen(); // Firefox
-          } else if (this.refs.video.webkitRequestFullscreen) {
-            this.refs.video.webkitRequestFullscreen(); // Chrome and Safari
-          }
-        console.log("Fullscreen")
+        // // this.refs.video.requestFullscreen;
+        // if (this.refs.video.requestFullscreen) {
+        //     this.refs.video.requestFullscreen();
+        //   } else if (this.refs.video.mozRequestFullScreen) {
+        //     this.refs.video.mozRequestFullScreen(); // Firefox
+        //   } else if (this.refs.video.webkitRequestFullscreen) {
+        //     this.refs.video.webkitRequestFullscreen(); // Chrome and Safari
+        //   }
+        // console.log("Fullscreen")
+        // this.setState({fullscreen: document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement})
+        // console.log( this.refs.video.fullscreenEnabled)
+
+        this.refs.video2.requestFullScreen =
+        this.refs.video2.requestFullscreen
+        || this.refs.video2.msRequestFullscreen
+        || this.refs.video2.mozRequestFullScreen
+        || this.refs.video2.webkitRequestFullscreen;
+    document.exitFullscreen =
+        document.exitFullscreen
+        || document.msExitFullscreen
+        || document.mozCancelFullScreen
+        || document.webkitExitFullscreen;
+    const fullscreenElement =
+        document.fullscreenElement
+        || document.msFullscreenElement
+        || document.mozFullScreenElement
+        || document.webkitFullscreenElement;
+    if (fullscreenElement === this.refs.video2) {
+        document.exitFullscreen();
+    } else {
+        this.refs.video2.requestFullScreen();
     }
+    console.log("fs =" + document.fullscreenEnabled);
+    }
+
+    exitFullscreen() {
+        if(document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if(document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if(document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+    }
+      
 
     handleChangeProgress(e){
         e.preventDefault();
@@ -78,8 +124,9 @@ export default class VideoPlayer extends React.Component{
 
     render(){
         return(
-            <div className="video"> 
-                <video className="img-fluid video-slot mx-auto" id="video" ref='video' 
+            //TODO: remake refs
+            <figure className="video figure-custom" ref='video2'> 
+                <video className="video align-self-center" ref='video' 
                        onCanPlay={this.handleCanPlay}
                        onTimeUpdate={this.handleTimeUpdate}>
                     <source src={this.props.src} type="video/mp4"/>
@@ -113,12 +160,12 @@ export default class VideoPlayer extends React.Component{
                         <span className="col-auto element-btn">
                             <img className="custom-icon-video-controls" src={settings} />
                         </span>
-                        <span className="element-btn" ref='fs' onClick={this.handleFullscreen}>
+                        <span className="element-btn" onClick={this.handleFullscreen}>
                             <img className="custom-icon-video-controls" src={full_screen} />
                         </span>
                     </div>
                 </div>
-            </div>
+            </figure>
                 
 
         );

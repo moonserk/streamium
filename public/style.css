@@ -21,8 +21,17 @@
 .input-search::-webkit-input-placeholder {
   padding-left: 50px; }
 
-.video {
+.video-container {
   position: relative; }
+
+.figure-custom {
+  width: 100%;
+  height: auto; }
+
+.video {
+  position: relative;
+  width: 100%;
+  height: auto; }
 
 .controls-container {
   position: absolute;
@@ -36,7 +45,7 @@
   -o-transition: opacity 0.5s;
   -ms-transition: opacity 0.5s;
   transition: opacity 0.5s;
-  z-index: 1030;
+  z-index: 2147483647;
   background-color: transparent; }
 
 .video:hover .controls-container {
@@ -142,6 +151,12 @@
 
 .volume-bar:focus {
   outline: none; }
+
+html:-ms-fullscreen {
+  width: 100%; }
+
+:-webkit-full-screen {
+  background-color: transparent; }
 
 .custom-icon {
   width: 22px; }

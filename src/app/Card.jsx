@@ -1,5 +1,6 @@
 import React from 'react';
 import VisibilitySensor from 'react-visibility-sensor'
+import VideoPlayer from './VideoPlayer';
 
 import menu from '../assets/images/menu.svg';
 import clock from '../assets/images/clock.svg';
@@ -57,20 +58,18 @@ class VideoSlot extends React.Component{
     constructor(props){
         super(props)
         this.state = {preview: true}
-        this.handleChange = this.handleChange.bind(this)
+        //this.handleChange = this.handleChange.bind(this)
     }
 
-    handleChange(isVisible){
-        isVisible ? this.refs.videoref.play() : this.refs.videoref.pause();
-    }
+    // handleChange(isVisible){
+    //     isVisible ? this.refs.videoref.play() : this.refs.videoref.pause();
+    // }
 
     render(){
         return(
             <div className="img-fluid video-slot relative">
                     <VisibilitySensor onChange={this.handleChange}>
-                        <video className="card-img-top" ref='videoref' controls autoPlay>
-                            <source src={this.props.fullSrc} type="video/mp4" />
-                        </video>
+                        <VideoPlayer className="card-img-top" ref='videoref' src={this.props.fullSrc}/>
                     </ VisibilitySensor>
             </div>
         );
