@@ -83,6 +83,18 @@
 .search-icon{
     margin-left: 21px;
     margin-right: 21px;
+    margin-top: 12px;
+    vertical-align: middle !important;
+}
+
+.login-icon{
+    margin-bottom: 0px !important;
+    margin-top: 5px !important;
+}
+
+.margin-logo{
+    margin-left: 280px !important;
+    margin-right: 280px !important;
 }
 
 @media only screen and (max-width : 480px) {
@@ -92,6 +104,7 @@
     .hide-icon{
         display: none !important;
     }
+
 }
 
 @media only screen and (max-width : 845px) {
@@ -101,6 +114,7 @@
     .hide-icon{
         display: none !important;
     }
+
 }
 
 @media only screen and (max-width : 992px) {
@@ -159,13 +173,22 @@
     margin-right: auto;
     margin-left: auto;
 }
-  
+@media (min-width: 320px) {
+    .margin-logo{
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+    }
+  }
   @media (min-width: 576px) {
     .container {
       max-width: 540px !important;
     }
     .feed-container {
         max-width: 576px !important;
+    }
+    .margin-logo{
+        margin-left: 20px !important;
+        margin-right: 20px !important;
     }
   }
   
@@ -176,6 +199,10 @@
     .feed-container {
         max-width: 680px !important;
     }
+    .margin-logo{
+        margin-left: 200px !important;
+        margin-right: 200px !important;
+    }
   }
   
   @media (min-width: 1024px) {
@@ -184,6 +211,10 @@
     }
     .feed-container {
         max-width: 680px !important;
+    }
+    .margin-logo{
+        margin-left: 280px !important;
+        margin-right: 280px !important;
     }
   }
 
@@ -205,17 +236,6 @@
     } 
   }
 
-  @media (min-width: 2000px) {
-    .navbar-custom{
-        padding-left: 500px !important;
-        padding-right: 500px !important;
-        
-    }
-    .navbar-guest-custom{
-        padding-left: 500px !important;
-        padding-right: 500px !important;
-    }
-  }
 
 .notify-container {
     position: fixed;

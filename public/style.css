@@ -38,7 +38,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   opacity: 0;
   -webkit-transition: opacity 0.5s;
   -moz-transition: opacity 0.5s;
@@ -173,7 +173,9 @@ html:-ms-fullscreen {
 
 :-webkit-full-screen {
   background-color: transparent;
-  vertical-align: middle; }
+  vertical-align: middle;
+  position: absolute;
+  padding-top: 6px; }
 
 .custom-icon {
   width: 22px; }
@@ -228,7 +230,17 @@ html:-ms-fullscreen {
 
 .search-icon {
   margin-left: 21px;
-  margin-right: 21px; }
+  margin-right: 21px;
+  margin-top: 12px;
+  vertical-align: middle !important; }
+
+.login-icon {
+  margin-bottom: 0px !important;
+  margin-top: 5px !important; }
+
+.margin-logo {
+  margin-left: 280px !important;
+  margin-right: 280px !important; }
 
 @media only screen and (max-width: 480px) {
   .input-custom {
@@ -286,23 +298,37 @@ html:-ms-fullscreen {
   margin-right: auto;
   margin-left: auto; }
 
+@media (min-width: 320px) {
+  .margin-logo {
+    margin-left: 20px !important;
+    margin-right: 20px !important; } }
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px !important; }
   .feed-container {
-    max-width: 576px !important; } }
+    max-width: 576px !important; }
+  .margin-logo {
+    margin-left: 20px !important;
+    margin-right: 20px !important; } }
 
 @media (min-width: 768px) {
   .container {
     max-width: 768px !important; }
   .feed-container {
-    max-width: 680px !important; } }
+    max-width: 680px !important; }
+  .margin-logo {
+    margin-left: 200px !important;
+    margin-right: 200px !important; } }
 
 @media (min-width: 1024px) {
   .container {
     max-width: 1000px !important; }
   .feed-container {
-    max-width: 680px !important; } }
+    max-width: 680px !important; }
+  .margin-logo {
+    margin-left: 280px !important;
+    margin-right: 280px !important; } }
 
 @media (min-width: 1200px) {
   .container {
@@ -315,14 +341,6 @@ html:-ms-fullscreen {
     max-width: 1200px !important; }
   .feed-container {
     max-width: 680px !important; } }
-
-@media (min-width: 2000px) {
-  .navbar-custom {
-    padding-left: 500px !important;
-    padding-right: 500px !important; }
-  .navbar-guest-custom {
-    padding-left: 500px !important;
-    padding-right: 500px !important; } }
 
 .notify-container {
   position: fixed;

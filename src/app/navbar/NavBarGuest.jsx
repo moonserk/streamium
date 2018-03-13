@@ -56,32 +56,35 @@ export default class NavBarDropDown extends React.Component {
     return(
       <div>
         <Navbar  className="navbar-guest-custom  fixed-top" color="faded" light>
-            
-            <Nav className="in-navbar-custom mx-auto" onClick={(e) => {this.setState({search: true});
+        <Nav className="mx-auto">
+            <Nav className="in-navbar-custom " onClick={(e) => {this.setState({search: true});
                                                                 console.log("asfsdf")}} navbar>
               <NavItem>
-                <img className="custom-icon" src={search} />
+                <img className="custom-icon search-icon" src={search} />
               </NavItem>
             </Nav>
 
-            <NavbarBrand    to="/" tag={RRNavLink} className="mx-auto in-navbar-custom">
+            <NavbarBrand    to="/" tag={RRNavLink} className="in-navbar-custom margin-logo">
 
                         {/* <img className="custom-logo2"  src={crownlogo} />{' '} */}
                         <img className="custom-logo" src={logo} />
 
             </NavbarBrand>
 
-            <Nav className="in-navbar-custom mx-auto" navbar>
+            <Nav className="in-navbar-custom" navbar>
               <NavItem>
               <NavLink onClick={this.modalToggle}>
                 <Media>
-                    <img className="custom-icon" src={login} />
+                    <img className="custom-icon search-icon login-icon" src={login} />
                 </Media>
               </NavLink>
               </NavItem>
             </Nav>
+            </Nav> 
             {this.state.modal ? <Login onLogin={(e) => this.props.onLogin()}/> : null}
-        </Navbar>   
+        
+        </Navbar>  
+    
       </div>
     )
   }

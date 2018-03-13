@@ -67,26 +67,27 @@ export default class NavBarDropDown extends React.Component {
       <div>
         <Navbar  className="navbar-custom  fixed-top" color="faded" light>
             
-            <Nav className="in-navbar-custom search-icon mx-auto">
+          <Nav className="mx-auto">
+            <Nav className="in-navbar-custom ">
               <NavItem onClick={(e) => this.setState({search: true})}>
-                <img className="custom-icon" src={search} />
+                <img className="custom-icon search-icon" src={search} />
               </NavItem>
             </Nav>
           
-          <NavbarBrand to="/" tag={RRNavLink} className="mx-auto in-navbar-custom">
+          <NavbarBrand to="/" tag={RRNavLink} className="in-navbar-custom margin-logo">
             {/* <img className="custom-logo2"  src={crownlogo} />{' '} */}
             <img className="custom-logo" src={logo} />
           </NavbarBrand>
 
 
 
-            <Dropdown  className="mx-auto" isOpen={this.state.dropdownOpen} toggle={this.toggle} >
+            <Dropdown  className="" isOpen={this.state.dropdownOpen} toggle={this.toggle} >
             
             <DropdownToggle  nav>
             <NavbarToggler style={{padding: '1px', border: 'none'}} />
             </DropdownToggle>
 
-            <DropdownMenu style={{marginTop: '0px', paddingTop: '18px'}} left>
+            <DropdownMenu style={{marginTop: '0px', paddingTop: '18px'}} >
               <DropdownItem header>
                
               <div className="">
@@ -185,6 +186,8 @@ export default class NavBarDropDown extends React.Component {
 
             </DropdownMenu>
           </Dropdown>
+
+          </Nav>
 
         </Navbar>
       </div>
