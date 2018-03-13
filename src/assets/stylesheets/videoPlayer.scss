@@ -190,8 +190,9 @@
 }
 
 html:-ms-fullscreen {
-	width:100%;
+  width:100%;
 }
 :-webkit-full-screen {
-	background-color:transparent;
+  background-color:transparent;
+  vertical-align: middle;
 }

@@ -27,10 +27,17 @@ export default class VideoPlayer extends React.Component{
         this.handleVolumeChange = this.handleVolumeChange.bind(this);
         this.handleChangeProgress = this.handleChangeProgress.bind(this);
         this.handleFullscreen = this.handleFullscreen.bind(this);
+        this.handleKeyPress = this.handleKeyPress.bind(this);
     }
 
     componentDidMount(){
         console.log(Document.fullscreenEnabled);
+        document.addEventListener('keyup', () => {
+            if(window.event.keyCode == 70){
+                this.handleFullscreen()
+            }
+            console.log(window.event.keyCode);
+        });
         this.refs.video.addEventListener("fullscreenchange", function(e){
             console.log('статус fullscreen = ', document.fullscreenEnabled);
             });
@@ -38,8 +45,15 @@ export default class VideoPlayer extends React.Component{
         
     }
 
+    handleKeyPress(e){
+        e.preventDefault()
+        if(e.key == 70){
+            this.handleFullscreen();
+        }
+    }
+
     handleFullscreen(e){
-        e.preventDefault();
+        //e.preventDefault();
         // this.refs.fs.style.display = 'none'
         // // this.refs.video.requestFullscreen;
         // if (this.refs.video.requestFullscreen) {
@@ -133,7 +147,9 @@ export default class VideoPlayer extends React.Component{
                 <video className="video align-self-center" ref='video' 
                        onCanPlay={this.handleCanPlay}
                        onTimeUpdate={this.handleTimeUpdate}
-                       onClick={this.handlePlay}>
+                       onClick={this.handlePlay}
+                       onDoubleClick={this.handleFullscreen}
+                       onKeyPress={this.handleKeyPress}>
                     <source src={this.props.src} type="video/mp4"/>
                 </video>
                 <div className="controls-container">

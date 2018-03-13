@@ -172,7 +172,8 @@ html:-ms-fullscreen {
   width: 100%; }
 
 :-webkit-full-screen {
-  background-color: transparent; }
+  background-color: transparent;
+  vertical-align: middle; }
 
 .custom-icon {
   width: 22px; }
@@ -207,8 +208,6 @@ html:-ms-fullscreen {
   margin-left: -55px; }
 
 .navbar-custom {
-  padding-left: 50px !important;
-  padding-right: 50px !important;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
   background-color: #fff;
@@ -217,8 +216,6 @@ html:-ms-fullscreen {
 
 .navbar-guest-custom {
   min-height: 48px;
-  padding-left: 68px !important;
-  padding-right: 68px !important;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
   background-color: #fff;
@@ -318,6 +315,14 @@ html:-ms-fullscreen {
     max-width: 1200px !important; }
   .feed-container {
     max-width: 680px !important; } }
+
+@media (min-width: 2000px) {
+  .navbar-custom {
+    padding-left: 500px !important;
+    padding-right: 500px !important; }
+  .navbar-guest-custom {
+    padding-left: 500px !important;
+    padding-right: 500px !important; } }
 
 .notify-container {
   position: fixed;

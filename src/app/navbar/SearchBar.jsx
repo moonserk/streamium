@@ -33,7 +33,7 @@ export default class SearchBar extends React.Component{
     render(){
         return(
                 <div className="input-search">
-                    <input type="text" autoFocus={true} className="input-search" onChange={this.handleFilterTextChange} placeholder="Search" value={this.props.filterText}/>
+                    <input type="text" autoFocus={true} className="input-search" onChange={this.handleFilterTextChange} placeholder="" value={this.props.filterText}/>
                     {/* <button className="" style={{border: 'none', minHeight: "42px"}} >
                         <img  style={{height: '20px', width: '20px'}} src={search} />
                     </button> */}

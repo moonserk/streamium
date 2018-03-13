@@ -57,7 +57,7 @@ export default class NavBarDropDown extends React.Component {
       <div>
         <Navbar  className="navbar-guest-custom  fixed-top" color="faded" light>
             
-            <Nav className="in-navbar-custom" onClick={(e) => {this.setState({search: true});
+            <Nav className="in-navbar-custom mx-auto" onClick={(e) => {this.setState({search: true});
                                                                 console.log("asfsdf")}} navbar>
               <NavItem>
                 <img className="custom-icon" src={search} />
@@ -71,7 +71,7 @@ export default class NavBarDropDown extends React.Component {
 
             </NavbarBrand>
 
-            <Nav className="in-navbar-custom" navbar>
+            <Nav className="in-navbar-custom mx-auto" navbar>
               <NavItem>
               <NavLink onClick={this.modalToggle}>
                 <Media>

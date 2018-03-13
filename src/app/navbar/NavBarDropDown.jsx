@@ -67,7 +67,7 @@ export default class NavBarDropDown extends React.Component {
       <div>
         <Navbar  className="navbar-custom  fixed-top" color="faded" light>
             
-            <Nav className="in-navbar-custom search-icon">
+            <Nav className="in-navbar-custom search-icon mx-auto">
               <NavItem onClick={(e) => this.setState({search: true})}>
                 <img className="custom-icon" src={search} />
               </NavItem>
@@ -80,13 +80,13 @@ export default class NavBarDropDown extends React.Component {
 
 
 
-            <Dropdown  isOpen={this.state.dropdownOpen} toggle={this.toggle} >
+            <Dropdown  className="mx-auto" isOpen={this.state.dropdownOpen} toggle={this.toggle} >
             
-            <DropdownToggle nav>
+            <DropdownToggle  nav>
             <NavbarToggler style={{padding: '1px', border: 'none'}} />
             </DropdownToggle>
 
-            <DropdownMenu style={{marginTop: '0px', paddingTop: '18px'}} right>
+            <DropdownMenu style={{marginTop: '0px', paddingTop: '18px'}} left>
               <DropdownItem header>
                
               <div className="">
