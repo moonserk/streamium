@@ -72,12 +72,15 @@
   position: relative;
   width: 100%;
   background-color: transparent !important;
-  border: 0; }
+  border: 0;
+  margin-left: 5px;
+  margin-right: 5px; }
 
 .progress-bar {
   -webkit-appearance: none;
-  position: relative;
-  background-color: #dcdcdc !important;
+  position: absolute;
+  background-color: transparent;
+  background-color: transparent !important;
   height: 5px;
   width: 100%;
   border: 0;
@@ -85,7 +88,8 @@
   margin-top: 5px;
   margin-left: 5px;
   margin-right: 5px;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  z-index: 10000; }
 
 .progress-bar::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -95,27 +99,55 @@
   border-radius: 50%;
   background: #fff;
   cursor: pointer;
-  z-index: 5000; }
+  z-index: 10000;
+  background-color: transparent;
+  background-color: transparent !important; }
 
 .progress-bar::-moz-range-thumb {
+  position: relative;
   width: 15px;
   height: 15px;
   border-radius: 50%;
   background: #fff;
   cursor: pointer;
-  z-index: 5000; }
+  z-index: 10000;
+  background-color: transparent;
+  background-color: transparent !important; }
 
-.viewed {
-  -webkit-appearance: none;
-  position: absolute;
+.viewed-progress {
+  position: relative;
   background-color: #009eff;
+  height: 5px;
+  border: 0;
+  border-radius: 0px;
+  margin-top: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 5px;
+  z-index: 2000; }
+
+.point-progress {
+  position: relative;
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  z-index: 3000; }
+
+.total-progress {
+  position: absolute;
+  background-color: #fff;
   height: 5px;
   width: 100%;
   border: 0;
   border-radius: 9px;
   margin-top: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
   margin-bottom: 5px;
   z-index: 1000; }
 

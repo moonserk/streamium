@@ -28,21 +28,15 @@ export default class VideoPlayer extends React.Component{
         this.handleChangeProgress = this.handleChangeProgress.bind(this);
         this.handleFullscreen = this.handleFullscreen.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
+        this.handleMouseDown = this.handleMouseDown.bind(this);
     }
 
     componentDidMount(){
-        console.log(Document.fullscreenEnabled);
         document.addEventListener('keyup', () => {
             if(window.event.keyCode == 70){
                 this.handleFullscreen()
             }
-            console.log(window.event.keyCode);
         });
-        this.refs.video.addEventListener("fullscreenchange", function(e){
-            console.log('статус fullscreen = ', document.fullscreenEnabled);
-            });
-
-        
     }
 
     handleKeyPress(e){
@@ -53,20 +47,6 @@ export default class VideoPlayer extends React.Component{
     }
 
     handleFullscreen(e){
-        //e.preventDefault();
-        // this.refs.fs.style.display = 'none'
-        // // this.refs.video.requestFullscreen;
-        // if (this.refs.video.requestFullscreen) {
-        //     this.refs.video.requestFullscreen();
-        //   } else if (this.refs.video.mozRequestFullScreen) {
-        //     this.refs.video.mozRequestFullScreen(); // Firefox
-        //   } else if (this.refs.video.webkitRequestFullscreen) {
-        //     this.refs.video.webkitRequestFullscreen(); // Chrome and Safari
-        //   }
-        // console.log("Fullscreen")
-        // this.setState({fullscreen: document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement})
-        // console.log( this.refs.video.fullscreenEnabled)
-
         this.refs.video2.requestFullScreen =
         this.refs.video2.requestFullscreen
         || this.refs.video2.msRequestFullscreen
@@ -140,6 +120,13 @@ export default class VideoPlayer extends React.Component{
         this.setState({currentVolume: this.refs.video.muted ? 0 : this.refs.video.volume * 100});
     }
 
+    handleMouseDown(e){
+        e.preventDefault();
+        this.refs.point.style.left = e.clientX + 'px';
+        console.log(this.refs.point.style.left, window.event.clientX);
+    }
+
+
     render(){
         return(
             //TODO: remake refs
@@ -155,11 +142,13 @@ export default class VideoPlayer extends React.Component{
                 <div className="controls-container">
                     <div className="row mx-auto" style={{width: '100%'}}>
                             <span className="progress">
-                            {/* <span className="viewed" style={this.state.progressStyle} ></span> */}
-                                <input className="progress-bar" type="range"  ref='progress' step="1"
+                                <span className="viewed-progress" style={this.state.progressStyle} onMouseDown={this.handleMouseDown}></span>
+                                {/* <input className="progress-bar" type="range"  ref='progress' step="1"
                                        value={this.state.currentTime} 
                                        min="0" max={this.state.duration} 
-                                       onChange={this.handleChangeProgress}/>
+                                       onChange={this.handleChangeProgress}/> */}
+                                <div className="point-progress" ref='point'></div>
+                                <span className="total-progress" onMouseDown={this.handleMouseDown}></span>
                             </span> 
                     </div>
                     
@@ -188,8 +177,6 @@ export default class VideoPlayer extends React.Component{
                     </div>
                 </div>
             </figure>
-                
-
         );
     }
 }
