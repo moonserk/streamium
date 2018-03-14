@@ -143,12 +143,12 @@ export default class VideoPlayer extends React.Component{
                     <div className="row mx-auto" style={{width: '100%'}}>
                             <span className="progress">
                                 <span className="viewed-progress" style={this.state.progressStyle} onMouseDown={this.handleMouseDown}></span>
-                                {/* <input className="progress-bar" type="range"  ref='progress' step="1"
+                                <input className="progress-bar" type="range"  ref='progress' step="1"
                                        value={this.state.currentTime} 
                                        min="0" max={this.state.duration} 
-                                       onChange={this.handleChangeProgress}/> */}
+                                       onChange={this.handleChangeProgress}/>
                                 <div className="point-progress" ref='point'></div>
-                                <span className="total-progress" onMouseDown={this.handleMouseDown}></span>
+                                <span className="total-progress"></span>
                             </span> 
                     </div>
                     
