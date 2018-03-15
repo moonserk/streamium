@@ -1,4 +1,6 @@
 import React from 'react';
+import {BrowserRouter as Router, Switch, Route, Link, withRouter } from 'react-router-dom';
+
 import VisibilitySensor from 'react-visibility-sensor'
 import VideoPlayer from './VideoPlayer';
 
@@ -12,7 +14,7 @@ import comments from '../assets/images/comments.svg';
 import share from '../assets/images/share-option.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import FlatButton from 'material-ui/FlatButton'
+import FlatButton from 'material-ui/FlatButton';
 
 
 class Card extends React.Component {
@@ -152,11 +154,11 @@ const Text = (props) => {
                 <br />
                 <div className="row">
                     <div className="col">
-                        <a href="" className="" data-ripple="true" title="Watch full video">
+                        <Link to={`/watch/${props.text}`} className="" data-ripple="true" title="Watch full video">
                             <div className="text-center">
                                 <img src={home} className="custom-icon" alt="home" />
                             </div>
-                        </a>
+                        </Link>
                     </div>
                     <div className="col">
                         <a href="" className="" data-ripple="true" title="Watch full video">

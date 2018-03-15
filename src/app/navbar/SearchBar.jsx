@@ -16,12 +16,14 @@ export default class SearchBar extends React.Component{
     componentDidMount(){
         console.log("Search Did Mount");
         // Detects clicks everywhere on the screen
-        document.addEventListener('click', this.props.onClickSearch)
+        document.addEventListener('click', (e) => {
+            this.props.onCloseSearch(e)
+        })
     }
 
     componentWillUnmount () {
         console.log("Search Will Unmount");
-        document.removeEventListener('click', this.props.onClickSearch)
+        document.removeEventListener('click', (e) => {this.props.onCloseSearch(e)});
     }
 
     handleFilterTextChange(e){

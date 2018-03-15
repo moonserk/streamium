@@ -10,7 +10,7 @@ import { Card, CardImg, CardText, CardBody,
 
 import SearchBar from './SearchBar'
 
-import logo from '../../assets/images/logo2.png'
+import logo from '../../assets/images/logo3.png'
 import community from '../../assets/images/community-l.svg'
 import channel from  '../../assets/images/webM-my-channel.svg'
 import upload from '../../assets/images/upload-btn.svg'
@@ -45,6 +45,16 @@ export default class NavBarDropDown extends React.Component {
       language: 'English',
       location: 'UK'
     };
+  }
+
+  closeSearch(e){
+    const evt = e || window.event;
+      if(evt.clientY <= 48){
+          //console.log("< 48");
+          return;
+      }else{
+        this.setState({search: false})
+      }
   }
 
   handleFilterTextChange(e){
@@ -194,16 +204,6 @@ export default class NavBarDropDown extends React.Component {
     )
   }
 
-  closeSearch(){
-    console.log("someAction " + window.event.clientX + ' : ' + window.event.clientY);
-    if(window.event.clientY <= 48){
-        console.log("< 48");
-        return;
-    }else{
-      this.setState({search: false})
-    }
-} 
-
   renderSearch(){
     return(
       <div>
@@ -220,7 +220,7 @@ export default class NavBarDropDown extends React.Component {
           
           <SearchBar filterText={this.props.filterText}
                      onFilterTextChange={this.handleFilterTextChange}
-                     onClickSearch={this.closeSearch}/>
+                     onCloseSearch={this.closeSearch}/>
 
         </Navbar>
       </div>

@@ -372,7 +372,10 @@ html:-ms-fullscreen {
   .container {
     max-width: 1200px !important; }
   .feed-container {
-    max-width: 680px !important; } }
+    max-width: 680px !important; }
+  .margin-logo {
+    margin-left: 350px !important;
+    margin-right: 350px !important; } }
 
 .notify-container {
   position: fixed;
