@@ -73,6 +73,7 @@ export default class HomePage extends React.Component{
                                 }
                             }).map((item, index) => <Card
                                                             key={index} 
+                                                            data={item}
                                                             channelName={item.channelName}
                                                             pubTime={item.pubTime}
                                                             src={item.src}

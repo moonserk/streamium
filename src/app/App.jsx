@@ -15,6 +15,7 @@ import Watch from './routes/Watch'
 import NavBarDropDown from './navbar/NavBarDropDown'
 import NavBarGuest from './navbar/NavBarGuest'
 
+
 const fakeAuth = {
     isAuthenticated: false,
     authenticate(cb) {

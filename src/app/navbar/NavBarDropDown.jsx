@@ -106,27 +106,27 @@ export default class NavBarDropDown extends React.Component {
               
               </DropdownItem>
 
-              <DropdownItem divider />
+              <DropdownItem  className="divider-margin-bottom" divider />
 
-              <DropdownItem >
+              <DropdownItem className="background-color">
                 <NavLink to="/feed" className="router-link" tag={RRNavLink}>
                     <img className="custom-icon" src={heart} style={iconMarginRight} /> Tuning In
                 </NavLink>   
               </DropdownItem>
 
-              <DropdownItem >
+              <DropdownItem className="background-color">
                 <NavLink to="/live" className="router-link" tag={RRNavLink}>
                     <img className="custom-icon" src={live} style={iconMarginRight} /> Live
                 </NavLink>   
               </DropdownItem>
 
-              <DropdownItem >
+              <DropdownItem className="background-color">
                 <NavLink to="/trend" className="router-link" tag={RRNavLink}>
                     <img className="custom-icon" src={trend} style={iconMarginRight} /> Trending
                 </NavLink>   
               </DropdownItem>
 
-              <DropdownItem divider />
+              <DropdownItem className="divider-margin-top"  divider />
 
               <DropdownItem >
                 <NavLink to="/channel" className="router-link" tag={RRNavLink}>

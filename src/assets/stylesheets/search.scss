@@ -2,9 +2,12 @@
     border: none;
     //display: block;
     width: 100%;
-    min-height: 42px;
+    min-height: 48px;
     background-color:#fff;
     text-align: center;
+}
+.text-size{
+    font-size: 25px;
 }
 .input-search:focus{
     outline: none;

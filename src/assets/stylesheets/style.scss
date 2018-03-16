@@ -173,10 +173,23 @@
     margin-right: auto;
     margin-left: auto;
 }
+
+.watch-container {
+    width: 100%;
+    padding-right: 250px;
+    padding-left: 250px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 @media (min-width: 320px) {
     .margin-logo{
         margin-left: 20px !important;
         margin-right: 20px !important;
+    }
+    .watch-container {
+        padding-right: 0px;
+        padding-left: 0px;
     }
   }
   @media (min-width: 576px) {
@@ -189,6 +202,10 @@
     .margin-logo{
         margin-left: 20px !important;
         margin-right: 20px !important;
+    }
+    .watch-container {
+        padding-right: 10px;
+        padding-left: 10px;
     }
   }
   
@@ -203,6 +220,10 @@
         margin-left: 200px !important;
         margin-right: 200px !important;
     }
+    .watch-container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
   }
   
   @media (min-width: 1024px) {
@@ -215,6 +236,10 @@
     .margin-logo{
         margin-left: 280px !important;
         margin-right: 280px !important;
+    }
+    .watch-container {
+        padding-right: 120px;
+        padding-left: 120px;
     }
   }
 
@@ -235,11 +260,20 @@
         max-width: 680px !important;
     } 
     .margin-logo{
-        margin-left: 350px !important;
-        margin-right: 350px !important;
+        margin-left: 250px !important;
+        margin-right: 250px !important;
+    }
+    .watch-container {
+        padding-right: 360px;
+        padding-left: 360px;
     }
   }
-
+  @media (min-width: 1600px) {
+    .watch-container {
+        padding-right: 560px;
+        padding-left: 560px;
+    }
+  }
 
 .notify-container {
     position: fixed;
@@ -269,4 +303,18 @@
     z-index: 1000;
     //max-height: 58px;
     -webkit-transform: translate3d(0, 0, 0)
+}
+
+.divider-margin-bottom{
+    margin-bottom: 0% !important;
+}
+.divider-margin-top{
+    margin-top: 0% !important;
+}
+
+.background-color{
+    background-color: #EEEEEE !important;
+}
+.background-color:hover{
+    background-color: #FAFAFA !important;
 }

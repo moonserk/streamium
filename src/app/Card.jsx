@@ -21,7 +21,7 @@ class Card extends React.Component {
     
     constructor(props){
         super(props)
-        this.state = {videoPreview : true}
+        this.state = {videoPreview : true, data : this.props.data}
         this.handleClick = this.handleClick.bind(this)
     }
     
@@ -38,8 +38,8 @@ class Card extends React.Component {
                     <VideoSlot fullSrc={this.props.fullSrc} time={this.props.time} /> 
                 }
                 </div>
-                <Title title={this.props.title} />
-                <Text text={this.props.text} moneyEarned={this.props.moneyEarned} click={this.handleClick}/>
+                <Title title={this.state.data.title} />
+                <Text text={this.state.data} moneyEarned={this.props.moneyEarned} click={this.handleClick}/>
             </div>
         )
     }
@@ -127,7 +127,7 @@ const Text = (props) => {
 
     return (
         <div className="card-body">
-            <p className="">{props.text}</p>
+            <p className="">{props.text.text}</p>
 
             <br/>
             
@@ -154,7 +154,7 @@ const Text = (props) => {
                 <br />
                 <div className="row">
                     <div className="col">
-                        <Link to={`/watch/${props.text}`} className="" data-ripple="true" title="Watch full video">
+                        <Link to={`/watch`} className="" data-ripple="true" title="Watch full video">
                             <div className="text-center">
                                 <img src={home} className="custom-icon" alt="home" />
                             </div>
