@@ -91,7 +91,7 @@ export default class NavBarDropDown extends React.Component {
 
 
 
-            <Dropdown  className="" isOpen={this.state.dropdownOpen} toggle={this.toggle} >
+            <Dropdown   isOpen={this.state.dropdownOpen} toggle={this.toggle} >
             
             <DropdownToggle  nav>
             <NavbarToggler style={{padding: '1px', border: 'none'}} />
@@ -128,31 +128,31 @@ export default class NavBarDropDown extends React.Component {
 
               <DropdownItem className="divider-margin-top"  divider />
 
-              <DropdownItem >
+              <DropdownItem  className="bg-hover">
                 <NavLink to="/channel" className="router-link" tag={RRNavLink}>
                     <img className="custom-icon" src={channel} style={iconMarginRight}/> My Channel
                 </NavLink>   
               </DropdownItem>
 
-              <DropdownItem>
+              <DropdownItem className="bg-hover">
                 <NavLink to="/envelope" className="router-link" tag={RRNavLink}>
                     <img className="custom-icon" src={envelope} style={iconMarginRight}/> Messages
                 </NavLink>
               </DropdownItem>
 
-              <DropdownItem>
+              <DropdownItem className="bg-hover">
                 <NavLink to="/community" className="router-link" tag={RRNavLink}>
                     <img className="custom-icon" src={community} style={iconMarginRight}/> Community
                 </NavLink>
               </DropdownItem>
 
-              <DropdownItem>
+              <DropdownItem className="bg-hover">
                 <NavLink to="/upload" className="router-link" tag={RRNavLink}>
                     <img className="custom-icon" src={upload} style={iconMarginRight}/> Upload
                 </NavLink>
               </DropdownItem>
 
-              <DropdownItem>
+              <DropdownItem className="bg-hover">
                 <NavLink to="/stream" className="router-link" tag={RRNavLink}>
                     <img className="custom-icon" src={stream} style={iconMarginRight}/> Stream
                 </NavLink>
@@ -161,25 +161,25 @@ export default class NavBarDropDown extends React.Component {
               <DropdownItem divider />
 
 
-              <DropdownItem>
+              <DropdownItem className="bg-hover">
                 <NavLink onClick={(e) => this.setState({darkToogle: !this.state.darkToogle})}>
                     <img className="custom-icon" src={dark} style={iconMarginRight}/> Dark mode: {this.state.darkToogle ? 'On' : 'Off'}
                 </NavLink>
               </DropdownItem>
 
-              <DropdownItem>
+              <DropdownItem className="bg-hover">
                 <NavLink to="/settings" className="router-link" tag={RRNavLink}>
                     <img className="custom-icon" src={settings} style={iconMarginRight}/> Settings
                 </NavLink>
               </DropdownItem>  
 
-              <DropdownItem>
+              <DropdownItem className="bg-hover">
                 <NavLink to="/upload" className="router-link" tag={RRNavLink}>
                   Language: {this.state.language}
                 </NavLink>
               </DropdownItem>
 
-              <DropdownItem>
+              <DropdownItem className="bg-hover">
                 <NavLink to="/stream" className="router-link" tag={RRNavLink}>
                   Location: {this.state.location}
                 </NavLink>
@@ -188,7 +188,7 @@ export default class NavBarDropDown extends React.Component {
 
               <DropdownItem divider />
 
-              <DropdownItem>
+              <DropdownItem className="bg-hover">
                 <NavLink onClick={(e) => this.props.onLogout()}>
                     <img className="custom-icon" src={login} style={iconMarginRight}/> Logout
                 </NavLink>

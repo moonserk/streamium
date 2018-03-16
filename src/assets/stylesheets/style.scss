@@ -313,8 +313,12 @@
 }
 
 .background-color{
-    background-color: #EEEEEE !important;
+    background-color: rgb(224, 224, 224) !important;
 }
 .background-color:hover{
-    background-color: #FAFAFA !important;
+    background-color: rgb(240, 240, 240) !important;
+}
+
+.bg-hover:hover{
+    background-color: rgb(240, 240, 240) !important;
 }

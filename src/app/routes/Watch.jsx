@@ -28,7 +28,7 @@ export default class Watch extends React.Component{
             <div className="watch-container container-margin-top">
             <div className="card">
             <div className="img-fluid video-slot relative">
-                <VideoPlayer src={this.props.fullSrc || this.state.data.fullSrc} />
+                <VideoPlayer src={this.props.fullSrc || this.state.data.fullSrc} autoplay={true}/>
             </div>
             <div className="row">
                 <div className="col-8">

@@ -439,7 +439,10 @@ html:-ms-fullscreen {
   margin-top: 0% !important; }
 
 .background-color {
-  background-color: #eee !important; }
+  background-color: #e0e0e0 !important; }
 
 .background-color:hover {
-  background-color: #fafafa !important; }
+  background-color: #f0f0f0 !important; }
+
+.bg-hover:hover {
+  background-color: #f0f0f0 !important; }

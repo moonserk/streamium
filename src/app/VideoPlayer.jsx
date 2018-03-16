@@ -136,7 +136,7 @@ export default class VideoPlayer extends React.Component{
                        onTimeUpdate={this.handleTimeUpdate}
                        onClick={this.handlePlay}
                        onDoubleClick={this.handleFullscreen}
-                       onKeyPress={this.handleKeyPress}>
+                       onKeyPress={this.handleKeyPress} autoPlay={this.props.autoplay || false}>
                     <source src={this.props.src} type="video/mp4"/>
                 </video>
                 <div className="controls-container">

@@ -1,7 +1,7 @@
 [
   {
-    "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
-    "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
+    "src": "http://res.cloudinary.com/streamium/video/upload/v1521186924/rose.mp4",
+    "fullSrc" : "https://res.cloudinary.com/streamium/video/upload/v1521106985/579929405.mp4",
     "trambnail": "https://i1.ytimg.com/vi/tILK37rsPik/0.jpg",
     "title": "Marcus Williams explains what happened on Vikings’ game-winner",
     "channelName": "test",
@@ -11,7 +11,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
-    "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
+    "src": "http://res.cloudinary.com/streamium/video/upload/v1521106985/712279929.mp4",
     "trambnail": "https://i1.ytimg.com/vi/JN7m5s_D0aI/0.jpg",
     "fullSrc" : "https://res.cloudinary.com/streamium/video/upload/v1521106985/579929405.mp4",
     "title": "No victims as Boeing narrowly avoids plunge into Black Sea",
@@ -22,7 +22,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
-    "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
+    "src": "http://res.cloudinary.com/streamium/video/upload/v1521186924/rose.mp4",
     "fullSrc" : "http://res.cloudinary.com/streamium/video/upload/v1521106986/624108775.mp4",
     "trambnail": null,
     "title": "Some title",
@@ -33,7 +33,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
-    "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
+    "src": "http://res.cloudinary.com/streamium/video/upload/v1521106985/712279929.mp4",
     "fullSrc" : "http://res.cloudinary.com/streamium/video/upload/v1521106985/738916935.mp4",
     "trambnail": "https://i1.ytimg.com/vi/0xqczZWP2So/0.jpg",
     "title": "Some title",
@@ -44,7 +44,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
-    "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
+    "src": "http://res.cloudinary.com/streamium/video/upload/v1521106985/712279929.mp4",
     "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": null,
     "title": "Some title",
@@ -55,7 +55,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
-    "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
+    "src": "http://res.cloudinary.com/streamium/video/upload/v1521106985/738916935.mp4",
     "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": null,
     "title": "Some title",
@@ -66,7 +66,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
-    "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
+    "src": "http://res.cloudinary.com/streamium/video/upload/v1521106985/738916935.mp4",
     "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": null,
     "title": "Some title",
