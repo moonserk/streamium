@@ -4,7 +4,7 @@ import axios from 'axios'
 import Card from './Card'
 import Notification from './Notification';
 
-import load from '../assets/images/spinning-circles.svg'
+import load from '../assets/images/loading.svg'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -28,7 +28,7 @@ export default class HomePage extends React.Component{
     }
 
     componentDidMount(){
-                axios.get(this.url)
+        axios.get(this.url)
             .then(
                 (response) => {
                     this.setState({cards: response.data});

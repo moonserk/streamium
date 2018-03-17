@@ -71,7 +71,7 @@ class VideoSlot extends React.Component{
         return(
             <div className="img-fluid video-slot relative">
                     <VisibilitySensor onChange={this.handleChange}>
-                        <VideoPlayer className="card-img-top" ref='videoref' src={this.props.fullSrc}/>
+                        <VideoPlayer className="card-img-top" ref='videoref' src={this.props.fullSrc}  autoplay={true}/>
                     </ VisibilitySensor>
             </div>
         );
@@ -154,7 +154,7 @@ const Text = (props) => {
                 <br />
                 <div className="row">
                     <div className="col">
-                        <Link to={`/watch`} className="" data-ripple="true" title="Watch full video">
+                        <Link to={`/${props.text.id}`} className="" data-ripple="true" title="Watch full video">
                             <div className="text-center">
                                 <img src={home} className="custom-icon" alt="home" />
                             </div>

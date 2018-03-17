@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "src": "http://res.cloudinary.com/streamium/video/upload/v1521186924/rose.mp4",
     "fullSrc" : "https://res.cloudinary.com/streamium/video/upload/v1521106985/579929405.mp4",
     "trambnail": "https://i1.ytimg.com/vi/tILK37rsPik/0.jpg",
@@ -11,6 +12,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "2",
     "src": "http://res.cloudinary.com/streamium/video/upload/v1521106985/712279929.mp4",
     "trambnail": "https://i1.ytimg.com/vi/JN7m5s_D0aI/0.jpg",
     "fullSrc" : "https://res.cloudinary.com/streamium/video/upload/v1521106985/579929405.mp4",
@@ -22,6 +24,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "3",
     "src": "http://res.cloudinary.com/streamium/video/upload/v1521186924/rose.mp4",
     "fullSrc" : "http://res.cloudinary.com/streamium/video/upload/v1521106986/624108775.mp4",
     "trambnail": null,
@@ -33,6 +36,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "4",
     "src": "http://res.cloudinary.com/streamium/video/upload/v1521106985/712279929.mp4",
     "fullSrc" : "http://res.cloudinary.com/streamium/video/upload/v1521106985/738916935.mp4",
     "trambnail": "https://i1.ytimg.com/vi/0xqczZWP2So/0.jpg",
@@ -44,6 +48,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "5",
     "src": "http://res.cloudinary.com/streamium/video/upload/v1521106985/712279929.mp4",
     "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": null,
@@ -55,6 +60,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "6",
     "src": "http://res.cloudinary.com/streamium/video/upload/v1521106985/738916935.mp4",
     "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": null,
@@ -66,6 +72,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "7",
     "src": "http://res.cloudinary.com/streamium/video/upload/v1521106985/738916935.mp4",
     "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": null,
@@ -77,6 +84,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "8",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": "https://i1.ytimg.com/vi/3jbx8Sa8sCw/0.jpg",
@@ -88,6 +96,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "9",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "fullSrc" : "https://pixabay.com/ru/videos/download/video-2118_medium.mp4?attachment",
     "trambnail": null,
@@ -99,6 +108,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "10",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": "https://i1.ytimg.com/vi/3jbx8Sa8sCw/0.jpg",
     "title": "Some title",
@@ -109,6 +119,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "11",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": "https://i1.ytimg.com/vi/JN7m5s_D0aI/0.jpg",
     "title": "No victims as Boeing narrowly avoids plunge into Black Sea",
@@ -119,6 +130,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "12",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": null,
     "title": "Some title",
@@ -129,6 +141,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "13",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": "https://i1.ytimg.com/vi/tILK37rsPik/0.jpg",
     "title": "Marcus Williams explains what happened on Vikings’ game-winner",
@@ -139,6 +152,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "14",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": "https://i1.ytimg.com/vi/JN7m5s_D0aI/0.jpg",
     "title": "No victims as Boeing narrowly avoids plunge into Black Sea",
@@ -149,6 +163,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "15",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": null,
     "title": "Some title",
@@ -159,6 +174,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "16",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": "https://i1.ytimg.com/vi/0xqczZWP2So/0.jpg",
     "title": "Some title",
@@ -169,6 +185,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "17",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": null,
     "title": "Some title",
@@ -179,6 +196,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "18",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": null,
     "title": "Some title",
@@ -189,6 +207,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "19",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": null,
     "title": "Some title",
@@ -199,6 +218,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "20",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": "https://i1.ytimg.com/vi/3jbx8Sa8sCw/0.jpg",
     "title": "Some title",
@@ -209,6 +229,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "21",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": null,
     "title": "Some title",
@@ -219,6 +240,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "22",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": "https://i1.ytimg.com/vi/3jbx8Sa8sCw/0.jpg",
     "title": "Some title",
@@ -229,6 +251,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "23",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": "https://i1.ytimg.com/vi/JN7m5s_D0aI/0.jpg",
     "title": "No victims as Boeing narrowly avoids plunge into Black Sea",
@@ -239,6 +262,7 @@
     "pubTime": "Jan 14, 2018"
   },
   {
+    "id": "24",
     "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
     "trambnail": null,
     "title": "Some title",

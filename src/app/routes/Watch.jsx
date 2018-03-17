@@ -1,34 +1,67 @@
 import React from 'react';
-import VideoPlayer from '../VideoPlayer.jsx';
+import VideoPlayer from '../VideoPlayer';
+import axios from 'axios'
 
 import FlatButton from 'material-ui/FlatButton';
 import clock from '../../assets/images/clock.svg';
 import gm from '../../assets/images/gm.png';
+
+import load from '../../assets/images/loading.svg';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class Watch extends React.Component{
     constructor(props){
         super(props)
-        this.state = { data: {
-            "src": "https://s3-ap-northeast-1.amazonaws.com/vue2/rose.mp4",
-            "trambnail": "https://i1.ytimg.com/vi/JN7m5s_D0aI/0.jpg",
-            "fullSrc" : "https://res.cloudinary.com/streamium/video/upload/v1521106985/579929405.mp4",
-            "title": "No victims as Boeing narrowly avoids plunge into Black Sea",
-            "channelName": "euronews (in English)",
-            "text": "No victims as Boeing narrowly avoids plunge into Black Sea  Plane skidded off runway in northeastern Turkey on landing, with 162 passengers and crew on board. No victims as Boeing narrowly avoids plunge into Black Sea  Plane skidded off runway in northeastern Turkey on landing, with 162 passengers and crew on board.",
-            "moneyEarned": "$1100",
-            "time": "21:22",
-            "pubTime": "Jan 14, 2018"
-        }}
+        this.state = { 
+            data: {},
+            error: null,
+            isLoaded: false
+        }
+    }
+
+    componentDidMount(){
+        console.log(this.props.match);
+        axios.get('/fakedata.json')
+        .then(
+            (response) => {
+                console.log(this.props.match.params);
+                console.log(response.data.filter(i => i.id === this.props.match.params.id)[0].fullSrc)
+                this.setState({data: response.data.filter(i => i.id === this.props.match.params.id)[0]});
+                setInterval(() => {
+                    this.setState({isLoaded: true});
+                }, 1000);
+            },
+            (error) => {
+                this.setState({
+                  isLoaded: true,
+                  error
+                });
+              }
+           )
+    }
+
+    renderSpiner(){
+        return (
+            <div>
+                <img className="App-logo" src={load} />
+            </div>
+        );      
     }
 
     render(){
+        const { data, error, isLoaded } = this.state;
+        if(error){
+            return <div>Error: {error.message}</div>
+        } else if (!isLoaded){
+            return <div>{this.renderSpiner()}</div>
+        }else{
         return(
             <div className="watch-container container-margin-top">
             <div className="card">
             <div className="img-fluid video-slot relative">
-                <VideoPlayer src={this.props.fullSrc || this.state.data.fullSrc} autoplay={true}/>
+            {console.log(this.state.data.fullSrc, "<<-")}
+                <VideoPlayer src={this.state.data.fullSrc} autoplay={true}/>
             </div>
             <div className="row">
                 <div className="col-8">
@@ -103,6 +136,7 @@ export default class Watch extends React.Component{
             <br/>
             </div>
         );
+    }
     }
 
 }

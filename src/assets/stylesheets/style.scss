@@ -24,6 +24,16 @@
     z-index: 23;
 }
 
+.App-logo {
+    animation: App-logo-spin infinite 1s linear;
+    height: 80px;
+}
+
+@keyframes App-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 // .btn-content{
 //     margin: 1px !important;
 //     padding: 0 4px !important;
@@ -316,9 +326,9 @@
     background-color: rgb(224, 224, 224) !important;
 }
 .background-color:hover{
-    background-color: rgb(240, 240, 240) !important;
+    background-color: rgb(199, 199, 199) !important;
 }
 
 .bg-hover:hover{
-    background-color: rgb(240, 240, 240) !important;
+    background-color: rgb(199, 199, 199) !important;
 }

@@ -229,6 +229,10 @@ html:-ms-fullscreen {
   margin: 6px 6px;
   z-index: 23; }
 
+.App-logo {
+  animation: App-logo-spin infinite 1s linear;
+  height: 80px; }
+
 .router-link {
   color: #000 !important;
   text-decoration: none !important; }
@@ -442,7 +446,31 @@ html:-ms-fullscreen {
   background-color: #e0e0e0 !important; }
 
 .background-color:hover {
-  background-color: #f0f0f0 !important; }
+  background-color: #c7c7c7 !important; }
 
 .bg-hover:hover {
-  background-color: #f0f0f0 !important; }
+  background-color: #c7c7c7 !important; }
+
+@-moz-keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@-webkit-keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@-o-keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
