@@ -6,6 +6,7 @@ import sound from '../assets/images/sound-w.png'
 import settings from '../assets/images/settings-w.png'
 import full_screen from '../assets/images/fs-w.png'
 import pause from '../assets/images/pause2.png'
+import load from '../assets/images/loading.svg'
 
 export default class VideoPlayer extends React.Component{
 
@@ -13,10 +14,12 @@ export default class VideoPlayer extends React.Component{
         super(props);
         this.state = {
             play: false,
+            loading: true,
             progressStyle: {width: '0px'},
             duration: '', 
             currentTime: '',
             currentVolume: '',
+            focus: false, // crunch TODO learn more
             fullscreen: document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement,
             fullscreenEnabled: document.fullscreenEnabled || document.mozFullScreenEnabled || document.webkitFullscreenEnabled};
 
@@ -27,26 +30,34 @@ export default class VideoPlayer extends React.Component{
         this.handleVolumeChange = this.handleVolumeChange.bind(this);
         this.handleChangeProgress = this.handleChangeProgress.bind(this);
         this.handleFullscreen = this.handleFullscreen.bind(this);
-        this.handleKeyPress = this.handleKeyPress.bind(this);
         this.handleMouseDown = this.handleMouseDown.bind(this);
     }
 
     componentDidMount(){
-        document.addEventListener('keyup', () => {
-            if(window.event.keyCode == 70){
-                this.handleFullscreen()
+        window.addEventListener('keydown', (e) => {
+            if(e.keyCode == 32 && e.target == document.body) {
+                e.preventDefault();
+              }
+        });
+        document.addEventListener('keyup', (e) => {
+            ;
+            console.log(e)
+            if(e.keyCode == 70 && this.state.focus){
+                this.handleFullscreen(e)
             }
+            if(e.keyCode == 32 && this.state.focus){
+                this.handlePlay(e)
+                console.log("32")
+            }
+           
+        });
+        this.refs.video.addEventListener('focus', function (e) { 
+            console.log("con");
         });
     }
 
-    handleKeyPress(e){
-        e.preventDefault()
-        if(e.key == 70){
-            this.handleFullscreen();
-        }
-    }
-
     handleFullscreen(e){
+        e.preventDefault();
         this.refs.video2.requestFullScreen =
         this.refs.video2.requestFullscreen
         || this.refs.video2.msRequestFullscreen
@@ -97,6 +108,7 @@ export default class VideoPlayer extends React.Component{
     handleCanPlay(e){
         e.preventDefault();
         this.setState({
+            loading: false,
             duration: this.refs.video.duration, 
             currentTime: this.refs.video.currentTime,
             currentVolume: this.refs.video.volume * 100});
@@ -126,19 +138,34 @@ export default class VideoPlayer extends React.Component{
         console.log(this.refs.point.style.left, window.event.clientX);
     }
 
+    renderSpiner(){
+        if(this.state.loading == true){
+            return (
+                <div className="loading">
+                    <img className="mx-auto App-logo-player" src={load} />
+                </div>
+            );      
+        }
+}
+
 
     render(){
         return(
             //TODO: remake refs
-            <figure className="video figure-custom" ref='video2'> 
-                <video className="video align-self-center" ref='video' 
+            <figure className="video figure-custom" ref='video2' onFocus={(e) => console.log("focus")}> 
+                <video className="video align-self-center" id="vid" ref='video' 
                        onCanPlay={this.handleCanPlay}
                        onTimeUpdate={this.handleTimeUpdate}
                        onClick={this.handlePlay}
                        onDoubleClick={this.handleFullscreen}
-                       onKeyPress={this.handleKeyPress} autoPlay={this.props.autoplay || false}>
+                       onMouseEnter={(e) => this.setState({focus: true})}
+                       onMouseLeave={(e) => this.setState({focus: false})}
+                       autoPlay={this.props.autoplay || false}>
                     <source src={this.props.src} type="video/mp4"/>
                 </video>
+
+                {/* {this.renderSpiner()} */}
+
                 <div className="controls-container">
                     <div className="row mx-auto" style={{width: '100%'}}>
                             <span className="progress">
@@ -151,9 +178,9 @@ export default class VideoPlayer extends React.Component{
                                 <span className="total-progress"></span>
                             </span> 
                     </div>
-                    
+
                     <div className="row mx-auto" style={{width: '100%'}}>
-                        <span className="element-btn" onClick={this.handlePlay}>
+                        <span ref="play" className="element-btn" onClick={this.handlePlay}>
                             <img className="custom-icon-video-controls" src={this.state.play ? play : pause} />
                         </span>
                         <span className="element-btn volume-icon" onClick={this.handleVolumeMute}>

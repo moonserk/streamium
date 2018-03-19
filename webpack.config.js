@@ -68,7 +68,11 @@ let config = {
     ]
   },
   plugins: [
-    new ExtractTextWebpackPlugin('style.css')
+    new ExtractTextWebpackPlugin('style.css'),
+    // new webpack.DefinePlugin({
+    //   'process.env.NODE_ENV': JSON.stringify('production')
+    // }),
+    // new webpack.optimize.UglifyJsPlugin()
   ],
   devServer: {
     contentBase: path.resolve(__dirname, './public'),
@@ -83,6 +87,8 @@ let config = {
 
 
 module.exports = config; 
+
+
 
 if(process.env.NODE_ENV === 'production'){
   module.exports.plugins.push(

@@ -32,7 +32,7 @@ export default class HomePage extends React.Component{
             .then(
                 (response) => {
                     this.setState({cards: response.data});
-                    setInterval(() => {
+                    this.timerID = setInterval(() => {
                         this.setState({isLoaded: true});
                     }, 1000);
                 },
@@ -43,7 +43,14 @@ export default class HomePage extends React.Component{
                     });
                   }
                )
+               console.log("HomePageDidMount")
     }
+
+
+    // shouldComponentUpdate(nextProps) {
+    //     return (nextProps.class !== this.props.class
+    //          || nextProps.url !== this.props.url || nextProps.filterText !== this.props.filterText);
+    // }
 
     renderSpiner(){
             return (
@@ -60,6 +67,7 @@ export default class HomePage extends React.Component{
         } else if (!isLoaded){
             return <div>{this.renderSpiner()}</div>
         }else{
+            clearInterval(this.timerID);
             return (
                 <div>
                     <div className={this.class.container}>

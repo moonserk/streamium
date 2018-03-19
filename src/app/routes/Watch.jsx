@@ -16,8 +16,16 @@ export default class Watch extends React.Component{
         this.state = { 
             data: {},
             error: null,
-            isLoaded: false
+            isLoaded: false,
+            inputValue: ''
         }
+        this.hangleChangeValue = this.hangleChangeValue.bind(this);
+    }
+
+    hangleChangeValue(e){
+        e.preventDefault();
+        this.setState({inputValue: e.target.value})
+        console.log(this.state.inputValue)
     }
 
     componentDidMount(){
@@ -28,7 +36,7 @@ export default class Watch extends React.Component{
                 console.log(this.props.match.params);
                 console.log(response.data.filter(i => i.id === this.props.match.params.id)[0].fullSrc)
                 this.setState({data: response.data.filter(i => i.id === this.props.match.params.id)[0]});
-                setInterval(() => {
+                this.timerID = setInterval(() => {
                     this.setState({isLoaded: true});
                 }, 1000);
             },
@@ -56,6 +64,7 @@ export default class Watch extends React.Component{
         } else if (!isLoaded){
             return <div>{this.renderSpiner()}</div>
         }else{
+            clearInterval(this.timerID);
         return(
             <div className="watch-container container-margin-top">
             <div className="card">
@@ -106,7 +115,8 @@ export default class Watch extends React.Component{
                                 <Avatar />
                             </div>
                             <div className="col-10">
-                                <textarea type="text" style={{width: '100%', height: '100px'}}>
+                                <textarea type="text" value={this.state.inputValue}
+                                          onChange={this.hangleChangeValue} style={{width: '100%', height: '100px'}}>
                                 </textarea>
                             </div>
                         </div>
