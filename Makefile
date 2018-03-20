@@ -6,3 +6,6 @@ start:
 
 dev:
 	npm run-script webpack-devserver
+
+git-push:
+	git push streamium master

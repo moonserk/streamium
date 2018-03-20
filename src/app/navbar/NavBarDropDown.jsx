@@ -48,13 +48,7 @@ export default class NavBarDropDown extends React.Component {
   }
 
   closeSearch(e){
-    const evt = e || window.event;
-      if(evt.clientY <= 48){
-          //console.log("< 48");
-          return;
-      }else{
         this.setState({search: false})
-      }
   }
 
   handleFilterTextChange(e){

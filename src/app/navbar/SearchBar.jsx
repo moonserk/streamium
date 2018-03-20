@@ -17,7 +17,18 @@ export default class SearchBar extends React.Component{
         console.log("Search Did Mount");
         // Detects clicks everywhere on the screen
         document.addEventListener('click', (e) => {
-            this.props.onCloseSearch(e)
+            const evt = e || window.event;
+            if(evt.clientY <= 48){
+                //console.log("< 48");
+                return;
+            }else{
+                this.props.onCloseSearch(e)
+            }
+        })
+        document.addEventListener('keyup', (e) => {
+            if(e.keyCode === 27){
+                this.props.onCloseSearch(e)
+            }
         })
     }
 
