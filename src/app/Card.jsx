@@ -30,8 +30,9 @@ class Card extends React.Component {
     }
     render(){
         return (
+            <div>
+                <NewChannel channelName={this.props.channelName} pubTime={this.props.pubTime} />
             <div className="card custom-card-border card-custom" >
-                <Channel channelName={this.props.channelName} pubTime={this.props.pubTime} />
                 <div  onClick={(e) => this.setState({videoPreview: false})}>
                 {this.state.videoPreview ?
                     <VideoSlotPreview  src={this.props.src} fullSrc={this.props.fullSrc} time={this.props.time} /> :
@@ -40,6 +41,7 @@ class Card extends React.Component {
                 </div>
                 <Title title={this.state.data.title} />
                 <Text text={this.state.data} moneyEarned={this.props.moneyEarned} click={this.handleClick}/>
+            </div>
             </div>
         )
     }
@@ -86,7 +88,7 @@ const VideoSlotPreview = (props) => {
 
     return (
         <div className="img-fluid video-slot relative">
-            <Avatar />
+            {/* <Avatar /> */}
             <VisibilitySensor onChange={handleChange}>
                 <video className="card-img-top" ref={(video) => testVideo = video} loop>
                     <source src={props.src} type="video/mp4" />
@@ -103,8 +105,8 @@ const Avatar = (props) => {
         weight: '68px',
     };
     return(
-        <div className="media absolute" style={size}>
-            <img className="rounded-circle" src={"https://media.giphy.com/media/j2nATOAdRgYZq/giphy.gif"} style={size} alt="user avatar" />
+        <div className="">
+            <img className="channel-name-avatar rounded-circle" src={"https://media.giphy.com/media/j2nATOAdRgYZq/giphy.gif"} alt="user avatar" />
         </div>
     )
 }
@@ -114,6 +116,27 @@ const Title = (props) => {
         <div className="card-body row">
             <span className="col-10">{props.title}</span>
             <div className="col-2 text-right"><img className="custom-icon" src={menu} alt="menu" /></div>
+        </div>
+    )
+}
+
+const NewChannel = (props) => {
+    return (
+        <div className="channel-name row">
+            <div className="row" style={{width: '100%', height: "100%", margin: '0'}}>
+                <div className="col-auto mr-auto">
+                    <Avatar  />
+                </div>
+                <div className="col-auto" style={{marginRight: '120px'}}>
+                    <button className="channel-name-button">Follow</button>
+                </div>
+            </div>
+            <div className="row channel-name-upper">
+            </div>
+            <div className="row channel-name-lower">
+                <span className="mx-auto" style={{marginTop: "12px"}}><b>{props.channelName}</b></span>
+                <span className="col-auto" style={{marginTop: "25px", marginRight: "43px"}}>2.5K</span>
+            </div>
         </div>
     )
 }

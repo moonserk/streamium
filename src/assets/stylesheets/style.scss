@@ -2,6 +2,9 @@
 @import './scrollbar';
 @import './videoPlayer';
 
+body{
+    background-color: rgb(245, 245, 245) !important;
+}
 .custom-icon{
     width: 22px;
 }
@@ -46,6 +49,8 @@
 
 .card-custom{
     margin-bottom: 30px !important;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
 }
 
 //.three { top: 50px; left: 55px; z-index: 5; }
@@ -150,7 +155,8 @@
 }
 
 .custom-card-border{
-    border: 1px solid #d0d9e8 !important;
+    border: 1px none #d0d9e8 !important;
+    // border-radius: 0px !important;
 }
 
 .video-slot{
@@ -331,4 +337,67 @@
 
 .bg-hover:hover{
     background-color: rgb(199, 199, 199) !important;
+}
+
+.channel-name{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin: 0px !important;
+    // display: flex ;
+    // flex-direction: row ;
+    // flex-wrap: wrap ;
+    // justify-content: space-around ;
+    // align-items: center ;
+    // align-content: center ;
+}
+
+.channel-name-upper{
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    margin: 0px 0px 0px 0px!important;
+    background-color: #ffffff00;
+}
+
+.channel-name-lower{
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    margin: 50px 0px 0px 0px!important;
+    background-color: rgb(255, 255, 255);
+    border-top: 1px none #d0d9e8 !important;
+    // border-bottom: 0px !important;
+    //border-radius: 9px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+
+.channel-name-avatar{
+    position: absolute;
+    //width: 100%; 
+    border-radius: 50% !important;
+    border: 3px solid #ffffff !important;
+    height: 100%;
+    z-index: 10;
+
+}
+.channel-name-button{
+    position: absolute;
+    width: 120px; 
+    height: 40px;
+    margin: 30px 0px 0px 0px; 
+    border: none;
+    outline: none!important;
+    color: white;
+    font-size: 20px;
+    font-family: "Brush Script MT, Brush Script Std, cursive";
+    //font-size: 26px;
+    text-decoration: none;
+    border: 3px solid #ffffff !important;
+    //background-color: rgb(224, 77, 33);
+    background: linear-gradient(to right, red , rgb(255, 102, 0));
+    border-radius: 100px;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.5);
+    z-index: 10;
 }
