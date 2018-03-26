@@ -34,8 +34,8 @@ export default class Watch extends React.Component{
         .then(
             (response) => {
                 console.log(this.props.match.params);
-                console.log(response.data.filter(i => i.id === this.props.match.params.id)[0].fullSrc)
-                this.setState({data: response.data.filter(i => i.id === this.props.match.params.id)[0]});
+                console.log(response.data.filter(i => i.idx === this.props.match.params.idx)[0].fullSrc)
+                this.setState({data: response.data.filter(i => i.idx === this.props.match.params.idx)[0]});
                 this.timerID = setInterval(() => {
                     this.setState({isLoaded: true});
                 }, 1000);

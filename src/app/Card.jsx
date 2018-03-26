@@ -32,20 +32,66 @@ class Card extends React.Component {
         return (
             <div>
                 <NewChannel channelName={this.props.channelName} pubTime={this.props.pubTime} />
-            <div className="card custom-card-border card-custom" >
-                <div  onClick={(e) => this.setState({videoPreview: false})}>
-                {this.state.videoPreview ?
-                    <VideoSlotPreview  src={this.props.src} fullSrc={this.props.fullSrc} time={this.props.time} /> :
-                    <VideoSlot fullSrc={this.props.fullSrc} time={this.props.time} /> 
-                }
+                <div className="card" style={{backgroundColor: '#ffffff', border: 0, marginBottom: "50px"}}>
+                    <div  onClick={(e) => this.setState({videoPreview: false})}>
+                            {this.state.videoPreview ?
+                                <VideoSlotPreview  src={this.props.src} fullSrc={this.props.fullSrc} time={this.props.time} /> :
+                                <VideoSlot fullSrc={this.props.fullSrc} time={this.props.time} /> 
+                            }
+                    </div>
+                    <ButtonPanel {...this.props}/>
+                    <Title {...this.props} />
+                    <TextCard {...this.props} />
                 </div>
-                <Title title={this.state.data.title} />
-                <Text text={this.state.data} moneyEarned={this.props.moneyEarned} click={this.handleClick}/>
-            </div>
-            </div>
+            </div> 
         )
     }
 }
+
+const ButtonPanel = ( {id, moneyEarned} ) => (
+    <div className="row" style={{width: '100%', height: "100%", margin: '0', backgroundColor: '#ffffff'}}>
+        <div className="col-auto mr-auto">
+            <button className="btn button-panel-btn"><img className="custom-icon " src={clock} alt="moneyEarned"/>{moneyEarned}</button>
+            <button className="btn button-panel-btn"><img className="custom-icon " src={gm} alt="moneyEarned"/>{moneyEarned}</button>
+        </div>
+        <div className="col-auto row">
+            <Link to={`/${id}`} className="col" data-ripple="true" title="Watch full video">
+                <div className="text-center">
+                    <img src={home} className="custom-icon" alt="home" />
+                </div>
+            </Link>
+            <a href="" className="col" data-ripple="true" title="Watch full video">
+                <div className="text-center">
+                    <img src={info} className="custom-icon" alt="home" />
+                </div>
+            </a>
+            <a href="" className="col" data-ripple="true" title="Watch full video">
+                <div className="text-center">
+                    <img src={comments} className="custom-icon" alt="home" />
+                </div>
+            </a>
+
+            <a href="" className="col" data-ripple="true" title="Watch full video">
+                <div className="text-center">
+                    <img src={share} className="custom-icon" alt="home" />
+                </div>
+            </a>
+        </div>
+    </div>
+)
+
+const Title = ({title, pubTime}) => (
+        <div className="row" style={{width: '100%', height: "100%", margin: '0', backgroundColor: '#ffffff', borderBottom : "1px solid rgb(220, 220, 220)"}}>
+            <span className="col"><b>{title}</b></span>
+            <small className="col-auto">Published on{pubTime}</small>
+        </div>
+)
+
+const TextCard = ({text}) => (
+    <div className="row" style={{width: '100%', height: "100%", margin: '0', backgroundColor: '#ffffff', padding: "10px"}}>
+        <div className="col">{text}</div>
+    </div>
+)
 
 const Channel = (props) => {
     return (
@@ -87,8 +133,7 @@ const VideoSlotPreview = (props) => {
     }
 
     return (
-        <div className="img-fluid video-slot relative">
-            {/* <Avatar /> */}
+        <div className="video-slot"> 
             <VisibilitySensor onChange={handleChange}>
                 <video className="card-img-top" ref={(video) => testVideo = video} loop>
                     <source src={props.src} type="video/mp4" />
@@ -111,14 +156,7 @@ const Avatar = (props) => {
     )
 }
 
-const Title = (props) => {
-    return (
-        <div className="card-body row">
-            <span className="col-10">{props.title}</span>
-            <div className="col-2 text-right"><img className="custom-icon" src={menu} alt="menu" /></div>
-        </div>
-    )
-}
+
 
 const NewChannel = (props) => {
     return (
