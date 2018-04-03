@@ -2,6 +2,20 @@ import axios from 'axios'
 
 export const REQUEST_CARDS = 'REQUEST_CARDS'
 export const RECEIVE_CARDS = 'RECEIVE_CARDS'
+export const TOGGLE_MENU = 'TOGGLE_MENU'
+export const TOGGLE_SEARCH = 'TOGGLE_SEARCH'
+
+export function toggleMenu(){
+    return {
+        type: TOGGLE_MENU
+    }
+}
+
+export function toggleSearch(){
+    return {
+        type: TOGGLE_SEARCH
+    }
+}
 
 export function requestCards(card){
     return {
@@ -14,7 +28,7 @@ export function receiveCards(card, json){
     return {
         type: RECEIVE_CARDS,
         card,
-        cards: json.data.children.map(item => item),
+        cards: json.map(item => item),
         receiveAt: Date.now()
     }
 }
@@ -22,7 +36,7 @@ export function receiveCards(card, json){
 export function fetchCards(card){
     return dispatch => {
         dispatch(requestCards(card))
-        fetch(`https://www.reddit.com/r/${card}.json`)
+        fetch('fakedata.json')
             .then(response => response.json())
             .then(json => dispatch(receiveCards(card, json)))
     }

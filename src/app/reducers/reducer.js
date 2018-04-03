@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import { REQUEST_CARDS, RECEIVE_CARDS } from '../actions/actions' 
+import { REQUEST_CARDS, RECEIVE_CARDS, TOGGLE_MENU, TOGGLE_SEARCH } from '../actions/actions' 
 
-function cards(state = {
+function fetchCards(state = {
     isFetching: false,
     didInvalidate: false,
     items: []
@@ -24,8 +24,24 @@ function cards(state = {
     }
 }
 
+function navbarReducer(state = {menuToggle: false, searchToggle: false}, action){
+    switch(action.type){
+        case TOGGLE_MENU:
+            return Object.assign({}, state, {
+                menuToggle: !state.menuToggle
+            })
+        case TOGGLE_SEARCH:
+            return Object.assign({}, state, {
+                searchToggle: !state.searchToggle
+            })
+        default:
+            return state
+    }
+}
+
 const rootReducer = combineReducers({
-    cards
+    fetchCards,
+    navbarReducer
 })
 
 export default rootReducer
