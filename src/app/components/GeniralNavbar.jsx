@@ -9,6 +9,7 @@ import { Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle } from 'reactstrap';
 
 import logo from '../../assets/images/logo3.png'
+import logoCrown from '../../assets/images/logo12.png'
 import community from '../../assets/images/community-l.svg'
 import channel from  '../../assets/images/webM-my-channel.svg'
 import upload from '../../assets/images/upload-btn.svg'
@@ -32,18 +33,25 @@ import { toggleMenu, toggleSearch } from '../actions/actions'
 const GeniralNavbar = ( {menuToggle, dispatch} ) => (
     <div>
         <Navbar  className="navbar-custom navbar-background fixed-top" color="faded" light>
-            <Nav className="mx-auto">
-                <Nav className="in-navbar-custom " onClick={() => dispatch(toggleSearch())} >
+            {/* <Nav className="mx-auto"> */}
+                {/* <Nav className="in-navbar-custom " onClick={() => dispatch(toggleSearch())} >
                     <NavItem>
                         <img className="custom-icon search-icon" src={search} />
                     </NavItem>
-                </Nav>
-                <NavbarBrand to="/" tag={RRNavLink} className="in-navbar-custom margin-logo">
+                </Nav> */}
+                <NavbarBrand to="/" tag={RRNavLink} className="in-navbar-custom col-auto">
+                    <img className="custom-icon-crown" src={logoCrown} />
+                </NavbarBrand>
+
+                <NavbarBrand to="/" tag={RRNavLink} className="in-navbar-custom mx-auto">
                     <img className="custom-logo" src={logo} />
                 </NavbarBrand>
-                <Menu menuToggle={menuToggle} toggle={() => dispatch(toggleMenu())} />
+                
                 {/* <MyDropdownMenu /> */}
-            </Nav>
+            {/* </Nav> */}
+
+            <Menu className="col-auto" menuToggle={menuToggle} toggle={() => dispatch(toggleMenu())} />
+            
         </Navbar>
     </div>
 )
@@ -88,7 +96,13 @@ const Menu = ( {menuToggle, toggle} ) => {
                         </div>
                     </div>
                 </div>
-              
+
+                {/* <NavItem> */}
+                    <div className="input-search navbar-custom search-border">
+                        <input type="text" autoFocus={true} className="input-search text-size" placeholder=""/>
+                    </div>
+                {/* </NavItem> */}
+                
                 {/* <DropdownItem  className="divider-margin-bottom bg-color-menu" divider /> */}
                 <div  className="navbar-background">
                 <DropdownItem className="bg-hover">

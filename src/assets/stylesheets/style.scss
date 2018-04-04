@@ -10,6 +10,12 @@ body{
     width: 22px;
 }
 
+.custom-icon-crown{
+    width: 40px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
 .custom-logo{
     max-width: 190px;
 }
@@ -429,4 +435,9 @@ body{
 .transiton-component{
     background-color: #ffffff00 !important;
     border: 0px !important;
+}
+
+.search-border{
+    border-top : 1px solid rgb(220, 220, 220);
+    border-bottom : 1px solid rgb(220, 220, 220);
 }

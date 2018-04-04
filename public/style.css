@@ -294,6 +294,11 @@ body {
 .custom-icon {
   width: 22px; }
 
+.custom-icon-crown {
+  width: 40px;
+  margin-left: 16px;
+  margin-right: 16px; }
+
 .custom-logo {
   max-width: 190px; }
 
@@ -597,6 +602,10 @@ body {
 .transiton-component {
   background-color: rgba(255, 255, 255, 0) !important;
   border: 0px !important; }
+
+.search-border {
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc; }
 
 @-moz-keyframes App-logo-spin {
   from {
