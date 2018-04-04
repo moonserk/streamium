@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Navbar = ( {searchToggle} ) => (
   <div>
-    {/* {console.log(searchToggle)} */}
     {!searchToggle ? <GeniralNavbar /> : <SearchNavbar />}
   </div>
 )

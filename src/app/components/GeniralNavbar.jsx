@@ -31,8 +31,7 @@ import { toggleMenu, toggleSearch } from '../actions/actions'
 
 const GeniralNavbar = ( {menuToggle, dispatch} ) => (
     <div>
-        {/* {console.log(dispatch)} */}
-        <Navbar  className="navbar-custom  fixed-top" color="faded" light>
+        <Navbar  className="navbar-custom navbar-background fixed-top" color="faded" light>
             <Nav className="mx-auto">
                 <Nav className="in-navbar-custom " onClick={() => dispatch(toggleSearch())} >
                     <NavItem>
@@ -43,10 +42,13 @@ const GeniralNavbar = ( {menuToggle, dispatch} ) => (
                     <img className="custom-logo" src={logo} />
                 </NavbarBrand>
                 <Menu menuToggle={menuToggle} toggle={() => dispatch(toggleMenu())} />
+                {/* <MyDropdownMenu /> */}
             </Nav>
         </Navbar>
     </div>
 )
+
+
 
 const iconMarginRight = {
     marginRight: '20px'
@@ -57,103 +59,121 @@ const Menu = ( {menuToggle, toggle} ) => {
     <div>
         <Nav>
         <Dropdown  isOpen={menuToggle} toggle={toggle}>
-
-            <DropdownToggle  nav>
-                <NavbarToggler style={{padding: '1px', border: 'none'}} />
+        
+            <DropdownToggle className="custom-toggler"  nav>
+                <NavbarToggler className="navbar-toggler-icon" style={{padding: '0px', border: 'none'}} />
             </DropdownToggle>
 
-            <DropdownMenu style={{marginTop: '0px', paddingTop: '18px'}} >
-                <DropdownItem header>
-               
-                <div className="">
-                    <Avatar />
+            <DropdownMenu className="transiton-component" style={{marginTop: '0px', paddingTop: '18px'}}>
+ 
+                <div className="channel-name row">
+                    <div className="row" style={{width: '100%', height: "100%", margin: '0'}}>
+                        <div className="col-auto mr-auto">
+                            <Avatar  />
+                        </div>
+                    </div>
+                    <div className="row channel-name-upper">
+                    </div>
+                    <div className="channel-name-lower">
+                        <div className="row">
+                            <span className="mr-auto col-auto"></span>
+                            <span className="col-auto" style={{marginRight: "10px"}}><b>Joey Tribiani</b></span>
+                        </div>
+                        {/* <div className="row">
+                            <span style={{height: "14px"}}></span>
+                        </div> */}
+                        <div className="row">
+                            <span className="mr-auto col-auto"></span>
+                            <span className="col-auto" style={{marginRight: "10px"}}>Balance: 2000$</span>
+                        </div>
+                    </div>
                 </div>
               
-                </DropdownItem>
-
-                <DropdownItem  className="divider-margin-bottom" divider />
-
-                <DropdownItem className="background-color">
+                {/* <DropdownItem  className="divider-margin-bottom bg-color-menu" divider /> */}
+                <div  className="navbar-background">
+                <DropdownItem className="bg-hover">
                     <NavLink to="/feed" className="router-link" tag={RRNavLink}>
                         <img className="custom-icon" src={heart} style={iconMarginRight} /> Tuning In
                     </NavLink>   
                 </DropdownItem>
 
-                <DropdownItem className="background-color">
+                <DropdownItem className="bg-hover ">
                     <NavLink to="/live" className="router-link" tag={RRNavLink}>
                         <img className="custom-icon" src={live} style={iconMarginRight} /> Live
                     </NavLink>   
                 </DropdownItem>
 
-                <DropdownItem className="background-color">
+                <DropdownItem className="bg-hover ">
                     <NavLink to="/trend" className="router-link" tag={RRNavLink}>
                         <img className="custom-icon" src={trend} style={iconMarginRight} /> Trending
                     </NavLink>   
                 </DropdownItem>
 
-                <DropdownItem className="divider-margin-top"  divider />
+                </div>
 
-                <DropdownItem  className="bg-hover">
+                {/* <DropdownItem className="divider-margin-top bg-color-menu"  divider /> */}
+
+                <DropdownItem  className="bg-hover bg-color-menu">
                     <NavLink to="/channel" className="router-link" tag={RRNavLink}>
                         <img className="custom-icon" src={channel} style={iconMarginRight}/> My Channel
                     </NavLink>   
                 </DropdownItem>
 
-                <DropdownItem className="bg-hover">
+                <DropdownItem className="bg-hover bg-color-menu">
                     <NavLink to="/envelope" className="router-link" tag={RRNavLink}>
                         <img className="custom-icon" src={envelope} style={iconMarginRight}/> Messages
                     </NavLink>
                 </DropdownItem>
 
-                <DropdownItem className="bg-hover">
+                <DropdownItem className="bg-hover bg-color-menu">
                     <NavLink to="/community" className="router-link" tag={RRNavLink}>
                         <img className="custom-icon" src={community} style={iconMarginRight}/> Community
                     </NavLink>
                 </DropdownItem>
 
-                <DropdownItem className="bg-hover">
+                <DropdownItem className="bg-hover bg-color-menu">
                     <NavLink to="/upload" className="router-link" tag={RRNavLink}>
                         <img className="custom-icon" src={upload} style={iconMarginRight}/> Upload
                     </NavLink>
                 </DropdownItem>
 
-                <DropdownItem className="bg-hover">
+                <DropdownItem className="bg-hover bg-color-menu">
                     <NavLink to="/stream" className="router-link" tag={RRNavLink}>
                         <img className="custom-icon" src={stream} style={iconMarginRight}/> Stream
                     </NavLink>
                 </DropdownItem>
 
-                <DropdownItem divider />
+                {/* <DropdownItem  className="bg-color-menu" divider /> */}
 
 
-                <DropdownItem className="bg-hover">
+                <DropdownItem className="bg-hover bg-color-menu">
                     <NavLink>
                         <img className="custom-icon" src={dark} style={iconMarginRight}/> Dark mode: {'Off'}
                     </NavLink>
                 </DropdownItem>
 
-                <DropdownItem className="bg-hover">
+                <DropdownItem className="bg-hover bg-color-menu">
                     <NavLink to="/settings" className="router-link" tag={RRNavLink}>
                         <img className="custom-icon" src={settings} style={iconMarginRight}/> Settings
                     </NavLink>
                 </DropdownItem>  
 
-                <DropdownItem className="bg-hover">
+                <DropdownItem className="bg-hover bg-color-menu">
                     <NavLink to="/upload" className="router-link" tag={RRNavLink}>
                     Language: {'England'}
                     </NavLink>
                 </DropdownItem>
 
-                <DropdownItem className="bg-hover">
+                <DropdownItem className="bg-hover bg-color-menu">
                     <NavLink to="/stream" className="router-link" tag={RRNavLink}>
                     Location: {'English'}
                     </NavLink>
                 </DropdownItem>
 
 
-                <DropdownItem divider />
+                {/* <DropdownItem className="bg-color-menu" divider /> */}
 
-                <DropdownItem className="bg-hover">
+                <DropdownItem className="bg-hover bg-color-menu">
                 <NavLink >
                     <img className="custom-icon" src={login} style={iconMarginRight}/> Logout
                 </NavLink>
@@ -169,6 +189,7 @@ const Avatar = (props) => {
     const size = {
         height: '68px',
         weight: '68px',
+        marginTop: '20px'
     };
     const size2 = {
         width: '300px'
@@ -179,11 +200,7 @@ const Avatar = (props) => {
     return(
         <div className="row">
             <div className="media col-sm-4" style={size2}>
-                <img className="rounded-circle" src={"https://media.giphy.com/media/j2nATOAdRgYZq/giphy.gif"} style={size} alt="user avatar" />
-            </div>
-            <div className="col-sm-8 text-right">
-                <h5>Login Logan</h5>
-                <h6 style={pad}>Balance: $8.94</h6>
+                <img className="rounded-circle channel-name-avatar" src={"https://media.giphy.com/media/j2nATOAdRgYZq/giphy.gif"} style={size} alt="user avatar" />
             </div>
         </div>
     )
