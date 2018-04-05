@@ -1,8 +1,7 @@
 import React from 'react'
 import {BrowserRouter as Router, Switch, Route, Link, withRouter } from 'react-router-dom';
 
-import VisibilitySensor from 'react-visibility-sensor'
-import VideoPlayer from '../VideoPlayer'
+import VideoContainer from '../containers/VideoContainer'
 
 import menu from '../../assets/images/menu.svg';
 import clock from '../../assets/images/clock.svg';
@@ -14,10 +13,11 @@ import comments from '../../assets/images/comments.svg';
 import share from '../../assets/images/share-option.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Card = ( {id, channelName, src, time, moneyEarned, title, pubTime, text} ) => (
+const Card = ( {id, channelName, src, fullSrc, time, moneyEarned, title, pubTime, text} ) => (
     <div className="card-custom">
         <Channel channelName={channelName} />      
-        <VideoPreview  src={src} time={time}/>
+        {/* <VideoPreview  src={src} time={time}/> */}
+        <VideoContainer src={src} time={time} fullSrc={fullSrc} />
         <ButtonPanel id={id} moneyEarned={moneyEarned} />
         <Title title={title} pubTime={pubTime}/>
         <Text text={text}/>
@@ -42,24 +42,6 @@ const Channel = ( {channelName} ) => (
         </div>
     </div>
 )
-
-const VideoPreview = ( {src, time} ) => {
-    let _video;
-    const handleChange = (isVisible) => {
-        isVisible ? _video.play() : _video.pause();
-    }
-
-    return (
-        <div className="video-slot"> 
-            <VisibilitySensor onChange={handleChange}>
-                <video className="card-img-top" ref={video => _video = video} loop>
-                    <source src={src} type="video/mp4" />
-                </video>
-            </ VisibilitySensor>
-            <span className="video-time">{time}</span>
-        </div>
-    )
-}
 
 const ButtonPanel = ( {id, moneyEarned} ) => (
     <div className="row" style={{width: '100%', height: "100%", margin: '0', backgroundColor: '#ffffff'}}>
@@ -105,23 +87,6 @@ const Text = ( {text} ) => (
         <div className="col">{text}</div>
     </div>
 )
-
-class Video extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {preview: true}
-    }
-
-    render(){
-        return(
-            <div className="img-fluid video-slot relative">
-                    <VisibilitySensor onChange={this.handleChange}>
-                        <VideoPlayer className="card-img-top" src={this.props.fullSrc}  autoplay={true}/>
-                    </VisibilitySensor>
-            </div>
-        );
-    }
-}
 
 const Avatar = () => {
     return(

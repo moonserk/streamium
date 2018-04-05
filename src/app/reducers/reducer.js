@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { REQUEST_CARDS, RECEIVE_CARDS, TOGGLE_MENU, TOGGLE_SEARCH } from '../actions/actions' 
 
 function fetchCards(state = {
-    isFetching: false,
+    isFetching: true,
     didInvalidate: false,
     items: []
 }, action){

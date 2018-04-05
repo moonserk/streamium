@@ -43,7 +43,7 @@ const GeniralNavbar = ( {menuToggle, dispatch} ) => (
                     <img className="custom-icon-crown" src={logoCrown} />
                 </NavbarBrand>
 
-                <NavbarBrand to="/" tag={RRNavLink} className="in-navbar-custom mx-auto">
+                <NavbarBrand className="in-navbar-custom mx-auto">
                     <img className="custom-logo" src={logo} />
                 </NavbarBrand>
                 
@@ -63,6 +63,7 @@ const iconMarginRight = {
 }
 
 const Menu = ( {menuToggle, toggle} ) => {
+    let input;
     return(
     <div>
         <Nav>
@@ -72,7 +73,7 @@ const Menu = ( {menuToggle, toggle} ) => {
                 <NavbarToggler className="navbar-toggler-icon" style={{padding: '0px', border: 'none'}} />
             </DropdownToggle>
 
-            <DropdownMenu className="transiton-component" style={{marginTop: '0px', paddingTop: '18px'}}>
+            <DropdownMenu className="transiton-component shadow-menu" style={{marginTop: '0px', paddingTop: '18px'}}>
  
                 <div className="channel-name row">
                     <div className="row" style={{width: '100%', height: "100%", margin: '0'}}>
@@ -80,8 +81,8 @@ const Menu = ( {menuToggle, toggle} ) => {
                             <Avatar  />
                         </div>
                     </div>
-                    <div className="row channel-name-upper">
-                    </div>
+                    {/* <div className="row channel-name-upper">
+                    </div> */}
                     <div className="channel-name-lower">
                         <div className="row">
                             <span className="mr-auto col-auto"></span>
@@ -99,7 +100,7 @@ const Menu = ( {menuToggle, toggle} ) => {
 
                 {/* <NavItem> */}
                     <div className="input-search navbar-custom search-border">
-                        <input type="text" autoFocus={true} className="input-search text-size" placeholder=""/>
+                        <input type="text" ref={node => input = node}  autoFocus={true} className="input-search text-size" placeholder=""/>
                     </div>
                 {/* </NavItem> */}
                 
