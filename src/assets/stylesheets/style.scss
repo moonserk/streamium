@@ -446,3 +446,14 @@ body{
 .shadow-menu{
     box-shadow: 0 6px 2px -2px rgb(100,100,100,0.1) !important; 
 }
+
+.fpp{
+    position: absolute;
+}
+
+@media only screen and (min-width : 845px) {
+    .hide-slidemenu{
+        display: none !important;
+    }
+
+}
