@@ -19,7 +19,7 @@ const Card = ( {id, channelName, src, fullSrc, time, moneyEarned, title, pubTime
         {/* <VideoPreview  src={src} time={time}/> */}
         <VideoContainer src={src} time={time} fullSrc={fullSrc} />
         <ButtonPanel id={id} moneyEarned={moneyEarned} />
-        <Title title={title} pubTime={pubTime}/>
+        <Title title={title} pubTime={pubTime} id={id}/>
         <Text text={text}/>
     </div>
 )
@@ -75,9 +75,9 @@ const ButtonPanel = ( {id, moneyEarned} ) => (
     </div>
 )
 
-const Title = ( {title, pubTime} ) => (
+const Title = ( {title, pubTime, id} ) => (
         <div className="row" style={{width: '100%', height: "100%", margin: '0', backgroundColor: '#ffffff', borderBottom : "1px solid rgb(220, 220, 220)"}}>
-            <span className="col"><b>{title}</b></span>
+            <Link to={`/${id}`} ><span className="col"><b>{title}</b></span></Link>
             <small className="col-auto">Published on{pubTime}</small>
         </div>
 )

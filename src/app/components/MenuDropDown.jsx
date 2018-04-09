@@ -37,7 +37,7 @@ const MenuDropDown = ( {menuToggle, toggle} ) => {
             <DropdownToggle className="custom-toggler"  nav>
                 <NavbarToggler className="navbar-toggler-icon" style={{padding: '0px', border: 'none'}} />
             </DropdownToggle>
-            {window.screen.availHeight > 800  ?
+            {window.screen.availWidth > 800  ?
             <DropdownMenu className="transiton-component shadow-menu" style={{marginTop: '0px', paddingTop: '18px'}}>
  
                 <div className="channel-name row">

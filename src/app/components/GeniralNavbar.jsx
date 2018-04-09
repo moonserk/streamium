@@ -59,8 +59,8 @@ const GeniralNavbar = ( {menuToggle, dispatch} ) => (
             <MenuDropDown className="col-auto float-left" menuToggle={menuToggle} toggle={() => dispatch(toggleMenu())} />
             
         </Navbar>
-
-        {window.screen.availHeight < 800 ? <SlideMenu className="hide-slidemenu" menuToggle={menuToggle}/> : null }
+        
+        {window.screen.availWidth <= 800 ? <SlideMenu className="hide-slidemenu" menuToggle={menuToggle}/> : null }
     </div>
 )
 

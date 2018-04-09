@@ -54,6 +54,7 @@ export default class SlideMenu extends React.Component {
       }
 
       render() {
+          let input
         const {menuToggle} = this.props
         return (
           <div>
@@ -66,6 +67,9 @@ export default class SlideMenu extends React.Component {
               onRequestChange={(open) => this.setState({open})}
             >
                 <div className="channel-name row">
+                    
+    
+
                     <div className="row" style={{width: '100%', height: "100%", margin: '0'}}>
                         <div className="col-auto mr-auto">
                             <Avatar  />
@@ -87,6 +91,12 @@ export default class SlideMenu extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                <div className="input-search navbar-custom search-border">
+                        <input type="text" ref={node => input = node}  autoFocus={true} className="input-search text-size" placeholder=""/>
+                </div>
+
+
                 <div  className="navbar-background">
                 <DropdownItem className="bg-hover">
                     <NavLink to="/feed" className="router-link" tag={RRNavLink}>
