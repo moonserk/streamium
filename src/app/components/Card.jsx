@@ -34,8 +34,8 @@ const Channel = ( {channelName} ) => (
                 <button className="channel-name-button">Follow</button>
             </div>
         </div>
-        <div className="row channel-name-upper">
-        </div>
+        {/* <div className="row channel-name-upper">
+        </div> */}
         <div className="row channel-name-lower">
             <span className="mx-auto" style={{marginTop: "12px"}}><b>{channelName}</b></span>
             <span className="col-auto" style={{marginTop: "25px", marginRight: "43px"}}>2.5K</span>

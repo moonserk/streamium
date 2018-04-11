@@ -38,17 +38,19 @@ const MenuDropDown = ( {menuToggle, toggle} ) => {
                 <NavbarToggler className="navbar-toggler-icon" style={{padding: '0px', border: 'none'}} />
             </DropdownToggle>
             {window.screen.availWidth > 800  ?
-            <DropdownMenu className="transiton-component shadow-menu" style={{marginTop: '0px', paddingTop: '18px'}}>
- 
-                <div className="channel-name row">
-                    <div className="row" style={{width: '100%', height: "100%", margin: '0'}}>
+            <DropdownMenu className="shadow-menu" style={{marginTop: '50px', paddingTop: '0px'}}>
+                
+                {/* <div className="channel-name row"> */}
+                    {/* <div className="row" style={{width: '100%', height: "100%", margin: '0'}}>
                         <div className="col-auto mr-auto">
-                            <Avatar  />
-                        </div>
-                    </div>
-                    {/* <div className="row channel-name-upper">
+                            {/* <Avatar  /> */}
+                        {/* </div>
                     </div> */}
-                    <div className="channel-name-lower">
+                    {/* <div className="row channel-name-upper">
+                    </div> */} 
+                    <div className="top-panel-menu">
+                    <Avatar />
+                    <div className="triangle-top"></div>
                         <div className="row">
                             <span className="mr-auto col-auto"></span>
                             <span className="col-auto" style={{marginRight: "10px"}}><b>Joey Tribiani</b></span>
@@ -61,7 +63,7 @@ const MenuDropDown = ( {menuToggle, toggle} ) => {
                             <span className="col-auto" style={{marginRight: "10px"}}>Balance: 2000$</span>
                         </div>
                     </div>
-                </div>
+                {/* </div> */}
 
                 {/* <NavItem> */}
                     <div className="input-search navbar-custom search-border">
@@ -91,7 +93,7 @@ const MenuDropDown = ( {menuToggle, toggle} ) => {
 
                 </div>
 
-                {/* <DropdownItem className="divider-margin-top bg-color-menu"  divider /> */}
+                <DropdownItem className="divider-margin-top bg-color-menu"  divider />
 
                 <DropdownItem  className="bg-hover bg-color-menu">
                     <NavLink to="/channel" className="router-link" tag={RRNavLink}>
@@ -123,7 +125,7 @@ const MenuDropDown = ( {menuToggle, toggle} ) => {
                     </NavLink>
                 </DropdownItem>
 
-                {/* <DropdownItem  className="bg-color-menu" divider /> */}
+                <DropdownItem   divider />
 
 
                 <DropdownItem className="bg-hover bg-color-menu">
@@ -151,7 +153,7 @@ const MenuDropDown = ( {menuToggle, toggle} ) => {
                 </DropdownItem>
 
 
-                {/* <DropdownItem className="bg-color-menu" divider /> */}
+                <DropdownItem divider />
 
                 <DropdownItem className="bg-hover bg-color-menu">
                 <NavLink >
@@ -180,7 +182,7 @@ const Avatar = (props) => {
     return(
         <div className="row">
             <div className="media col-sm-4" style={size2}>
-                <img className="rounded-circle channel-name-avatar" src={"https://media.giphy.com/media/j2nATOAdRgYZq/giphy.gif"} style={size} alt="user avatar" />
+                <img className="rounded-circle top-avatar" src={"https://media.giphy.com/media/j2nATOAdRgYZq/giphy.gif"} style={size} alt="user avatar" />
             </div>
         </div>
     )

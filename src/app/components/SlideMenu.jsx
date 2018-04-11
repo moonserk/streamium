@@ -59,7 +59,7 @@ export default class SlideMenu extends React.Component {
         return (
           <div>
             <Drawer
-              className=""
+              className="zzz"
               docked={false}
               width={300}
               open={menuToggle}
@@ -92,9 +92,14 @@ export default class SlideMenu extends React.Component {
                     </div>
                 </div>
 
-                <div className="input-search navbar-custom search-border">
+                <div className="input-search navbar-custom search-border zzz">
                         <input type="text" ref={node => input = node}  autoFocus={true} className="input-search text-size" placeholder=""/>
                 </div>
+
+
+                <MenuItem><NavLink to="/feed" className="router-link" tag={RRNavLink}>
+                        <img className="custom-icon" src={heart} style={iconMarginRight} /> Tuning In
+                    </NavLink></MenuItem>
 
 
                 <div  className="navbar-background">
@@ -150,7 +155,7 @@ export default class SlideMenu extends React.Component {
                     </NavLink>
                 </DropdownItem>
 
-                {/* <DropdownItem  className="bg-color-menu" divider /> */}
+                <DropdownItem divider />
 
 
                 <DropdownItem className="bg-hover bg-color-menu">
@@ -178,7 +183,7 @@ export default class SlideMenu extends React.Component {
                 </DropdownItem>
 
 
-                {/* <DropdownItem className="bg-color-menu" divider /> */}
+                <DropdownItem divider />
 
                 <DropdownItem className="bg-hover bg-color-menu">
                 <NavLink >

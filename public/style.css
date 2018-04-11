@@ -609,10 +609,40 @@ body {
   border-bottom: 1px solid #dcdcdc; }
 
 .shadow-menu {
-  box-shadow: 0 6px 2px -2px #646464 !important; }
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important; }
 
 .fpp {
   position: absolute; }
+
+.zzz {
+  z-index: 99999; }
+
+.triangle-top {
+  position: absolute;
+  left: 77.3%;
+  top: -20px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #fff; }
+
+.top-avatar {
+  position: absolute;
+  border-radius: 50% !important;
+  border: 3px solid #fff !important;
+  height: 100%;
+  z-index: 10;
+  left: 20%;
+  top: -50px; }
+
+.top-panel-menu {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 0px !important;
+  background-color: #fff; }
 
 @-moz-keyframes App-logo-spin {
   from {
