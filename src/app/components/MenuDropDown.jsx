@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import { Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle } from 'reactstrap';
 
+import home from '../../assets/images/home.svg';
 import logo from '../../assets/images/logo3.png'
 import logoCrown from '../../assets/images/logo12.png'
 import community from '../../assets/images/community-l.svg'
@@ -64,15 +65,22 @@ const MenuDropDown = ( {menuToggle, toggle} ) => {
                         </div>
                     </div>
                 {/* </div> */}
-
-                {/* <NavItem> */}
-                    <div className="input-search navbar-custom search-border">
-                        <input type="text" ref={node => input = node}  autoFocus={true} className="input-search text-size" placeholder=""/>
-                    </div>
-                {/* </NavItem> */}
+                {/* <DropdownItem className="navbar-custom "> */}
+                <NavItem className="navbar-custom" style={{paddingLeft: '40px', paddingRight: '5px',}}>
+                    {/* <div className="input-search navbar-custom search-border"> */}
+                    <img className="custom-icon" src={search} style={iconMarginRight} /><input type="text" ref={node => input = node}  autoFocus={true} className="input-search text-size" placeholder="Search"/>
+                    {/* </div> */}
+                </NavItem>
+                {/* </DropdownItem> */}
                 
                 {/* <DropdownItem  className="divider-margin-bottom bg-color-menu" divider /> */}
                 <div  className="navbar-background">
+                <DropdownItem className="bg-hover">
+                    <NavLink to="/feed" className="router-link" tag={RRNavLink}>
+                        <img className="custom-icon" src={home} style={iconMarginRight} /> Home
+                    </NavLink>   
+                </DropdownItem>
+
                 <DropdownItem className="bg-hover">
                     <NavLink to="/feed" className="router-link" tag={RRNavLink}>
                         <img className="custom-icon" src={heart} style={iconMarginRight} /> Tuning In
@@ -148,7 +156,7 @@ const MenuDropDown = ( {menuToggle, toggle} ) => {
 
                 <DropdownItem className="bg-hover bg-color-menu">
                     <NavLink to="/stream" className="router-link" tag={RRNavLink}>
-                    Location: {'English'}
+                    Location: {'UK'}
                     </NavLink>
                 </DropdownItem>
 

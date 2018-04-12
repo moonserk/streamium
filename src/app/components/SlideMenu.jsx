@@ -13,6 +13,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Fo
     import { Card, CardImg, CardText, CardBody,
         CardTitle, CardSubtitle } from 'reactstrap';
     
+    import home from '../../assets/images/home.svg';
     import logo from '../../assets/images/logo3.png'
     import logoCrown from '../../assets/images/logo12.png'
     import community from '../../assets/images/community-l.svg'
@@ -36,13 +37,17 @@ export default class SlideMenu extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {open: false};
+        this.state = {open: this.props.menuToggle};
         this.handleToggle = this.handleToggle.bind(this)
         this.handleClose = this.handleClose.bind(this)
       }
 
       componentDidMount(){
-          
+
+      }
+
+      componentDidUpdate(){
+
       }
     
       handleToggle(){
@@ -56,6 +61,8 @@ export default class SlideMenu extends React.Component {
       render() {
           let input
         const {menuToggle} = this.props
+        // const { open } = this.state
+        console.log(this.state.open)
         return (
           <div>
             <Drawer
@@ -66,17 +73,21 @@ export default class SlideMenu extends React.Component {
               openSecondary={true}
               onRequestChange={(open) => this.setState({open})}
             >
-                <div className="channel-name row">
+                <div className="channel-name row  zzz">
                     
-    
+                    <DropdownItem className="bg-hover">
+                        {/* <div className="input-search navbar-custom search-border"> */}
+                            <img className="custom-icon" src={search} style={iconMarginRight} /><input type="text" ref={node => input = node}  autoFocus={false} className="input-search text-size" placeholder="Search"/>
+                        {/* </div> */}
+                    </DropdownItem>
 
-                    <div className="row" style={{width: '100%', height: "100%", margin: '0'}}>
+                    <div className="row" style={{width: '100%', height: "100px", margin: '0'}}>
                         <div className="col-auto mr-auto">
                             <Avatar  />
                         </div>
                     </div>
-                    {/* <div className="row channel-name-upper">
-                    </div> */}
+                    <div className="row channel-name-upper">
+                    </div>
                     <div className="channel-name-lower">
                         <div className="row">
                             <span className="mr-auto col-auto"></span>
@@ -92,17 +103,13 @@ export default class SlideMenu extends React.Component {
                     </div>
                 </div>
 
-                <div className="input-search navbar-custom search-border zzz">
-                        <input type="text" ref={node => input = node}  autoFocus={true} className="input-search text-size" placeholder=""/>
-                </div>
-
-
-                <MenuItem><NavLink to="/feed" className="router-link" tag={RRNavLink}>
-                        <img className="custom-icon" src={heart} style={iconMarginRight} /> Tuning In
-                    </NavLink></MenuItem>
-
-
                 <div  className="navbar-background">
+                <DropdownItem className="bg-hover">
+                    <NavLink to="/feed" className="router-link" tag={RRNavLink}>
+                        <img className="custom-icon" src={home} style={iconMarginRight} /> Home
+                    </NavLink>   
+                </DropdownItem>
+
                 <DropdownItem className="bg-hover">
                     <NavLink to="/feed" className="router-link" tag={RRNavLink}>
                         <img className="custom-icon" src={heart} style={iconMarginRight} /> Tuning In
@@ -120,7 +127,6 @@ export default class SlideMenu extends React.Component {
                         <img className="custom-icon" src={trend} style={iconMarginRight} /> Trending
                     </NavLink>   
                 </DropdownItem>
-
                 </div>
 
                 {/* <DropdownItem className="divider-margin-top bg-color-menu"  divider /> */}
@@ -178,7 +184,7 @@ export default class SlideMenu extends React.Component {
 
                 <DropdownItem className="bg-hover bg-color-menu">
                     <NavLink to="/stream" className="router-link" tag={RRNavLink}>
-                    Location: {'English'}
+                    Location: {'UK'}
                     </NavLink>
                 </DropdownItem>
 

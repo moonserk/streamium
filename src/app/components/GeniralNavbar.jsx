@@ -60,7 +60,7 @@ const GeniralNavbar = ( {menuToggle, dispatch} ) => (
             
         </Navbar>
         
-        {window.screen.availWidth <= 800 ? <SlideMenu className="hide-slidemenu" menuToggle={menuToggle}/> : null }
+        {window.screen.availWidth <= 800 ? <SlideMenu className="hide-slidemenu" dispatch={dispatch} menuToggle={menuToggle}/> : null }
     </div>
 )
 
