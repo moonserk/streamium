@@ -33,12 +33,12 @@ const MenuDropDown = ( {menuToggle, toggle} ) => {
     return(
     <div>
         <Nav>
-        <Dropdown  isOpen={menuToggle} toggle={toggle}>
+        <Dropdown  isOpen={menuToggle} toggle={toggle} className="notify-container">
         
             <DropdownToggle className="custom-toggler"  nav>
                 <NavbarToggler className="navbar-toggler-icon" style={{padding: '0px', border: 'none'}} />
             </DropdownToggle>
-            {window.screen.availWidth > 800  ?
+
             <DropdownMenu className="shadow-menu" style={{marginTop: '50px', paddingTop: '0px'}}>
                 
                 {/* <div className="channel-name row"> */}
@@ -168,7 +168,7 @@ const MenuDropDown = ( {menuToggle, toggle} ) => {
                     <img className="custom-icon" src={login} style={iconMarginRight}/> Logout
                 </NavLink>
                 </DropdownItem>
-                </DropdownMenu> : null}
+                </DropdownMenu>
         </Dropdown>
         </Nav>
     </div>

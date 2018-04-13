@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 
 import MenuDropDown from './MenuDropDown'
 import SlideMenu from './SlideMenu'
+import DrawerMenu from './DrawerMenu'
 
 import { Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle } from 'reactstrap';
@@ -56,11 +57,12 @@ const GeniralNavbar = ( {menuToggle, dispatch} ) => (
                 {/* <MyDropdownMenu /> */}
             {/* </Nav> */}
             
-            <MenuDropDown className="col-auto float-left" menuToggle={menuToggle} toggle={() => dispatch(toggleMenu())} />
-            
+            {window.screen.availWidth >= 800  ? <MenuDropDown className="col-auto float-left" menuToggle={menuToggle} toggle={() => dispatch(toggleMenu())} />
+                : <DrawerMenu />}
+
         </Navbar>
         
-        {window.screen.availWidth <= 800 ? <SlideMenu className="hide-slidemenu" dispatch={dispatch} menuToggle={menuToggle}/> : null }
+        {/* {window.screen.availWidth <= 800 ? <SlideMenu className="hide-slidemenu" dispatch={dispatch} menuToggle={menuToggle}/> : null } */}
     </div>
 )
 

@@ -43,11 +43,9 @@ export default class SlideMenu extends React.Component {
       }
 
       componentDidMount(){
-
-      }
-
-      componentDidUpdate(){
-
+        this.setState({open: this.props.menuToggle})
+        console.log("sas")
+        this.forceUpdate()
       }
     
       handleToggle(){
@@ -69,25 +67,23 @@ export default class SlideMenu extends React.Component {
               className="zzz"
               docked={false}
               width={300}
-              open={menuToggle}
+              open={this.state.open}
               openSecondary={true}
               onRequestChange={(open) => this.setState({open})}
             >
                 <div className="channel-name row  zzz">
                     
-                    <DropdownItem className="bg-hover">
-                        {/* <div className="input-search navbar-custom search-border"> */}
-                            <img className="custom-icon" src={search} style={iconMarginRight} /><input type="text" ref={node => input = node}  autoFocus={false} className="input-search text-size" placeholder="Search"/>
-                        {/* </div> */}
-                    </DropdownItem>
+                    <div className="input-search navbar-custom search-border">
+                            <input type="text" ref={node => input = node}  autoFocus={true} className="input-search text-size" placeholder=""/>
+                    </div>
 
-                    <div className="row" style={{width: '100%', height: "100px", margin: '0'}}>
+                    <div className="row" style={{width: '100%', height: "100%", margin: '0'}}>
                         <div className="col-auto mr-auto">
                             <Avatar  />
                         </div>
                     </div>
-                    <div className="row channel-name-upper">
-                    </div>
+                    {/* <div className="row channel-name-upper">
+                    </div> */}
                     <div className="channel-name-lower">
                         <div className="row">
                             <span className="mr-auto col-auto"></span>

@@ -84,7 +84,7 @@ body{
     padding-bottom: 0px !important;
     background-color: #fff;
     border-bottom: 1px solid rgb(255, 45, 17); 
-    -webkit-transform: translate3d(0, 0, 0);
+    // -webkit-transform: translate3d(0, 0, 0);
 }
 .navbar-guest-custom{
     min-height: 48px;
@@ -499,4 +499,9 @@ body{
 	// justify-content: space-around ;
 	// align-items: center ;
 	// align-content: center ;
+}
+
+.drawer-menu{
+    overflow-x: hidden !important;
+    // display: inline-block !important;
 }
