@@ -66,7 +66,7 @@ const MenuDropDown = ( {menuToggle, toggle} ) => {
                     </div>
                 {/* </div> */}
                 {/* <DropdownItem className="navbar-custom "> */}
-                <NavItem className="navbar-custom" style={{paddingLeft: '40px', paddingRight: '5px',}}>
+                <NavItem className="" style={{paddingLeft: '40px', paddingRight: '5px',}}>
                     {/* <div className="input-search navbar-custom search-border"> */}
                     <img className="custom-icon" src={search} style={iconMarginRight} /><input type="text" ref={node => input = node}  autoFocus={true} className="input-search text-size" placeholder="Search"/>
                     {/* </div> */}

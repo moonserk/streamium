@@ -13,11 +13,11 @@ import comments from '../../assets/images/comments.svg';
 import share from '../../assets/images/share-option.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Card = ( {id, channelName, src, fullSrc, time, moneyEarned, title, pubTime, text} ) => (
+const Card = ( {id, channelName, src, fullSrc, time, moneyEarned, title, pubTime, text, poster} ) => (
     <div className="card-custom">
         <Channel channelName={channelName} />      
         {/* <VideoPreview  src={src} time={time}/> */}
-        <VideoContainer src={src} time={time} fullSrc={fullSrc} />
+        <VideoContainer src={src} time={time} fullSrc={fullSrc} poster={poster} />
         <ButtonPanel id={id} moneyEarned={moneyEarned} />
         <Title title={title} pubTime={pubTime} id={id} />
         <Text text={text} pubTime={pubTime} />

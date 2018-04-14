@@ -275,12 +275,32 @@ html:-ms-fullscreen {
   height: 100%;
   z-index: 10; }
 
+.panel {
+  max-width: 500px;
+  min-height: 50px;
+  background-color: #f8cd7d;
+  border-radius: 90px 90px 0px 0px;
+  -moz-border-radius: 90px 90px 0px 0px;
+  -webkit-border-radius: 90px 90px 0px 0px;
+  border: 0px solid #000; }
+
+.moreVideos {
+  padding: 10px;
+  background-color: #fddfa7;
+  width: 100%;
+  margin: 0px !important; }
+
 body {
   background-color: #f5f5f5 !important; }
 
 @font-face {
   font-family: "FORTE";
   src: url(fonts/_/stylesheets/forte.ttf) format("truetype"); }
+
+.logo-font {
+  font-family: "FORTE";
+  font-size: 32px;
+  color: #fff; }
 
 .custom-icon {
   width: 22px; }
@@ -329,7 +349,8 @@ body {
   padding-top: 0px !important;
   padding-bottom: 0px !important;
   background-color: #fff;
-  border-bottom: 1px solid #ff2d11; }
+  border-bottom: 1px solid #ff2d11;
+  max-height: 42px !important; }
 
 .navbar-guest-custom {
   min-height: 48px;

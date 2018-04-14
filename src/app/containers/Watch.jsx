@@ -2,6 +2,8 @@ import React from 'react';
 import VideoPlayer from './VideoPlayer';
 import axios from 'axios'
 
+import RecomendedVideos from './RecomendedVideos'
+
 import FlatButton from 'material-ui/FlatButton';
 import clock from '../../assets/images/clock.svg';
 import gm from '../../assets/images/gm.png';
@@ -67,6 +69,7 @@ export default class Watch extends React.Component{
             clearInterval(this.timerID);
         return(
             <div className="watch-container container-margin-top">
+            <RecomendedVideos />
             <div className="card">
             <div className="img-fluid video-slot relative">
             {console.log(this.state.data.fullSrc, "<<-")}

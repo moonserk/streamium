@@ -2,6 +2,7 @@
 @import './scrollbar';
 @import './videoPlayer';
 @import './dropdownmenu';
+@import './recomendedVideos';
 
 body{
     background-color: rgb(245, 245, 245) !important;
@@ -10,6 +11,11 @@ body{
 @font-face{
     font-family: "FORTE";
     src: url("forte.ttf") format('truetype');
+}
+.logo-font{
+    font-family: "FORTE";
+    font-size: 32px;
+    color: white;
 }
 
 .custom-icon{
@@ -90,6 +96,7 @@ body{
     padding-bottom: 0px !important;
     background-color: #fff;
     border-bottom: 1px solid rgb(255, 45, 17); 
+    max-height: 42px !important;
     // -webkit-transform: translate3d(0, 0, 0);
 }
 .navbar-guest-custom{

@@ -50,9 +50,9 @@ const GeniralNavbar = ( {menuToggle, dispatch} ) => (
                     <img className="custom-icon-crown" src={logoCrown} />
                 </NavbarBrand>
 
-                <NavbarBrand className="in-navbar-custom mx-auto">
-                    <img className="custom-logo" src={logo} />
-                </NavbarBrand>
+                <div className="in-navbar-custom mx-auto logo-font">
+                    {"Streamium"}
+                </div>
                 
                 {/* <MyDropdownMenu /> */}
             {/* </Nav> */}

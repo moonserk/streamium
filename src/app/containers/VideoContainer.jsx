@@ -8,7 +8,7 @@ class VideoContainer extends React.Component{
         this.state = {preview: true}
     }
 
-    previewVideo(src ,time){
+    previewVideo(src ,time, poster){
         let _video;
         const handleChange = (isVisible) => {
             isVisible ? _video.play() : _video.pause();
@@ -17,7 +17,7 @@ class VideoContainer extends React.Component{
         return (
             <div className="video-slot" onClick={e => this.setState({preview: false})}> 
                 <VisibilitySensor onChange={handleChange}>
-                    <video className="card-img-top" ref={video => _video = video} loop>
+                    <video className="card-img-top" poster={poster} ref={video => _video = video} loop>
                         <source src={src} type="video/mp4" />
                     </video>
                 </ VisibilitySensor>
@@ -37,9 +37,9 @@ class VideoContainer extends React.Component{
     }
 
     render(){
-        const { src, fullSrc, time } = this.props
+        const { src, fullSrc, time, poster } = this.props
         return(
-            this.state.preview ? this.previewVideo(src, time) : this.fullVideo(fullSrc)
+            this.state.preview ? this.previewVideo(src, time, poster) : this.fullVideo(fullSrc)
         )
     }
 }
