@@ -7,10 +7,10 @@ body{
     background-color: rgb(245, 245, 245) !important;
 }
 
-// @font-face{
-//     font-family: "forte";
-//     src: url("FORTE.TTF") format('truetype');
-// }
+@font-face{
+    font-family: "FORTE";
+    src: url("forte.ttf") format('truetype');
+}
 
 .custom-icon{
     width: 22px;
@@ -411,7 +411,7 @@ body{
     outline: none!important;
     color: white;
     font-size: 20px;
-    font-family: "forte";
+    font-family: 'FORTE';
     //font-size: 26px;
     text-decoration: none;
     border: 3px solid #ffffff !important;

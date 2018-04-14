@@ -44,7 +44,7 @@ let config = {
       },
       {
         test: /\.(woff|woff2|eot|ttf)$/,
-        loader: 'file-loader?context=src/assets/fonts/[path][name].[ext]'
+        loader: 'file-loader?context=src/assets/fonts/&name=fonts/[path][name].[ext]'
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
