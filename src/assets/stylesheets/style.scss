@@ -6,6 +6,12 @@
 body{
     background-color: rgb(245, 245, 245) !important;
 }
+
+// @font-face{
+//     font-family: "forte";
+//     src: url("FORTE.TTF") format('truetype');
+// }
+
 .custom-icon{
     width: 22px;
 }
@@ -405,7 +411,7 @@ body{
     outline: none!important;
     color: white;
     font-size: 20px;
-    font-family: "Brush Script MT, Brush Script Std, cursive";
+    font-family: "forte";
     //font-size: 26px;
     text-decoration: none;
     border: 3px solid #ffffff !important;
@@ -444,6 +450,7 @@ body{
 }
 
 .shadow-menu{
+    border: 0px !important;
     -webkit-box-shadow: 0px 15px 8px -3px rgba(50, 50, 50, 0.75) !important;
     -moz-box-shadow:    0px 15px 8px -3px rgba(50, 50, 50, 0.75) !important;
     box-shadow:         0px 15px 8px -3px rgba(50, 50, 50, 0.75) !important;

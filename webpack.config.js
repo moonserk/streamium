@@ -11,7 +11,7 @@ let config = {
     filename: 'output.js'
   },
   resolve: { // These options change how modules are resolved
-    extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.styl', '.jpeg', '.jpg', '.gif', '.png', 'svg'], // Automatically resolve certain extensions
+    extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.styl', '.jpeg', '.jpg', '.gif', '.png', 'svg', 'ttf'], // Automatically resolve certain extensions
     alias: { // Create aliases
       images: path.resolve(__dirname, 'src/assets/images')  // src/assets/images alias
     }
@@ -41,6 +41,10 @@ let config = {
         test: /\.jsx$/,
         exclude: /node_modules/,
         loader: "babel-loader"
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf)$/,
+        loader: 'file-loader?context=src/assets/fonts/[path][name].[ext]'
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,

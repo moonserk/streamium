@@ -33,7 +33,7 @@ const MenuDropDown = ( {menuToggle, toggle} ) => {
     return(
     <div>
         <Nav>
-        <Dropdown  isOpen={menuToggle} toggle={toggle} className="notify-container">
+        <Dropdown  isOpen={menuToggle} toggle={toggle} className="">
         
             <DropdownToggle className="custom-toggler"  nav>
                 <NavbarToggler className="navbar-toggler-icon" style={{padding: '0px', border: 'none'}} />
