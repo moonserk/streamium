@@ -1,12 +1,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import play from '../assets/images/pp-w.png'
-import sound from '../assets/images/sound-w.png'
-import settings from '../assets/images/settings-w.png'
-import full_screen from '../assets/images/fs-w.png'
-import pause from '../assets/images/pause2.png'
-import load from '../assets/images/loading.svg'
+import play from '../../assets/images/pp-w.png'
+import sound from '../../assets/images/sound-w.png'
+import settings from '../../assets/images/settings-w.png'
+import full_screen from '../../assets/images/fs-w.png'
+import pause from '../../assets/images/pause2.png'
+import load from '../../assets/images/loading.svg'
 
 export default class VideoPlayer extends React.Component{
 

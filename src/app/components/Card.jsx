@@ -19,8 +19,8 @@ const Card = ( {id, channelName, src, fullSrc, time, moneyEarned, title, pubTime
         {/* <VideoPreview  src={src} time={time}/> */}
         <VideoContainer src={src} time={time} fullSrc={fullSrc} />
         <ButtonPanel id={id} moneyEarned={moneyEarned} />
-        <Title title={title} pubTime={pubTime} id={id}/>
-        <Text text={text}/>
+        <Title title={title} pubTime={pubTime} id={id} />
+        <Text text={text} pubTime={pubTime} />
     </div>
 )
 
@@ -31,7 +31,7 @@ const Channel = ( {channelName} ) => (
                 <Avatar  />
             </div>
             <div className="col-auto" style={{marginRight: '120px'}}>
-                <button className="channel-name-button">Follow</button>
+                <button className="channel-name-button">follow</button>
             </div>
         </div>
         {/* <div className="row channel-name-upper">
@@ -50,41 +50,25 @@ const ButtonPanel = ( {id, moneyEarned} ) => (
             <button className="btn button-panel-btn"><img className="custom-icon " src={gm} alt="moneyEarned"/>{moneyEarned}</button>
         </div>
         <div className="col-auto row">
-            <Link to={`/${id}`} className="col" data-ripple="true" title="Watch full video">
                 <div className="text-center">
-                    <img src={home} className="custom-icon" alt="home" />
+                    <img src={menu} className="custom-icon" alt="home" />
                 </div>
-            </Link>
-            <a href="" className="col" data-ripple="true" title="Watch full video">
-                <div className="text-center">
-                    <img src={info} className="custom-icon" alt="home" />
-                </div>
-            </a>
-            <a href="" className="col" data-ripple="true" title="Watch full video">
-                <div className="text-center">
-                    <img src={comments} className="custom-icon" alt="home" />
-                </div>
-            </a>
-
-            <a href="" className="col" data-ripple="true" title="Watch full video">
-                <div className="text-center">
-                    <img src={share} className="custom-icon" alt="home" />
-                </div>
-            </a>
         </div>
     </div>
 )
 
-const Title = ( {title, pubTime, id} ) => (
+const Title = ( {title, id} ) => (
         <div className="row" style={{width: '100%', height: "100%", margin: '0', backgroundColor: '#ffffff', borderBottom : "1px solid rgb(220, 220, 220)"}}>
             <Link to={`/${id}`} ><span className="col"><b>{title}</b></span></Link>
-            <small className="col-auto">Published on{pubTime}</small>
         </div>
 )
 
-const Text = ( {text} ) => (
-    <div className="row" style={{width: '100%', height: "100%", margin: '0', backgroundColor: '#ffffff', padding: "10px"}}>
-        <div className="col">{text}</div>
+const Text = ( {text, pubTime} ) => (
+    <div style={{width: '100%', height: "100%", margin: '0', backgroundColor: '#ffffff', padding: "10px"}}>
+        <div className="row" >
+            <div className="col">{text}</div>
+        </div>
+        <small className="col-auto">Published on{' '}{pubTime}</small>
     </div>
 )
 

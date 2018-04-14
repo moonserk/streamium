@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoPlayer from '../VideoPlayer';
+import VideoPlayer from './VideoPlayer';
 import axios from 'axios'
 
 import FlatButton from 'material-ui/FlatButton';

@@ -1,6 +1,6 @@
 import React from 'react'
 import VisibilitySensor from 'react-visibility-sensor'
-import VideoPlayer from '../VideoPlayer'
+import VideoPlayer from './VideoPlayer'
 
 class VideoContainer extends React.Component{
     constructor(props){
