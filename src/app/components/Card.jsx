@@ -13,6 +13,11 @@ import comments from '../../assets/images/comments.svg';
 import share from '../../assets/images/share-option.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
+import IconButton from 'material-ui/IconButton';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+
 const Card = ( {id, channelName, src, fullSrc, time, moneyEarned, title, pubTime, text, poster} ) => (
     <div className="card-custom">
         <Channel channelName={channelName} />      
@@ -45,13 +50,20 @@ const Channel = ( {channelName} ) => (
 
 const ButtonPanel = ( {id, moneyEarned} ) => (
     <div className="row" style={{width: '100%', height: "100%", margin: '0', backgroundColor: '#ffffff'}}>
-        <div className="col-auto mr-auto">
+        <div className="col-auto mr-auto" style={{marginTop: "10px"}}>
             <button className="btn button-panel-btn"><img className="custom-icon " src={clock} alt="moneyEarned"/>{moneyEarned}</button>
             <button className="btn button-panel-btn"><img className="custom-icon " src={gm} alt="moneyEarned"/>{moneyEarned}</button>
         </div>
         <div className="col-auto row">
                 <div className="text-center">
-                    <img src={menu} className="custom-icon" alt="home" />
+                <IconMenu
+                    iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+                    anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+                    targetOrigin={{horizontal: 'left', vertical: 'top'}}
+                >
+                    <MenuItem primaryText="Share" leftIcon={<img src={share} className="custom-icon" alt="home" />} />
+                    <MenuItem primaryText="Report" />
+                </IconMenu>
                 </div>
         </div>
     </div>
