@@ -16,7 +16,7 @@ import { Card, CardImg, CardText, CardBody,
     import MenuItem from 'material-ui/MenuItem';
 
 import logo from '../../assets/images/logo3.png'
-import logoCrown from '../../assets/images/logo12.png'
+import logoCrown from '../../assets/images/logo-01.svg'
 import community from '../../assets/images/community-l.svg'
 import channel from  '../../assets/images/webM-my-channel.svg'
 import upload from '../../assets/images/upload-btn.svg'

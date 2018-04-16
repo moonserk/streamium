@@ -36,7 +36,7 @@ const MenuDropDown = ( {menuToggle, toggle} ) => {
         <Dropdown  isOpen={menuToggle} toggle={toggle} className="">
         
             <DropdownToggle className="custom-toggler"  nav>
-                <NavbarToggler className="navbar-toggler-icon" style={{padding: '0px', border: 'none'}} />
+                <NavbarToggler className="custom-toggler" style={{padding: '0px', border: 'none'}} />
             </DropdownToggle>
 
             <DropdownMenu className="shadow-menu" style={{marginTop: '50px', paddingTop: '0px'}}>

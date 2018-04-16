@@ -50,7 +50,7 @@ const Channel = ( {channelName} ) => (
 
 const ButtonPanel = ( {id, moneyEarned} ) => (
     <div className="row" style={{width: '100%', height: "100%", margin: '0', backgroundColor: '#ffffff'}}>
-        <div className="col-auto mr-auto" style={{marginTop: "10px"}}>
+        <div className="col-auto mr-auto" style={{marginTop: "5px"}}>
             <button className="btn button-panel-btn"><img className="custom-icon " src={clock} alt="moneyEarned"/>{moneyEarned}</button>
             <button className="btn button-panel-btn"><img className="custom-icon " src={gm} alt="moneyEarned"/>{moneyEarned}</button>
         </div>
