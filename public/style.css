@@ -318,7 +318,7 @@ body {
 
 .logo-font {
   font-family: "FORTE";
-  font-size: 28px;
+  font-size: 36px;
   margin-top: 0px;
   margin-right: 0px;
   background: -webkit-linear-gradient(#f60, #f30);
@@ -374,7 +374,7 @@ body {
   padding-bottom: 0px !important;
   background-color: #fff;
   border-bottom: 1px solid #fff;
-  min-height: 42px !important; }
+  min-height: 56px !important; }
 
 .navbar-guest-custom {
   min-height: 48px;
