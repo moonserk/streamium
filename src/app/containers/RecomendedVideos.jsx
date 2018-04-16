@@ -7,23 +7,17 @@ export default class RecomendedVideos extends React.Component{
     constructor(props){
         super(props)
         
-        this.state = {modal: false}
+        this.state = {modal: false, pos: 'relative'}
         this.mouseEnterHandler = this.mouseEnterHandler.bind(this)
         this.mouseLeaveHandler = this.mouseLeaveHandler.bind(this)
     }
 
     renderRecomend(){
         return (
-            <div className="row moreVideos" onMouseEnter={this.mouseEnterHandler}  onMouseLeave={this.mouseLeaveHandler}>
-                <div className="col-4">
-                    <MoreVideos />
-                </div>
-                <div className="col-4">
-                    <MoreVideos />
-                </div>
-                <div className="col-4">
-                    <MoreVideos />
-                </div>
+            <div className="moreVideos" onMouseEnter={this.mouseEnterHandler}  onMouseLeave={this.mouseLeaveHandler}>
+                <MoreVideos />
+                <MoreVideos />
+                <MoreVideos />
             </div>
         )
     }
@@ -31,7 +25,7 @@ export default class RecomendedVideos extends React.Component{
     mouseLeaveHandler(e){
         e.preventDefault()
         if(this.state.modal === true){
-            this.timer = setInterval(()=> this.setState({modal: false}, () => clearInterval(this.timer)), 3000)
+            this.timer = setInterval(()=> this.setState({modal: false,pos: 'relative'}, () => clearInterval(this.timer)), 3000)
         }
         console.log("Hello->>")
     }
@@ -39,17 +33,18 @@ export default class RecomendedVideos extends React.Component{
     mouseEnterHandler(e){
         e.preventDefault()
         clearInterval(this.timer)
-        this.setState({modal: true})
+        this.setState({modal: true, pos: 'absolute'})
         console.log("Hello-<<")
     }
 
     render(){
         return(
-            <div>
-                <div className="panel" onMouseEnter={this.mouseEnterHandler} onMouseLeave={this.mouseLeaveHandler}>
+            <div className="rec-container">
+                <div className="panel" style={{position: this.state.pos}} onMouseEnter={this.mouseEnterHandler} onMouseLeave={this.mouseLeaveHandler}>
                 </div>
-                
+                <div>
                 {this.state.modal ? this.renderRecomend() : null}
+                </div>
             </div>
         )
     }

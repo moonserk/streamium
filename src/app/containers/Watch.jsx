@@ -68,26 +68,29 @@ export default class Watch extends React.Component{
         }else{
             clearInterval(this.timerID);
         return(
+            
             <div className="watch-container container-margin-top">
-            <RecomendedVideos />
+            {/* <div className="rec-container"> */}
+                <RecomendedVideos />
+            {/* </div> */}
             <div className="card">
             <div className="img-fluid video-slot relative">
             {console.log(this.state.data.fullSrc, "<<-")}
                 <VideoPlayer src={this.state.data.fullSrc} autoplay={true}/>
             </div>
             <div className="row">
-                <div className="col-8">
+                <div className="col">
                     <div className="" >
                         {this.props.title || this.state.data.title}
                     </div>
                         <div className="row" style={st}>
-                            <div className="col">
+                            <div className="col-2">
                                 <FlatButton  type="button" data-ripple="true">
                                     <img className="custom-icon " src={clock} alt="moneyEarned"/>
                                     {this.props.moneyEarned || this.state.data.moneyEarned} 
                                 </FlatButton>
                             </div>
-                            <div className="col">
+                            <div className="col-2">
                                 <FlatButton  type="button" data-ripple="true">
                                     <img className="custom-icon" src={gm} alt="moneyEarned"/>
                                     {this.props.moneyEarned || this.state.data.moneyEarned}
@@ -123,12 +126,12 @@ export default class Watch extends React.Component{
                                 </textarea>
                             </div>
                         </div>
-                        <div className="row justify-content-end">
+                        <div className="row justify-content-end" style={{marginRight: '30px', marginBottom: '10px'}}>
                                 <FlatButton  backgroundColor="#E0E0E0"label="CANCEL" type="button" data-ripple="true"/>
                                 <FlatButton  backgroundColor="#009eff" label="COMMENT" type="button" data-ripple="true" />
                         </div>
                     </div>
-                    <div className="col-4">
+                    {/* <div className="col-4">
                         <MoreVideos src={this.props.src || this.state.data.src}
                                     title={this.props.title || this.state.data.title}
                                     channelName={this.props.channelName || this.state.data.channelName}
@@ -142,7 +145,7 @@ export default class Watch extends React.Component{
                                     channelName={this.props.channelName || this.state.data.channelName}
                                     moneyEarned={this.props.moneyEarned || this.state.data.moneyEarned}/>
                         
-                    </div>
+                    </div> */}
                 </div>
 
             </div>
