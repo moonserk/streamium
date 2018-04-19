@@ -16,7 +16,7 @@ import { Card, CardImg, CardText, CardBody,
     import MenuItem from 'material-ui/MenuItem';
 
 import logo from '../../assets/images/logo3.png'
-import logoCrown from '../../assets/images/logo-01.svg'
+import logoCrown from '../../assets/images/logo123.png'
 import community from '../../assets/images/community-l.svg'
 import channel from  '../../assets/images/webM-my-channel.svg'
 import upload from '../../assets/images/upload-btn.svg'
@@ -50,9 +50,9 @@ const GeniralNavbar = ( {menuToggle, dispatch} ) => (
                     <img className="custom-icon-crown" src={logoCrown} />
                 </NavbarBrand>
 
-                <div className="in-navbar-custom mx-auto logo-font">
+                {/* <div className="in-navbar-custom mx-auto logo-font">
                     {"Streamium"}
-                </div>
+                </div> */}
                 
                 {/* <MyDropdownMenu /> */}
             {/* </Nav> */}

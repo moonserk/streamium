@@ -29,9 +29,9 @@ body{
 
 .custom-icon-crown{
     width: 40px;
-    margin-left: 16px;
-    margin-right: 16px;
-    margin-bottom: 5px;
+    // margin-left: 16px;
+    // margin-right: 16px;
+    // margin-bottom: 5px;
 }
 
 .custom-logo{
@@ -409,9 +409,10 @@ body{
 .channel-name-avatar{
     position: absolute;
     //width: 100%; 
+    margin-top: 10px;
     border-radius: 50% !important;
     border: 3px solid #ffffff !important;
-    height: 100%;
+    height: 80%;
     z-index: 10;
 
 }
@@ -442,6 +443,10 @@ body{
 .navbar-background{
     // background: linear-gradient(to right, rgb(255, 102, 0),  rgb(255, 51, 0));
     background: white;
+}
+
+.trend-menu-background{
+    background: linear-gradient(to right, rgb(255, 102, 0),  rgb(255, 51, 0));
 }
 
 // .custom-toggler .navbar-toggler {

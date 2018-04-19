@@ -74,7 +74,7 @@ const MenuDropDown = ( {menuToggle, toggle} ) => {
                 {/* </DropdownItem> */}
                 
                 {/* <DropdownItem  className="divider-margin-bottom bg-color-menu" divider /> */}
-                <div  className="navbar-background">
+                <div  className="trend-menu-background">
                 <DropdownItem className="bg-hover">
                     <NavLink to="/feed" className="router-link" tag={RRNavLink}>
                         <img className="custom-icon" src={home} style={iconMarginRight} /> Home

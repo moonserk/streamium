@@ -114,7 +114,7 @@ const BottomMenu = (props) => (
 )
 
 const TopMenu = (props) => (
-  <div  className="navbar-background">
+  <div  className="trend-menu-background">
     <MenuItem onClick={props.onClose}>
       <img className="custom-icon" src={home} style={iconMarginRight} /> Home
     </MenuItem>
