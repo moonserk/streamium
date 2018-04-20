@@ -310,7 +310,7 @@ html:-ms-fullscreen {
   z-index: 100; }
 
 body {
-  background-color: #f5f5f5 !important; }
+  background-color: #fff !important; }
 
 @font-face {
   font-family: "FORTE";

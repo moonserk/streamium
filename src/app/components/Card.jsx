@@ -57,9 +57,9 @@ const ButtonPanel = ( {id, moneyEarned} ) => (
         <div className="col-auto row">
                 <div className="text-center">
                 <IconMenu
-                    iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
-                    anchorOrigin={{horizontal: 'left', vertical: 'top'}}
-                    targetOrigin={{horizontal: 'left', vertical: 'top'}}
+                    iconButtonElement={<IconButton style={{transform: 'rotate(90deg)'}}><MoreVertIcon /></IconButton>}
+                    anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+                    targetOrigin={{horizontal: 'right', vertical: 'top'}}
                 >
                     <MenuItem primaryText="Share" leftIcon={<img src={share} className="custom-icon" alt="home" />} />
                     <MenuItem primaryText="Report" />
@@ -70,7 +70,7 @@ const ButtonPanel = ( {id, moneyEarned} ) => (
 )
 
 const Title = ( {title, id} ) => (
-        <div className="row" style={{width: '100%', height: "100%", margin: '0', backgroundColor: '#ffffff', borderBottom : "1px solid rgb(220, 220, 220)"}}>
+        <div className="row" style={{width: '100%', height: "100%", margin: '0', backgroundColor: '#ffffff'}} >
             <Link to={`/${id}`} ><span className="col"><b>{title}</b></span></Link>
         </div>
 )
